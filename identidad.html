@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identidad Progresivo - Revista FUBA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/identidad.css">
+<link rel="icon" href="img/favicon.png" type="image/png">
+</head>
+<body>
+
+    <!-- HEADER SUPERIOR - Mismo navbar del proyecto -->
+  <header class="site-header">
+
+    <div class="header-container">
+    <div class="logo-area">
+        <img src="img/logo-revista-progresivo.png" alt="Logo">
+    </div>
+
+    <button class="menu-toggle" aria-label="Abrir menú">
+        ☰
+    </button>
+
+   <nav class="main-navigation">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#archivo">Archivo</a>
+                <a href="convocatorias.html">Convocatorias</a>
+                <a href="identidad.html">Identidad Progresivo</a>
+                <a href="index.html#revistas">Revistas</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+</div>
+
+    
+</header>
+<main class="entrada-suave"> 
+
+    <!-- BANNER/PORTADA con imagen geométrica -->
+    <section class="identidad-hero">
+        <!-- Imagen de fondo con efecto parallax -->
+        <div class="identidad-hero-background">
+            <img src="img/identidad.png" alt="Identidad Progresivo" class="hero-image-parallax">
+        </div>
+        
+        <!-- Overlay con gradiente -->
+        <div class="identidad-hero-overlay"></div>
+        
+        <!-- Contenido del hero -->
+        <div class="identidad-hero-content">
+            <h1 class="identidad-hero-title" data-aos="fade-up">
+                Identidad <br> Progresivo
+            </h1>
+            <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="300">
+
+                <div class="scroll-arrow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE CONTENIDO INTERACTIVO -->
+    <section class="identidad-content">
+        <div class="identidad-container">
+            
+            <!-- Navegación de secciones sticky -->
+            <aside class="identidad-sidebar" id="identidadSidebar">
+                <nav class="content-nav">
+                    <a href="#cambio" class="nav-link active" data-section="cambio">
+                        <span class="nav-number">01</span>
+                        <span class="nav-text">El Cambio</span>
+                    </a>
+                    <a href="#progresivo" class="nav-link" data-section="progresivo">
+                        <span class="nav-number">02</span>
+                        <span class="nav-text">El Progresivo</span>
+                    </a>
+                    <a href="#mundo" class="nav-link" data-section="mundo">
+                        <span class="nav-number">03</span>
+                        <span class="nav-text">El Mundo</span>
+                    </a>
+                    <a href="#autores" class="nav-link" data-section="autores">
+                        <span class="nav-number">04</span>
+                        <span class="nav-text">Autores</span>
+                    </a>
+                </nav>
+                
+                <!-- Indicador de progreso de lectura -->
+                <div class="reading-progress">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </aside>
+
+            <!-- Contenido principal -->
+            <main class="identidad-main">
+                
+                <!-- SECCIÓN 1: EL CAMBIO -->
+                <article class="content-section" id="cambio" data-section="cambio">
+                    <div class="section-header">
+                        <span class="section-number">01</span>
+                        <h2 class="section-title">El Cambio</h2>
+                    </div>
+
+                    <!-- Párrafos con animaciones y elementos interactivos -->
+                    <div class="text-content">
+                        <p class="intro-text" data-reveal>
+                            El término <span class="highlight-term" data-tooltip="Modelo constructivo de narrativa no lineal">hipermedia</span> hace referencia a un modelo constructivo, la narrativa hipermedia. Dicho modelo propone un espacio de narración no lineal con múltiples puntos de acceso y diferentes experiencias posibles en función de variadas dinámicas de consumo o acercamiento.
+                        </p>
+
+                        <div class="quote-block" data-reveal>
+                            <blockquote>
+                                "Es una forma de construcción cultural que se alimenta de múltiples medios y plataformas para construir un universo narrativo dinámico."
+                            </blockquote>
+                        </div>
+
+                        <p data-reveal>
+                            Esta aproximación permite plantear un espacio de creación y consumo que va más allá de una temática, una historia o un personaje. Dentro de las hipermediaciones aparece la <span class="highlight-term" data-tooltip="Estructura para construcción de universos narrativos">narrativa transmedia</span> como una manera de estructurar universos posibles para la construcción de imaginarios, Jenkins (2006) expone que estas narrativas consisten en crear mundos en los cuales pueden coexistir gran cantidad de personajes, historias y relaciones entre todos ellos.
+                        </p>
+
+                        <p data-reveal>
+                            Además es un espacio extensivo donde el consumidor puede asumir un rol activo y ampliar, modificar o resignificar el mundo. De esta forma cada nodo (historia, personaje o derivación) es un portal de acceso al mundo y cada lector adquiere un rol activo en la definición de su propia experiencia.
+                        </p>
+
+                        <!-- Panel expandible -->
+                        <div class="expandable-panel" data-reveal>
+                            <button class="panel-trigger">
+                                <span>Marco conceptual</span>
+                                <svg class="panel-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                            <div class="panel-content">
+                                <p>
+                                    Con el objetivo de establecer un marco conceptual para la comprensión de la naturaleza de las narrativas hipermedia y transmedia, a continuación se hace un esbozo de las condiciones generales bajo las cuales se construyen estos universos narrativos.
+                                </p>
+                            </div>
+                        </div>
+
+                        <p data-reveal>
+                            En primer lugar, para Marshall McLuhan la comunicación constituye un proceso de intercambio sensible entre los seres humanos y el mundo tangible, en tanto los canales están definidos por aspectos naturales como la luz (en el caso de las imágenes) o el sonido (en el caso de la comunicación oral o la música) (2015).
+                        </p>
+
+                        <p data-reveal>
+                            Esta naturaleza mediática es fluida, permite a los mensajes migrar y transformarse de un medio a otro, reconoce posibilidades expandidas en la remediación (cambio de medios). Es por esta razón que se considera en este texto el término hipermedia, como uno que potencia altamente la hibridación mediática en la medida que se fundamenta en el intercambio de información entre diferentes plataformas y formas de expresión.
+                        </p>
+
+                        <!-- Elemento visual interactivo -->
+                        <div class="visual-element" data-reveal>
+                            <div class="geometric-pattern">
+                                <div class="pattern-line"></div>
+                                <div class="pattern-line"></div>
+                                <div class="pattern-line"></div>
+                            </div>
+                        </div>
+
+                        <p data-reveal>
+                            En la actualidad se trata de términos de uso común que se asocian a la implementación y uso de tecnologías de la información, o tecnologías electrónicas para la distribución de contenidos mediáticos. De lo que no están lejos ya que se valen de las posibilidades tecnológicas para manifestar su naturaleza, además los desarrollos especializados amplían rápidamente sus límites; sin embargo, debe entenderse la hipermediación como un fenómeno cuya naturaleza se encuentra ligada a la manera en la que fluye la información en una red de medios.
+                        </p>
+
+                        <p data-reveal>
+                            También es necesario tener en cuenta su dependencia de las asociaciones simbólicas generadas por la yuxtaposición o superposición de informaciones con materialidades y orígenes diferentes para conformar un universo narrativo en la mente de los espectadores, lectores o interactores. Esto gracias a que la diferencia entre las materialidades de la información se diluye en la utilización de diferentes medios para transmitir un mensaje.
+                        </p>
+
+                        <div class="quote-block" data-reveal>
+                            <blockquote>
+                                Como ya lo definiera Henry Jenkins en su texto Convergence Culture, cuando ejemplifica la situación de los medios actuales y sus posibilidades narrativas a través de un análisis de las implicaciones frente a las campañas de expectativa y los estrenos de las películas de la serie Matrix.
+                            </blockquote>
+                        </div>
+
+                        <p data-reveal>
+                            Deja claro que la relación de los usuarios se potencia cuando se liberan pistas que deben ser continuadas en otros escenarios para completar la historia detrás de la narración. En ese orden de ideas empiezan a ser importantes no solamente las películas, sino también todo el material mediático alrededor, como historietas, cortos, animaciones, videojuegos, juguetes, objetos de colección, literatura, entre otros. Así como la activación que pueden hacer de estos sistemas los usuarios que empiezan a saciar su curiosidad buscando información extra en otros canales, incluso al generar comunidades que permiten compartir y expandir información (2008).
+                        </p>
+
+                        <p data-reveal>
+                            En este sentido la narración hipermedia es entendida como aquella que necesita de una participación activa del espectador en la medida que ha de escoger sus rutas y los medios en los que puede o quiere participar, genera secuencias narrativas diferentes en algunos casos o giros que no cambian el sentido de la información pero permiten establecer matices, capas o lecturas diferentes.
+                        </p>
+
+                        <p data-reveal>
+                            Esta forma de representación es analógica al comportamiento de la información en el mundo que se entiende como real, ya que en este, los sucesos ocurren de forma simultánea y la información que un espectador puede procesar dependerá del canal o el medio por el cual la recibe. Carlos Scolari propone: "En un mundo transmedia tanto el público como sus creadores comparten una misma imagen mental de la worldness, o sea una serie de rasgos que distinguen un determinado universo narrativo" (Scolari, 2013, pág. 26).
+                        </p>
+
+                        <p data-reveal>
+                            Esta imagen mental constituye además de un hilo narrativo, una posibilidad de generar un mapa mental colectivo con relación al fenómeno objeto de la historia, bien se trate de ficción o de la reconstrucción de elementos reales. Situación que puede contribuir a generar, cambiar o extender imaginarios colectivos relacionados con fenómenos determinados.
+                        </p>
+
+                        <!-- Tweet destacado -->
+                        <div class="tweet-highlight" data-reveal>
+                            <h4>Narrativas transmedia en cinco tweets:</h4>
+                            <ul class="tweet-list">
+                                <li>#narrativastransmedia: concepto introducido @henryjenkins en Technology Review (2003)</li>
+                                <li>Las #narrativastransmedia son historias contadas a través de múltiples medios</li>
+                                <li>En las #narrativastransmedia cada medio hace lo que mejor sabe hacer</li>
+                                <li>Las #narrativastransmedia son el resultado de una producción integrada</li>
+                                <li>Las #narrativastransmedia son una red de personajes, sucesos, lugares, tiempos y medios</li>
+                            </ul>
+                            <cite>(Scolari, 2013, pág. 38)</cite>
+                        </div>
+
+                        <p data-reveal>
+                            En este orden de ideas puede afirmarse que la hipermediación de narrativas devenidas de experiencias simbólicas objetuales y espaciales individuales se convierte en una herramienta para la extensión de la experiencia del espacio y por tanto de la expansión de imaginarios culturales.
+                        </p>
+
+                        <div class="expandable-panel" data-reveal>
+                            <button class="panel-trigger">
+                                <span>Narrativas relacionales</span>
+                                <svg class="panel-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                            <div class="panel-content">
+                                <p>
+                                    De otro lado conviene tener en cuenta las reflexiones acerca de las narrativas relacionales introducidas por Tomas García Ferrari (2008), quien aporta información acerca de la naturaleza narrativa producida por los nuevos medios y las analogías frente a la representación visual de la información.
+                                </p>
+                            </div>
+                        </div>
+
+                        <p data-reveal>
+                            En este sentido presenta el concepto de modularidad, una estructura narrativa no secuencial, en la medida que al usuario se le presenta una suerte de menú visual, a manera de cuadros en una pared, en el cual existe la sensación de libertad a la hora de elegir por donde inicia su experiencia narrativa. La modularidad implica independencia en cada una de las interfaces presentadas.
+                        </p>
+
+                        <p data-reveal>
+                            De esta manera un usuario frente a una experiencia hipermedia, podrá decidir, según sus intereses, cual es la interfaz que le resulta más adecuada y tendrá una experiencia de navegación ajustada a las condiciones técnicas de ese fragmento en particular.
+                        </p>
+
+                        <p data-reveal>
+                            Ahora bien, la representación modulada de la información no garantiza por si sola que exista una ruta narrativa elegida por el espectador, ya que puede ser el creador o diseñador por sí mismo quien determine cuál es la secuencia o el orden de los módulos de información.
+                        </p>
+
+                        <p data-reveal>
+                            Es necesario entonces comprender la noción de Tabularidad visual, agregada también por García Ferrari, quien indica que se trata de la presentación no lineal de los módulos de información, en una suerte de retícula imaginaria en la que los recorridos y elecciones perceptuales obedecen a la voluntad del usuario (2008), por lo menos en la experiencia de navegación, ya que es el creador quien decide cuales son las jerarquías y pesos presentados en la interfaz.
+                        </p>
+
+                        <p data-reveal>
+                            Entonces puede entenderse a la modularidad y a la tabularidad en una propuesta hipermedia como la estructura de organización de los datos, sin importar la naturaleza de los mismos. Y que permite que la interacción o navegación de dicha narrativa pueda hacerse sin seguir una secuencia lineal pero sin perder la esencia del universo narrativo (García Ferrari, 2008).
+                        </p>
+
+                        <div class="quote-block" data-reveal>
+                            <blockquote>
+                                El concepto de modularidad y la tabularidad en la representación visual de las narrativas como la posibilidad de selección de contenidos, potencia la idea de un imaginario construido de forma colectiva a partir de fragmentos de información con diversas materialidades.
+                            </blockquote>
+                        </div>
+
+                        <p data-reveal>
+                            Además es reforzada la idea de la homologación entre las formas narrativas hipermedia y las formas de construcción de imágenes mentales. A partir de la acción creativa de los participantes y teniendo claro que existe un hilo narrativo que constituye una suerte de tema permitido por la convergencia de acciones e intencionalidades en el espacio, la narración hipermedia es en esencia creación colaborativa; ya que responde a un concepto que Jenkins define como autoría cooperativa.
+                        </p>
+
+                        <p data-reveal>
+                            Un fenómeno en el que las formas narrativas o los medios han de tener la firma característica de autores o productores diferentes, en escala, disposiciones estéticas, tipos de medios, entre otros. Sin que esto constituya pérdida en la esencia de la historia, por el contrario es uno de los factores que contribuye a la expansión del universo narrado (2008).
+                        </p>
+
+                        <p data-reveal>
+                            Es necesario tener en cuenta, a manera de conclusión, que las interacciones tecnológicas como se contemplan en este texto, son en sí mismas mediaciones que permiten a sistemas humanos y otros entrar en relación. En este sentido el advenimiento y avance de los medios electrónicos permite que las redes de mediadores como lo plantea Bruno Latour en su teoría del actor-network (1999) puedan complejizarse y expandir el universo narrativo desde las asociaciones que pueden verse materializadas en las distintas representaciones o piezas que componen una narrativa hipermedia.
+                        </p>
+
+                        <p data-reveal>
+                            Que a su vez hace las veces de reconstrucción de carácter colectivo, al permitir que un grupo de personas indeterminado pueda tener una experiencia combinada aunque diferenciada de lo que está siendo narrado, independiente del carácter de ficción o registro de lo contado.
+                        </p>
+
+                        <p data-reveal>
+                            Además, conviene dejar claro que, como lo plantea Jenkins, la hipermediación facilita la creación de mundos imaginarios (2008) gracias a la expansión que se puede lograr de los mapas mentales por generar una doble acción, ya que las interfaces presentan disposiciones que son interpretadas y reconstruidas mentalmente por el usuario, quien en respuesta proyecta su voluntad manifestada en las decisiones que toma frente a las narrativas hipermedia. Esta constante co afectación, expande la experiencia narrativa con cada acción o repetición.
+                        </p>
+
+                        <p data-reveal>
+                            Entonces, las narrativas hipermedia son funcionales gracias a que generan una dinámica de interpretación y representación análoga a la de los procesos de construcción de cartografías mentales, como lo plantea Damasio (2010). En este sentido, es natural que se extiendan y se comprendan dentro de un universo narrativo sin limitaciones, con una gran libertad a la hora de incluir o expandir información, en tanto pueden ser asociadas informaciones de diferentes procedencias y naturalezas que siguen un guión pero no una estructura determinada.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- SECCIÓN 2: EL PROGRESIVO -->
+                <article class="content-section" id="progresivo" data-section="progresivo">
+                    <div class="section-header">
+                        <span class="section-number">02</span>
+                        <h2 class="section-title">El Progresivo</h2>
+                    </div>
+
+                    <div class="text-content">
+                        <p class="intro-text" data-reveal>
+                            En lo que respecta a la revista El progresivo es importante definir si este es el camino, ya que una publicación hipermedia no es lo mismo que una revista con contenidos multimedia. Gran parte de los materiales seleccionados deben alimentar, extender, explorar el universo narrativo que se defina.
+                        </p>
+
+                        <p data-reveal>
+                            De igual forma, toda la producción cultural propia del progresivo (diseño de comunicación, Diseño de interfaces, redes sociales, mural, entre otros.) debe insertarse en el mundo tangible y generar puntos de acceso e interés para su público.
+                        </p>
+
+                        <p data-reveal>
+                            En este sentido es importante definir cuáles son esos elementos de conexión o inserción que se proponen para que una amplia gama de contenidos e intereses puedan articularse a El Progresivo. De igual manera, es crucial definir cuál es el mundo y probablemente una serie de niveles de generalidad que lo definen, por ejemplo:
+                        </p>
+
+                        <!-- Lista interactiva con niveles -->
+                        <div class="levels-list" data-reveal>
+                            <h2>El mundo del Progresivo es:</h2>
+                            <div class="level-item" data-level="general">
+                                <div class="level-indicator">
+                                    <span class="level-dot"></span>
+                                    <span class="level-label">General</span>
+                                </div>
+                                <p>El arte, el diseño, la comunicación, la articulación disciplinar y la creación como pensamiento.</p>
+                            </div>
+                            <div class="level-item" data-level="contextual">
+                                <div class="level-indicator">
+                                    <span class="level-dot"></span>
+                                    <span class="level-label">Contextual</span>
+                                </div>
+                                <p>Los procesos académico-creativos universitarios.</p>
+                            </div>
+                            <div class="level-item" data-level="particular">
+                                <div class="level-indicator">
+                                    <span class="level-dot"></span>
+                                    <span class="level-label">Contextual Particular</span>
+                                </div>
+                                <p>La producción y vida en FUBA.</p>
+                            </div>
+                            <div class="level-item" data-level="especifico">
+                                <div class="level-indicator">
+                                    <span class="level-dot"></span>
+                                    <span class="level-label">Específico</span>
+                                </div>
+                                <p>Marco de intereses particulares del Progresivo a definir.</p>
+                            </div>
+                            <div class="level-item" data-level="tema">
+                                <div class="level-indicator">
+                                    <span class="level-dot"></span>
+                                    <span class="level-label">Tema</span>
+                                </div>
+                                <p>Posibles narrativas específicas para cada número.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SECCIÓN 3: EL MUNDO -->
+                <article class="content-section" id="mundo" data-section="mundo">
+                    <div class="section-header">
+                        <span class="section-number">03</span>
+                        <h2 class="section-title">El Mundo del Progresivo</h2>
+                    </div>
+
+                    <div class="text-content">
+                        <p class="intro-text" data-reveal>
+                            El mundo del Progresivo también puede ser:
+                        </p>
+
+                        <!-- Grid de tarjetas interactivas -->
+                        <div class="mundo-grid" data-reveal>
+                            <div class="mundo-card">
+                                <div class="mundo-icon">
+                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                        <rect x="5" y="5" width="30" height="30" stroke="currentColor" stroke-width="2"/>
+                                        <line x1="5" y1="15" x2="35" y2="15" stroke="currentColor" stroke-width="2"/>
+                                        <line x1="5" y1="25" x2="35" y2="25" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <h4>Sintaxis Visual</h4>
+                                <p>Una sintaxis visual particular, lograda a partir del análisis de fenómenos fundamentales en la naturaleza de El progresivo (cartografía y retícula existentes).</p>
+                            </div>
+
+                            <div class="mundo-card">
+                                <div class="mundo-icon">
+                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                        <circle cx="20" cy="20" r="15" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M20 10 L20 20 L28 20" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <h4>Meta Narrativa</h4>
+                                <p>Una meta narrativa fundamentada en los encuentros y coincidencias conceptuales y estéticos del material recogido para el progresivo.</p>
+                            </div>
+
+                            <div class="mundo-card">
+                                <div class="mundo-icon">
+                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                        <polygon points="20,5 35,15 35,25 20,35 5,25 5,15" stroke="currentColor" stroke-width="2" fill="none"/>
+                                    </svg>
+                                </div>
+                                <h4>Instrumentos</h4>
+                                <p>Una serie de instrumentos formales, lingüísticos y técnicos disponibles para la automatización de procesos y la inserción de contenidos al mundo.</p>
+                            </div>
+
+                            <div class="mundo-card">
+                                <div class="mundo-icon">
+                                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                        <circle cx="20" cy="15" r="8" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M13 22 Q13 30, 20 35 Q27 30, 27 22" stroke="currentColor" stroke-width="2" fill="none"/>
+                                    </svg>
+                                </div>
+                                <h4>Entidad Digital</h4>
+                                <p>Una entidad digital (avatar) que entabla comunicación con su entorno, seguidores y espacios de interés.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SECCIÓN 4: AUTORES -->
+                <article class="content-section" id="autores" data-section="autores">
+                    <div class="section-header">
+                        <span class="section-number">04</span>
+                        <h2 class="section-title">Autores</h2>
+                    </div>
+
+                    <div class="text-content">
+                        <div class="autores-grid" data-reveal>
+                            <div class="autor-card">
+                                <div class="autor-initial">JL</div>
+                                <h4 class="autor-name">Juan Alejandro López Carmona</h4>
+                            </div>
+                            <div class="autor-card">
+                                <div class="autor-initial">EG</div>
+                                <h4 class="autor-name">Esteban Gutiérrez Jiménez</h4>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </main>
+        </div>
+    </section>
+</main>  
+   <!-- FOOTER -->
+<footer class="site-footer" id="contacto">
+    <div class="footer-container">
+        
+        <!-- Sección superior del footer -->
+        <div class="footer-top">
+            
+            <!-- Columna 1: Contacto -->
+            <div class="footer-column">
+                <h3 class="footer-title">Contacto</h3>
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <h5>60(4) 322 82 83 </h5>
+                    </div>
+                    <div class="contact-item">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                       <h5> contacto@progresivo.edu.co </h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna 2: Navegación -->
+            <div class="footer-column">
+                <h3 class="footer-title">Explora</h3>
+                <nav class="footer-nav">
+                   <!-- <a href="videos.html" class="footer-link">Videos</a> - LA REVISTA ORIGINAL NO TIENE VIDEOS -->
+                   <!-- <a href="eventos.html" class="footer-link">Eventos</a>  LA REVISTA ORIGINAL NO TIENE EVENTOS-->
+                    <a href="https://bellasartesmed.edu.co/semilleros-de-investigacion/ " class="footer-link" target="_blank">Semilleros</a>
+                </nav>
+            </div>
+
+            <!-- Columna 3: Redes Sociales -->
+             <div class="footer-column">
+                <h3 class="footer-title">Síguenos</h3>
+                <div class="footer-social">
+                    <a href="https://web.facebook.com/people/Revista_progresivo/100066919231309/#" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/revista_progresivo/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCscGmMWkis03dq0ZO0oG1tQ" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+         <img src="img/logo-semillero-cocreacion-bellas-artes.png" alt="Logo FUBA y Semillero Cocreación" class="logo">
+
+        <!-- Línea divisoria -->
+        <div class="footer-divider"></div>
+
+        <!-- Sección inferior del footer -->
+        <div class="footer-bottom">
+            <h3 class="footer-copyright">
+                &copy; Fundación Universitaria Bellas Artes – Medellín / Antioquia / Colombia
+            <h3/>
+        </div>
+    </div>
+</footer>
+
+
+<script src="js/script.js"></script>
+<script src="identidad.js"></script>
+</body>
+</html>

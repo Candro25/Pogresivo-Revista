@@ -1,0 +1,797 @@
+/* Estilos específicos para la página de Convocatorias
+   Estos estilos se suman a los de style.css */
+
+/* Hero principal con imagen vertical ocupando casi toda la pantalla */
+.convocatoria-hero {
+    position: relative;                   /* Permite posicionar el contenido interno */
+    height: 100vh;                        /* Ocupa toda la altura de la ventana */
+    min-height: 700px;                    /* Asegura suficiente espacio en pantallas pequeñas */
+    display: flex;                        /* Centra vertical y horizontalmente */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;                     /* Oculta exceso de imagen */
+    margin-top: 85px;                     /* Compensa el menú fijo */
+    background-color: #f5f5f5;            /* Fondo suave por si la imagen no cubre */
+}
+
+/* Contenedor que centra una imagen vertical de portada */
+.hero-imagen-container {
+    position: absolute;                   /* Permite superponer la imagen */
+    top: 0;
+    left: 50%;                            /* Centrar horizontalmente */
+    transform: translateX(-50%);          /* Ajuste perfecto al centro */
+    height: 100%;                         /* Ocupa toda la altura */
+    width: auto;
+    max-width: 500px;                     /* Limita el ancho para no ser invasiva */
+}
+
+/* Imagen vertical principal del hero */
+.hero-imagen-vertical {
+    height: 100%;                         /* Se estira en vertical */
+    width: 100%;
+    object-fit: contain;                  /* Mantiene proporciones sin recortes */
+    object-position: center;
+}
+
+/* Contenido superpuesto encima de la imagen */
+.hero-overlay-content {
+    position: relative;
+    z-index: 10;                          /* Asegura estar por encima de la imagen */
+    text-align: center;
+    max-width: 800px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.95);/* Fondo blanco casi opaco */
+    border-radius: 12px;                  /* Bordes redondos */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+/* Etiqueta que indica el estado de la convocatoria (Abierta, Cerrada, etc.) */
+.badge-convocatoria {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #00c853;           /* Verde = abierta */
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;           /* Estilo institucional */
+    letter-spacing: 0.1em;
+    border-radius: 20px;                 /* Forma de pastilla */
+    margin-bottom: 20px;
+}
+
+/* Título principal del hero */
+.hero-titulo-convocatoria {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #000000;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+/* Descripción del hero */
+.hero-descripcion {
+    font-size: 1.2rem;
+    color: #555555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Botón principal para "Postularse" */
+.btn-postular {
+    display: inline-block;
+    padding: 16px 40px;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;           /* Suavidad del hover */
+}
+
+/* Hover para el botón */
+.btn-postular:hover {
+    background-color: #333333;           /* Gris más claro */
+    transform: translateY(-3px);         /* Sutil elevación */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Contenedor de todo el contenido principal */
+.convocatoria-content {
+    background-color: #ffffff;
+    padding: 80px 0;
+}
+
+/* Contenedor que limita y centra el contenido */
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Títulos de secciones dentro de la página */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Párrafo introductorio de sección */
+.section-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666666;
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Sección de fechas importantes */
+.fechas-importantes {
+    margin-bottom: 100px;
+}
+
+/* Contenedor principal del timeline vertical */
+.timeline {
+    position: relative;
+    padding: 40px 0;
+}
+
+/* Línea vertical del centro del timeline */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;                          /* Centrada */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(
+        to bottom,
+        #e0e0e0 0%,
+        #000000 50%,
+        #e0e0e0 100%
+    );                                   /* Gradiente elegante */
+    transform: translateX(-50%);
+}
+
+/* Grupo individual dentro del timeline */
+.timeline-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+/* Items impares: contenido a la derecha, punto a la izquierda */
+.timeline-item:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+/* Alineación del texto cuando está a la derecha */
+.timeline-item:nth-child(odd) .timeline-content {
+    text-align: right;
+    padding-right: 60px;
+}
+
+/* Alineación del texto cuando está a la izquierda */
+.timeline-item:nth-child(even) .timeline-content {
+    text-align: left;
+    padding-left: 60px;
+}
+
+/* Punto circular sobre la línea central */
+.timeline-punto {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: #000000;
+    border: 4px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px #e0e0e0;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+/* Hover sobre el item del timeline */
+.timeline-item:hover .timeline-punto {
+    width: 24px;
+    height: 24px;
+    box-shadow: 0 0 0 6px #e0e0e0;
+}
+
+/* Contenedor del texto del evento */
+.timeline-content {
+    flex: 1;
+    max-width: 45%;
+}
+
+/* Fecha dentro del timeline */
+.timeline-fecha {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #f5f5f5;
+    color: #000000;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+/* Título del evento */
+.timeline-titulo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+/* Descripción del evento */
+.timeline-descripcion {
+    font-size: 0.95rem;
+    color: #666666;
+    line-height: 1.6;
+}
+
+/* Sección que contiene las diferentes modalidades */
+.modalidades-section {
+    margin-bottom: 100px;
+}
+
+/* Grid en dos columnas */
+.modalidades-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+/* Tarjeta individual de modalidad */
+.modalidad-card {
+    background-color: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 40px;
+    transition: all 0.3s ease;
+}
+
+/* Hover de la tarjeta */
+.modalidad-card:hover {
+    border-color: #000000;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Icono dentro de la tarjeta */
+.modalidad-icono {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    color: #000000;
+    transition: all 0.3s ease;
+}
+
+/* Hover del icono */
+.modalidad-card:hover .modalidad-icono {
+    background-color: #000000;
+    color: #ffffff;
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Título de la modalidad */
+.modalidad-titulo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+/* Descripción de la modalidad */
+.modalidad-descripcion {
+    font-size: 1rem;
+    color: #666666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Lista de características */
+.modalidad-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Item individual de la lista dentro de .modalidad-lista */
+.modalidad-lista li {
+    padding: 10px 0;                     /* Espacio arriba y abajo del ítem */
+    padding-left: 25px;                  /* Espacio para ubicar la viñeta personalizada */
+    position: relative;                  /* Permite posicionar el pseudo-elemento ::before */
+    font-size: 0.95rem;                  /* Tamaño del texto del ítem */
+    color: #555555;                      /* Color gris oscuro */
+    border-bottom: 1px solid #f5f5f5;    /* Línea divisoria inferior */
+}
+
+/* Viñeta circular personalizada antes del texto del ítem */
+.modalidad-lista li::before {
+    content: '';                         /* Crea el pseudo-elemento */
+    position: absolute;                  /* Permite colocarlo independientemente */
+    left: 0;                             /* Ubicación al inicio del ítem */
+    top: 50%;                            /* Centrado vertical */
+    transform: translateY(-50%);         /* Ajuste perfecto al centro */
+    width: 8px;                          /* Tamaño de la viñeta */
+    height: 8px;
+    background-color: #000000;           /* Color negro sólido */
+    border-radius: 50%;                  /* Forma circular */
+}
+
+/* Sección completa de requisitos */
+.requisitos-section {
+    margin-bottom: 100px;                /* Espacio inferior grande */
+}
+
+/* Contenedor general del acordeón */
+.accordion-container {
+    max-width: 900px;                    /* Ancho máximo del acordeón */
+    margin: 0 auto;                      /* Centrado automático */
+}
+
+/* Elemento individual del acordeón */
+.accordion-item {
+    background-color: #ffffff;           /* Fondo blanco */
+    border: 2px solid #e0e0e0;           /* Borde gris claro */
+    border-radius: 8px;                  /* Bordes redondeados */
+    margin-bottom: 15px;                 /* Separación entre ítems */
+    overflow: hidden;                    /* Oculta contenido al colapsar */
+    transition: all 0.3s ease;           /* Transición suave */
+}
+
+/* Hover en los items del acordeón */
+.accordion-item:hover {
+    border-color: #000000;               /* El borde se oscurece al pasar el mouse */
+}
+
+/* Título/encabezado clickeable del acordeón */
+.accordion-header {
+    width: 100%;                         /* Ocupa todo el ancho */
+    display: flex;                       /* Layout flexible */
+    justify-content: space-between;      /* Título a la izquierda, icono a la derecha */
+    align-items: center;                 /* Centrado vertical */
+    padding: 20px 25px;                  /* Espaciado interno */
+    background-color: transparent;       /* Sin fondo específico */
+    border: none;                        /* Sin bordes adicionales */
+    font-size: 1.1rem;                   /* Tamaño del texto */
+    font-weight: 600;                    /* Texto más fuerte */
+    color: #000000;                      /* Texto negro */
+    cursor: pointer;                     /* Indica interacción */
+    transition: all 0.3s ease;           /* Suavidad en el hover */
+}
+
+/* Hover en el encabezado del acordeón */
+.accordion-header:hover {
+    background-color: #f5f5f5;           /* Fondo gris claro al pasar el mouse */
+}
+
+/* Icono (flecha) del acordeón */
+.accordion-icon {
+    transition: transform 0.3s ease;     /* Rotación suave */
+}
+
+/* Rota el icono cuando la tarjeta está abierta */
+.accordion-item.active .accordion-icon {
+    transform: rotate(180deg);           /* Rotación hacia abajo */
+}
+
+/* Contenedor colapsable del acordeón */
+.accordion-content {
+    max-height: 0;                       /* Altura cero por defecto (cerrado) */
+    overflow: hidden;                    /* Oculta el contenido */
+    transition: max-height 0.4s ease, 
+                padding 0.4s ease;       /* Transición suave al expandir/cerrar */
+}
+
+/* Contenido cuando el acordeón está expandido */
+.accordion-item.active .accordion-content {
+    max-height: 600px;                   /* Altura suficiente para mostrar contenido */
+    padding: 0 25px 25px 25px;           /* Añade padding al abrir */
+}
+
+/* Lista dentro del contenido del acordeón */
+.accordion-content ul {
+    list-style: none;                    /* Quita viñetas por defecto */
+    padding: 0;
+    margin: 0;
+}
+
+/* Ítems de la lista dentro del acordeón */
+.accordion-content li {
+    padding: 12px 0;                     /* Espaciado vertical */
+    padding-left: 30px;                  /* Espacio para la viñeta ::before */
+    position: relative;                  /* Permite posicionar viñeta personalizada */
+    font-size: 0.95rem;                  /* Tamaño del texto */
+    color: #555555;                      /* Gris oscuro */
+    line-height: 1.6;                    /* Alto de línea cómodo */
+    border-bottom: 1px solid #f5f5f5;    /* Línea divisoria inferior */
+}
+
+/* Viñeta personalizada dentro del acordeón */
+.accordion-content li::before {
+    content: '';                         /* Crea la viñeta */
+    position: absolute;
+    left: 0;                             /* Pegado al borde */
+    top: 50%;                            /* Centrado */
+    transform: translateY(-50%);
+    width: 6px;                          /* Tamaño de la viñeta */
+    height: 6px;
+    background-color: #000000;           /* Color negro */
+    border-radius: 50%;                  /* Forma circular */
+}
+
+/* Sección de normas éticas */
+.etica-section {
+    margin-bottom: 100px;                /* Espacio inferior amplio */
+    padding: 60px 0;                     /* Espacio interno arriba y abajo */
+    background-color: #f9f9f9;           /* Fondo gris muy claro */
+    margin-left: -40px;                  /* Extiende el fondo para romper el contenedor */
+    margin-right: -40px;
+    padding-left: 40px;                  /* Ajuste compensatorio */
+    padding-right: 40px;
+}
+
+/* Grid de tarjetas éticas: 3 columnas */
+.etica-grid {
+    display: grid;                       /* Activa el diseño en cuadrícula */
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+    gap: 30px;                           /* Separación entre tarjetas */
+    max-width: 1200px;                   /* Ancho máximo del grid */
+    margin: 0 auto;                      /* Centrado */
+}
+
+/* Tarjeta individual de ética */
+.etica-card {
+    background-color: #ffffff;           /* Fondo blanco */
+    padding: 30px;                       /* Espaciado interno */
+    border-radius: 8px;                  /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    transition: all 0.3s ease;           /* Suavidad en hover */
+}
+
+/* Hover en tarjeta de ética */
+.etica-card:hover {
+    transform: translateY(-5px);         /* Efecto de elevarse */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Título dentro de la tarjeta ética */
+.etica-card h3 {
+    font-size: 1.2rem;                   /* Tamaño del título */
+    font-weight: 700;                    /* Peso fuerte */
+    color: #000000;                      /* Negro */
+    margin-bottom: 15px;                 /* Espacio inferior */
+}
+
+/* Texto dentro de la tarjeta ética */
+.etica-card p {
+    font-size: 0.95rem;                  /* Tamaño de texto */
+    color: #666666;                      /* Gris oscuro */
+    line-height: 1.7;                    /* Alto de línea más cómodo */
+    margin: 0;                           /* Sin márgenes extra */
+}
+
+/* Sección de inscripción y descargas */
+.inscripcion-section {
+    margin-bottom: 80px;                 /* Separación inferior */
+}
+
+/* Grid de inscripción: 2 columnas */
+.inscripcion-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+    gap: 40px;                           /* Separación entre tarjetas */
+    max-width: 1000px;
+    margin: 0 auto;                      /* Centrado */
+}
+
+/* Tarjeta de inscripción individual */
+.inscripcion-card {
+    background-color: #ffffff;           /* Fondo blanco */
+    border: 2px solid #e0e0e0;           /* Borde gris claro */
+    border-radius: 12px;
+    padding: 50px 40px;                  /* Espaciado interno */
+    text-align: center;                  /* Centrado del contenido */
+    transition: all 0.3s ease;
+}
+
+/* Hover de tarjeta de inscripción */
+.inscripcion-card:hover {
+    border-color: #000000;               /* Borde negro al pasar el mouse */
+    transform: translateY(-5px);         /* Elevación */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Icono dentro de tarjeta de inscripción */
+.inscripcion-icono {
+    margin-bottom: 25px;                 /* Espacio inferior */
+    color: #000000;                      /* Color del icono */
+}
+
+/* Título de inscripción */
+.inscripcion-card h3 {
+    font-size: 1.5rem;                   /* Tamaño del título */
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+/* Texto descriptivo de inscripción */
+.inscripcion-card p {
+    font-size: 1rem;
+    color: #666666;                      /* Gris oscuro */
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Botón genérico de acción */
+.btn-accion {
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;           /* Mayúsculas */
+    letter-spacing: 0.05em;              /* Separación de letras */
+    text-decoration: none;               /* Quita subrayado */
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+/* Botón primario negro */
+.btn-primario {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Hover del botón primario */
+.btn-primario:hover {
+    background-color: #333333;           /* Gris más claro */
+    transform: translateY(-2px);         /* Elevación leve */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Lista vertical para descargas */
+.descargas-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;                           /* Separación entre botones */
+}
+
+/* Botón individual de descarga */
+.btn-descarga {
+    display: flex;                       /* Permite distribuir icono y texto */
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background-color: #f5f5f5;           /* Fondo gris claro */
+    color: #000000;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/* Hover del botón de descarga */
+.btn-descarga:hover {
+    background-color: #000000;           /* Fondo negro */
+    color: #ffffff;                      /* Texto blanco */
+    transform: translateX(5px);          /* Desplazamiento horizontal */
+}
+
+/* Sección de contacto final */
+.contacto-convocatoria {
+    background: linear-gradient(135deg, #000000 0%, #333333 100%); /* De negro a gris */
+    color: #ffffff;
+    padding: 60px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* Título dentro del contacto */
+.contacto-content h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* Texto dentro del contacto */
+.contacto-content p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    opacity: 0.9;                         /* Ligera transparencia */
+}
+
+/* Botón/email de contacto */
+.contacto-email {
+    display: inline-block;
+    padding: 14px 30px;
+    background-color: #ffffff;           /* Fondo blanco */
+    color: #000000;                      /* Texto negro */
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+/* Hover del correo de contacto */
+.contacto-email:hover {
+    background-color: #f5f5f5;
+    transform: scale(1.05);              /* Crece un poco */
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* ================================
+   RESPONSIVE: Tablets (max-width: 1024px)
+   ================================ */
+@media (max-width: 1024px) {
+
+    .hero-titulo-convocatoria {
+        font-size: 2.8rem;               /* Reduce el tamaño del título */
+    }
+
+    .modalidades-grid {
+        grid-template-columns: 1fr;      /* Pasa a una sola columna */
+    }
+
+    .etica-grid {
+        grid-template-columns: 1fr;      /* También una sola columna */
+    }
+
+    /* Ajusta el alineado del timeline */
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        text-align: left;
+        padding-left: 60px;
+        padding-right: 20px;
+    }
+
+    .timeline::before {
+        left: 30px;                      /* Mueve la línea del timeline a la izquierda */
+    }
+
+    .timeline-punto {
+        left: 30px;                      /* Mueve los puntos también */
+    }
+
+    .timeline-content {
+        max-width: 100%;                 /* Que el contenido use todo el ancho disponible */
+    }
+}
+
+/* ================================
+   RESPONSIVE: Móviles (max-width: 768px)
+   ================================ */
+@media (max-width: 768px) {
+
+    .convocatoria-hero {
+        height: auto;                    /* Ya no ocupa toda la pantalla */
+        min-height: 600px;
+        margin-top: 70px;
+    }
+
+    .hero-imagen-container {
+        position: relative;              /* Deja de ser absoluta */
+        transform: none;
+        left: 0;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;             /* Imagen arriba del texto */
+    }
+
+    .hero-imagen-vertical {
+        height: auto;
+        max-height: 400px;               /* Limita altura en móviles */
+    }
+
+    .hero-overlay-content {
+        position: relative;
+        padding: 30px 20px;
+        margin: 20px;
+    }
+
+    .hero-titulo-convocatoria {
+        font-size: 2rem;
+    }
+
+    .hero-descripcion {
+        font-size: 1rem;
+    }
+
+    .content-wrapper {
+        padding: 0 20px;                /* Reduce padding */
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .timeline::before {
+        left: 20px;                     /* Aún más a la izquierda */
+    }
+
+    .timeline-punto {
+        left: 20px;
+    }
+
+    .timeline-item {
+        flex-direction: column;         /* Todo en una sola columna */
+        align-items: flex-start;
+    }
+
+    .timeline-content {
+        padding-left: 50px !important; /* Ajuste para que no se solape */
+        text-align: left !important;
+    }
+
+    .inscripcion-grid {
+        grid-template-columns: 1fr;     /* Una columna */
+    }
+
+    /* Ajustes para evitar desbordes */
+    .etica-section {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .contacto-convocatoria {
+        padding: 40px 20px;
+    }
+
+    .contacto-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .contacto-email {
+        font-size: 0.95rem;
+        padding: 12px 24px;
+    }
+}
+
+/* ================================
+   RESPONSIVE: Móviles pequeños (max-width: 480px)
+   ================================ */
+@media (max-width: 480px) {
+
+    .hero-titulo-convocatoria {
+        font-size: 1.75rem;
+    }
+
+    .badge-convocatoria {
+        font-size: 0.75rem;
+        padding: 6px 16px;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .modalidad-card,
+    .inscripcion-card {
+        padding: 30px 20px;             /* Reduce padding general */
+    }
+
+    .accordion-header {
+        font-size: 1rem;
+        padding: 15px 20px;             /* Más compacto */
+    }
+}

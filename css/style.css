@@ -1,0 +1,1853 @@
+/* ===== RESET Y CONFIGURACIÓN GENERAL ===== */
+
+/* Elimina márgenes y padding por defecto de todos los elementos */
+* {
+    margin: 0; /* Elimino cualquier margen por defecto que traen los navegadores */
+    padding: 0; /* Elimino el padding por defecto para tener control total del diseño */
+    box-sizing: border-box; /* Hago que el width/height incluyan padding y borde, evitando cálculos extra */
+}
+
+/* Estilos del cuerpo principal */
+body {
+    font-family: Arial, sans-serif; /* Defino la fuente del sitio, común y fácil de leer */
+    background-color: #ffffff; /* Color de fondo blanco que cubre toda la página */
+    color: #000000; /* Establezco que el texto principal será negro */
+    min-height: 100vh; /* Garantizo que el body tenga al menos el alto total de la ventana */
+}
+
+html {
+    scroll-behavior: smooth; /* Activo el desplazamiento suave en toda la página al navegar entre secciones */
+    scroll-padding-top: 100px; /* Reservo espacio en el scroll para evitar que el menú fijo tape los títulos */
+}
+
+
+/* ===== BARRA DE NAVEGACIÓN ===== */
+
+/* ==========================================================================
+   HEADER: Navegación principal superior
+   ========================================================================== */
+
+/* Header fijo en la parte superior */
+.site-header {
+    position: fixed; /* Mantengo este elemento fijo en la parte superior aun haciendo scroll */
+    top: 0; /* Lo ubico en el borde superior */
+    left: 0; /* Lo alinio al borde izquierdo para abarcar toda la pantalla */
+    width: 100%; /* Hago que el header ocupe todo el ancho disponible */
+    background-color: #ffffff; /* Fondo blanco consistente con el diseño general */
+    border-bottom: 1px solid #e0e0e0; /* Le agrego una línea inferior para separarlo visualmente del contenido */
+    z-index: 1000; /* Me aseguro de que quede por encima de cualquier otro elemento */
+    padding: 20px 0; /* Agrego espacio vertical interno para que el contenido respire */
+}
+
+/* Contenedor del header: limita ancho y centra */
+.header-container {
+    max-width: 1400px; /* Limito el ancho máximo para evitar que el contenido se estire demasiado en pantallas grandes */
+    margin: 0 auto; /* Centro el contenedor dentro del header */
+    padding: 0 40px; /* Agrego espacio lateral para separar el contenido de los bordes */
+    display: flex; /* Hago que los elementos se organicen horizontalmente */
+    justify-content: space-between; /* Ubico el menú a la izquierda y el logo a la derecha */
+    align-items: center; /* Alineo verticalmente los elementos centrados */
+    gap: 40px; /* Dejo separación horizontal entre el menú y el logo */
+}
+
+/* Navegación principal: lista horizontal a la IZQUIERDA */
+.main-navigation {
+    display: flex; /* Organizo los enlaces en una fila */
+    gap: 35px; /* Dejo espacio uniforme entre cada enlace */
+    align-items: center; /* Alineo verticalmente los enlaces */
+}
+
+/* Links de navegación */
+.main-navigation a {
+    font-size: 0.9rem; /* Ajusto el tamaño de la fuente del menú */
+    font-weight: 500; /* Aplico un grosor medio al texto para mejor legibilidad */
+    color: #000000; /* Color por defecto de los enlaces: negro */
+    padding: 8px 0; /* Agrego espacio vertical para aumentar área clickeable */
+    position: relative; /* Lo preparo para agregar el subrayado animado con ::after */
+    text-decoration: none; /* Quito el subrayado por defecto para usar uno personalizado */
+    transition: color 0.3s ease; /* Cambio suave de color al hacer hover */
+}
+
+/* Efecto hover: cambia color */
+.main-navigation a:hover {
+    color: #666666; /* Cambio el color del texto a gris al pasar el cursor */
+}
+
+/* Efecto de subrayado animado en hover */
+.main-navigation a::after {
+    content: ''; /* Creo un pseudo-elemento vacío que funcionará como subrayado */
+    position: absolute; /* Permito colocarlo debajo del texto del enlace */
+    bottom: 0; /* Lo ubico exactamente al borde inferior del enlace */
+    left: 0; /* Inicio la animación desde la izquierda */
+    width: 0; /* El subrayado inicia completamente invisible */
+    height: 2px; /* Define el grosor del subrayado */
+    background-color: #000000; /* Color negro, igual que el texto */
+    transition: width 0.3s ease; /* Animación suave al expandirse */
+}
+
+/* Expansión del subrayado en hover */
+.main-navigation a:hover::after {
+    width: 100%; /* El subrayado se expande hasta cubrir todo el texto */
+}
+
+/* Área del logo a la DERECHA */
+.logo-area {
+    display: flex; /* Organizo los logos en línea */
+    gap: 15px; /* Espacio entre los elementos que componen el logo */
+    align-items: center; /* Centrado vertical */
+    height: 45px; /* Defino la altura del contenedor del logo */
+}
+
+/* Imágenes del logo */
+.logo-area img {
+    height: 100%    ; /* La imagen ocupará todo el alto definido en su contenedor */
+    width: auto; /* Mantengo proporciones originales */
+    transition: transform 0.3s ease; /* Agrego animación suave para hover */
+}
+
+/* Efecto hover en logos */
+.logo-area img:hover {
+    transform: scale(1.05); /* Aumento ligeramente su tamaño para dar feedback visual */
+}
+
+
+/* ========================================================================== 
+   RESPONSIVE NAVBAR: Tablets (max-width: 1024px)
+   ========================================================================== */
+/* Esta sección define reglas que solo se aplican cuando la pantalla
+   tiene un ancho máximo de 1024px, es decir, tablets o pantallas medianas. */
+
+@media (max-width: 1024px) { /* Inicio de la media query para <= 1024px */
+    
+    /* Aquí ajusto el padding lateral del contenedor del header para que
+       en pantallas medianas no se vea tan ancho y mantenga proporción. */
+    .header-container {
+        padding: 0 30px; /* Reduzco el padding izquierdo y derecho a 30px */
+    }
+    
+    /* En pantallas medianas hay menos espacio horizontal, así que reduzco
+       la separación entre los enlaces del menú. */
+    .main-navigation {
+        gap: 25px; /* Cambio el espacio entre ítems del menú a 25px */
+    }
+    
+    /* También reduzco un poco el tamaño de la fuente para que la navegación
+       no se vea demasiado grande ni abarque demasiado espacio. */
+    .main-navigation a {
+        font-size: 0.85rem; /* Disminuyo el tamaño de letra de los enlaces */
+    }
+    
+    /* Como el header total se hace más pequeño, ajusto también la altura del logo
+       para mantener su escala visual proporcional. */
+    .logo-area {
+        height: 40px; /* Bajo la altura máxima del área del logo a 40px */
+    }
+} /* Fin de la media query para tablets */
+
+
+
+/* ========================================================================== 
+   RESPONSIVE NAVBAR: Móviles (max-width: 768px)
+   ========================================================================== */
+/* Esta sección define estilos aplicados cuando la pantalla es de 768px o menos,
+   es decir, teléfonos o tablets muy pequeñas. */
+
+
+/* 1. Regla de oro para imágenes y videos (evita que se desborden) */
+img, video, iframe, embed, object {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 2. Botón de menú (Hamburguesa) - Oculto en PC */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    padding: 5px;
+}
+
+/* 3. Ajustes para Celulares y Tablets */
+@media (max-width: 768px) {
+    
+    /* Header compacto: Fila horizontal en vez de columna */
+    .header-container {
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        height: 60px; /* Altura fija para no tapar contenido */
+    }
+
+    /* Logo a la izquierda y pequeño */
+    .logo-area {
+        height: 35px;
+        order: 0; /* Logo primero */
+    }
+
+    /* Botón hamburguesa visible */
+    .menu-toggle {
+        display: block;
+        order: 1; /* Botón a la derecha */
+    }
+
+    /* El menú de navegación: OCULTO por defecto */
+    .main-navigation {
+        position: absolute;
+        top: 100%; /* Justo debajo del header blanco */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        padding: 0;
+        border-bottom: 2px solid #000;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        overflow-y: auto;
+        max-height: 620vh;
+        
+        /* Ocultar visualmente */
+        display: none; 
+    }
+
+    /* Clase que activaremos con JS para mostrar el menú */
+    .main-navigation.active {
+        display: flex;
+    }
+
+    /* Estilo de los enlaces en móvil */
+    .main-navigation a {
+        display: block;
+        text-align: center;
+        padding: 5px 0;
+        border-bottom: 1px solid #eee;
+        width: 100%;
+    }
+}
+
+/* ========================================================================== 
+   RESPONSIVE NAVBAR: Móviles pequeños (max-width: 480px)
+   ========================================================================== */
+/* Esta sección se activa en teléfonos muy pequeños (menos de 480px de ancho),
+   donde todo debe compactarse aún más para asegurar buena legibilidad. */
+
+@media (max-width: 480px) { /* Inicio de la media query para <= 480px */
+    
+    /* Aumentar un poco el tamaño de la fuente en los enlaces mejora la legibilidad
+       en pantallas extremadamente pequeñas. */
+    .main-navigation a {
+        font-size: 0.9rem; /* Agrando ligeramente la letra */
+    }
+    
+    /* Reduzco aún más la altura del logo y el espacio entre elementos del área
+       para que la interfaz no se vea encajada o demasiado alta. */
+    .logo-area {
+        height: 30px; /* Adelgazo visualmente el logo */
+        gap: 10px; /* Reduzco el espacio entre íconos o elementos del logo */
+    }
+} /* Fin de la media query para móviles pequeños */
+
+
+/* ========================================================================== 
+   HERO: Sección destacada con imagen de fondo
+   ========================================================================== */
+/* Indico que comienza la sección de estilos dedicada al HERO, la parte superior destacada */
+
+/* Contenedor del hero: posición relativa para elementos absolutos internos */
+.hero-section {
+    position: relative; /* Coloco el contenedor como referencia para posicionar elementos absolutos dentro */
+    min-height: 750px; /* Le doy una altura mínima para que el hero sea visualmente grande */
+    display: flex; /* Activo flexbox para manejar la alineación interna */
+    align-items: center; /* Centro verticalmente todo el contenido dentro del hero */
+    overflow: hidden; /* Oculto cualquier contenido que sobresalga de los límites del hero */
+    margin-top: 80px; /* Dejo espacio en la parte superior para evitar que el header fijo lo tape */
+    justify-content: flex-start
+}
+
+/* Imagen de fondo del hero */
+.hero-background {
+    position: absolute; /* Ubico este contenedor detrás del contenido principal */
+    top: 0; /* Lo pego al top del contenedor padre */
+    left: 0; /* Lo pego al lado izquierdo */
+    width: 100%; /* Hago que cubra todo el ancho */
+    height: 100%; /* Hago que cubra todo el alto */
+    z-index: 1; /* Lo dejo por detrás del overlay y del contenido */
+}
+
+.hero-background img {
+    width: 100%; /* Hago que la imagen ocupe todo el ancho disponible */
+    height: 100%; /* Hago que ocupe también todo el alto para cubrir el hero */
+    object-fit: cover; /* Hago que se ajuste recortando si es necesario sin deformarse */
+}
+
+/* Overlay oscuro sobre la imagen para legibilidad del texto */
+.hero-overlay {
+    position: absolute; /* Coloco esta capa encima de la imagen */
+    top: 0; /* Pegada arriba */
+    left: 0; /* Pegada a la izquierda */
+    width: 100%; /* Cubre todo el ancho */
+    height: 100%; /* Cubre todo el alto */
+    background-color: rgba(255, 255, 255, 0.133); /* Capa gris translúcida para mejorar el contraste del texto */
+    z-index: 2; /* La coloco entre la imagen y el contenido del hero */
+}
+
+/* Contenido del hero: texto e información */
+.hero-content {
+    position: relative; /* Necesario para manejar bien los niveles de apilamiento */
+    z-index: 3; /* Este debe estar por encima del overlay y de la imagen */
+    max-width: 1200px; /* Limito el ancho del contenido para que no se estire demasiado */
+    margin: 0; /* Centro el contenido horizontalmente */
+    padding: 80px 40px; /* Agrego espacio interno alrededor del texto */
+    color: #000000; /* Color del texto del hero */
+    text-align: left;
+
+}
+
+/* Categoría del artículo hero */
+.hero-category {
+    display: inline-block; /* Permite aplicar padding y margin correctamente */
+    font-size: 0.75rem; /* Hago el texto pequeño */
+    text-transform: uppercase; /* Todo en mayúsculas para estilo editorial */
+    letter-spacing: 0.1em; /* Espacio entre letras para un look más estilizado */
+    padding: 8px 16px; /* Espaciado interior de la etiqueta */
+    background-color: rgb(255, 255, 255); /* Fondo blanco para destacarla */
+    margin-bottom: 24px; /* Espacio debajo antes del título */
+    font-weight: 600; /* Texto en seminegrita */
+    color: #000000; /* Color del texto */
+}
+
+/* Título principal del hero */
+.hero-title {
+    font-size: 3.3rem; /* Hago el título grande y llamativo */
+    margin-bottom: 24px; /* Espacio debajo del título */
+    max-width: 800px; /* Limito el ancho para no ocupar toda la pantalla */
+    line-height: 1.1; /* Ajusto el espaciado vertical del texto */
+    color: #000000; /* Color del título */
+}
+
+/* Descripción del artículo hero */
+.hero-description {
+    font-size: 1.25rem; /* Tamaño de texto más grande para destacar */
+    margin-bottom: 32px; /* Espacio debajo del párrafo */
+    max-width: 600px; /* Limito el ancho para legibilidad */
+    line-height: 1.5; /* Aumento la separación entre líneas para fácil lectura */
+    opacity: 0.95; /* Le doy un toque suave bajando un poco la opacidad */
+}
+
+/* Metadata del hero: autor, fecha, tiempo de lectura */
+.hero-meta {
+    display: flex; /* Organizo los metadatos en fila */
+    gap: 16px; /* Espacio entre cada elemento de metadata */
+    align-items: center; /* Alineo verticalmente al centro */
+    font-size: 0.875rem; /* Tamaño de letra reducido */
+    margin-bottom: 32px; /* Espacio bajo la metadata */
+    opacity: 0.9; /* Un estilo más suave para no competir con el texto principal */
+    flex-wrap: wrap; /* Permito que los elementos suban o bajen si no cabe todo */
+}
+
+/* Separador entre elementos de metadata */
+.meta-separator {
+    opacity: 0.5; /* Le doy semitransparencia para que no atraiga demasiada atención */
+}
+
+/* Botón de llamada a acción del hero */
+.hero-button {
+    display: inline-block; /* Permito aplicar padding correctamente */
+    padding: 16px 40px; /* Tamaño grande para hacerlo visible */
+    background-color: #ffffff; /* Fondo blanco */
+    color: #1a1a1a; /* Texto oscuro para contraste */
+    font-size: 0.875rem; /* Tamaño del texto del botón */
+    font-weight: 600; /* Seminegrita */
+    text-transform: uppercase; /* Todo en mayúscula para impacto visual */
+    letter-spacing: 0.05em; /* Espaciado entre letras para estilo */
+    transition: transform 0.3s ease; /* Suavizo la animación al hacer hover */
+    text-decoration: none; /* Quito el subrayado de los enlaces */
+}
+
+.hero-button:hover {
+    transform: translateY(-2px); /* Muevo el botón hacia arriba para sensación de elevación */
+    opacity: 1; /* Mantengo el color sólido en hover */
+}
+
+/* ========================================================================== 
+   RESPONSIVE HERO: Tablets (max-width: 1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .hero-section {
+        min-height: 500px; /* Reduzco un poco la altura del hero en pantallas medianas */
+    }
+    
+    .hero-title {
+        font-size: 2.5rem; /* Disminuyo el tamaño del título */
+        max-width: 100%; /* Dejo que el título pueda ocupar más espacio horizontal */
+    }
+}
+
+/* ========================================================================== 
+   RESPONSIVE HERO: Móviles (max-width: 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 400px; /* Hago el hero mucho más compacto */
+    }
+    
+    .hero-content {
+        padding: 48px 24px; /* Ajusto el padding para pantallas pequeñas */
+    }
+    
+    .hero-title {
+        font-size: 1.5rem; /* Hago el título mucho más pequeño */
+    }
+    
+    .hero-description {
+        font-size: 1rem; /* Reduzco tamaño del texto */
+    }
+    
+    .hero-meta {
+        flex-direction: column; /* La metadata pasa a columna */
+        align-items: flex-start; /* Alineo los elementos a la izquierda */
+        gap: 8px; /* Espacio pequeño entre elementos */
+    }
+    
+    .meta-separator {
+        display: none; /* Quito el separador porque no se necesita en columna */
+    }
+    
+    .hero-button {
+        width: 100%; /* El botón ocupa todo el ancho */
+        text-align: center; /* Centrado del texto del botón */
+    }
+}
+
+/* ========================================================================== 
+   RESPONSIVE HERO: Móviles pequeños (max-width: 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.75rem; /* Ajusto el tamaño del título para pantallas muy pequeñas */
+    }
+}
+
+/* ===== ANIMACIONES ===== */
+/* Esta sección contiene las animaciones utilizadas en el sitio. Cada una define
+   un movimiento o transición específica que luego se puede aplicar a cualquier elemento. */
+
+
+/* Entrada desde la izquierda */
+@keyframes fadeInLeft { /* Defino una animación llamada fadeInLeft */
+    from {
+        opacity: 0; /* El elemento arranca completamente invisible */
+        transform: translateX(-30px); /* Lo ubico 30px a la izquierda para que parezca que entra desde afuera */
+    }
+    to {
+        opacity: 1; /* Al terminar, el elemento debe ser totalmente visible */
+        transform: translateX(0); /* Regresa a su posición original, sin desplazamiento */
+    }
+}
+
+
+/* Entrada desde la derecha */
+@keyframes fadeInRight { /* Defino una animación llamada fadeInRight */
+    from {
+        opacity: 0; /* Inicio con el elemento invisible */
+        transform: translateX(30px); /* Lo muevo 30px hacia la derecha para simular entrada desde ese lado */
+    }
+    to {
+        opacity: 1; /* Finaliza visible */
+        transform: translateX(0); /* Vuelve a su posición original */
+    }
+}
+
+
+/* Aparición simple */
+@keyframes fadeIn { /* Animación básica donde el elemento simplemente aparece */
+    from {
+        opacity: 0; /* Comienza siendo invisible */
+    }
+    to {
+        opacity: 1; /* Termina siendo totalmente visible */
+    }
+}
+
+
+/* Movimiento del indicador de scroll */
+@keyframes scrollMove { /* Animación creada para objetos que indican desplazamiento hacia abajo */
+    0%, 100% { /* Inicio y final del ciclo de animación */
+        transform: translateY(0); /* El elemento está en su posición original */
+        opacity: 1; /* Totalmente visible */
+    }
+    50% { /* Punto medio de la animación */
+        transform: translateY(15px); /* Bajo 15px al elemento para simular un rebote hacia abajo */
+        opacity: 0.5; /* Lo vuelvo semi-transparente para dar más sensación de movimiento */
+    }
+}
+
+
+/* * REVISTAS */
+
+/* ===== SECCIÓN DE REVISTAS ===== */
+/* Contenedor principal de toda la sección de revistas */
+.revistas-section {
+    padding: 80px 40px; /* Espaciado interno arriba/abajo y a los lados */
+    background-color: #ffffff; /* Fondo blanco */
+    min-height: 100vh; /* Asegura que la sección tenga al menos la altura completa de la pantalla */
+}
+
+
+/* ===== HEADER DE LA SECCIÓN ===== */
+/* Contiene el título y subtítulo de la sección */
+.revistas-header {
+    text-align: center; /* Centra el contenido horizontalmente */
+    margin-bottom: 50px; /* Espacio inferior para separar del contenido */
+}
+
+
+/* Título principal de la sección */
+.revistas-title {
+    font-size: 3rem; /* Tamaño grande para resaltar */
+    font-weight: bold; /* Texto en negrita */
+    color: #000; /* Texto negro */
+    margin-bottom: 15px; /* Espacio debajo del título */
+}
+
+/* Subtítulo debajo del título principal */
+.revistas-subtitle {
+    font-size: 1.2rem; /* Tamaño intermedio */
+    color: #666; /* Color gris medio */
+}
+
+
+/* ===== FILTROS ===== */
+/* Contenedor que agrupa todos los filtros (selects y botón) */
+.filtros-container {
+    display: flex; /* Activa flexbox horizontal */
+    justify-content: center; /* Centra todos los filtros */
+    gap: 20px; /* Espacio entre filtros */
+    flex-wrap: wrap; /* Permite que bajen de línea en pantallas pequeñas */
+    margin-bottom: 50px; /* Espacio inferior */
+    padding: 20px; /* Espaciado interno */
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombra suave */
+}
+
+/* Contenedor de cada filtro individual */
+.filtro-grupo {
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Coloca el label encima del select */
+    gap: 8px; /* Espacio entre label y select */
+}
+
+/* Texto que etiqueta cada filtro */
+.filtro-grupo label {
+    font-size: 0.9rem; /* Tamaño pequeño */
+    font-weight: bold; /* Texto en negrita */
+    color: #333; /* Color gris oscuro */
+}
+
+/* Select de cada filtro */
+.filtro-select {
+    padding: 10px 15px; /* Espacio interno */
+    border: 2px solid #e0e0e0; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 0.9rem; /* Tamaño del texto */
+    background-color: #fff; /* Fondo blanco */
+    color: #333; /* Texto gris oscuro */
+    transition: all 0.3s ease; /* Transición suave en hover y focus */
+    min-width: 150px; /* Ancho mínimo del select */
+}
+
+/* Efecto hover para el select */
+.filtro-select:hover {
+    border-color: #000; /* Cambia el borde a negro */
+}
+
+/* Estilo cuando el select está en focus */
+.filtro-select:focus {
+    outline: none; /* Quita el borde azul del navegador */
+    border-color: #000; /* Borde negro */
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1); /* Sombra alrededor del select */
+}
+
+/* Botón para resetear los filtros */
+.btn-reset-filtros {
+    padding: 10px 20px; /* Espacio interno */
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 0.9rem; /* Tamaño del texto */
+    font-weight: bold; /* Negrita */
+    transition: all 0.3s ease; /* Transición suave */
+    align-self: flex-end; /* Se posiciona al final del contenedor */
+}
+
+/* Hover del botón reset */
+.btn-reset-filtros:hover {
+    background-color: #333; /* Se vuelve gris oscuro */
+    transform: translateY(-2px); /* Se eleva ligeramente */
+}
+
+
+/* ===== GRID DE REVISTAS ===== */
+/* Contenedor en forma de cuadrícula para todas las tarjetas */
+.revistas-grid {
+    display: grid; /* Activa CSS Grid */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Columnas adaptativas */
+    gap: 30px; /* Espacio entre las tarjetas */
+    max-width: 1400px; /* Limita el ancho total */
+    margin: 0 auto; /* Centra el grid */
+}
+
+
+/* ===== TARJETA DE REVISTA ===== */
+/* Contenedor principal de cada tarjeta de revista */
+.revista-card {
+    width: 310px; /* Ancho fijo */
+    height: 640px; /* Alto fijo */
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta exceso de contenido */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: all 0.3s ease; /* Animación suave en hover */
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Contenido ordenado en columna */
+}
+
+/* Efecto hover sobre la tarjeta */
+.revista-card:hover {
+    transform: translateY(-10px); /* La tarjeta se eleva */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Sombra más marcada */
+}
+
+
+/* ===== PORTADA DE LA REVISTA ===== */
+/* Contenedor de la imagen de portada */
+.revista-portada {
+    position: relative; /* Permite colocar un overlay encima */
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa toda la altura asignada */
+    overflow: hidden; /* Oculta lo que sobresalga */
+}
+
+/* Imagen de la revista */
+.revista-portada img {
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    object-fit: cover; /* Ajuste sin deformación */
+    transition: transform 0.3s ease; /* Animación suave */
+}
+
+/* Efecto hover sobre la imagen */
+.revista-card:hover .revista-portada img {
+    transform: scale(1.01); /* La imagen se expande ligeramente */
+}
+
+/* Overlay oscuro encima de la portada */
+.revista-overlay {
+    position: absolute; /* Se coloca encima de la imagen */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa todo el alto */
+    background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.7)); /* Degradado desde transparente a oscuro */
+    display: flex; /* Activa flexbox */
+    align-items: flex-end; /* Coloca el contenido al final */
+    padding: 20px; /* Espacio interno */
+    opacity: 0; /* Comienza invisible */
+    transition: opacity 0.3s ease; /* Transición suave */
+}
+
+/* Hace visible el overlay cuando se hace hover sobre la tarjeta */
+.revista-card:hover .revista-overlay {
+    opacity: 1; /* Overlay visible */
+}
+
+/* Texto del número de edición */
+.revista-numero {
+    color: #fff; /* Texto blanco */
+    font-size: 1.0rem; /* Tamaño del número */
+    font-weight: bold; /* Negrita */
+}
+
+
+/* ===== CONTENIDO DE LA TARJETA ===== */
+
+.revista-content {
+    padding: 20px; /* Espaciado interno */
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Columna vertical */
+    gap: 12px; /* Espacio entre elementos */
+    flex-grow: 1; /* Ocupa el espacio disponible */
+}
+
+/* Título de la revista */
+.revista-titulo {
+    font-size: 1.3rem; /* Tamaño grande */
+    font-weight: bold; /* Negrita */
+    color: #000; /* Negro */
+    margin: 0; /* Sin márgenes */
+}
+
+/* Información (fecha, volumen, tema) */
+.revista-info {
+    font-size: 0.85rem; /* Tamaño pequeño */
+    color: #888; /* Gris medio */
+    margin: 0; /* Sin márgenes */
+}
+
+/* Resumen editorial */
+.revista-resumen {
+    font-size: 0.95rem; /* Tamaño mediano-pequeño */
+    color: #555; /* Gris oscuro */
+    line-height: 1.5; /* Altura de línea */
+    margin: 0; /* Sin márgenes */
+    flex-grow: 1; /* Ocupa espacio disponible */
+}
+
+/* ===== ACCIONES (BOTONES) ===== */
+
+.revista-acciones {
+    display: flex; /* Flexbox horizontal */
+    gap: 10px; /* Espacio entre botones */
+    margin-top: auto; /* Se empuja al final */
+}
+
+/* Botón genérico de revista */
+.btn-revista {
+    flex: 1; /* Ocupa espacio igual */
+    padding: 10px; /* Espaciado interno */
+    text-align: center; /* Centra el texto */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 0.85rem; /* Tamaño pequeño */
+    font-weight: bold; /* Negrita */
+    border-radius: 6px; /* Bordes redondeados */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Botón de leer en línea */
+.btn-leer {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+}
+
+/* Hover en botón leer */
+.btn-leer:hover {
+    background-color: #333; /* Gris oscuro */
+    transform: translateY(-2px); /* Se eleva */
+}
+
+/* Botón de descargar PDF */
+.btn-descargar {
+    background-color: #f5f5f5; /* Fondo gris claro */
+    color: #000; /* Texto negro */
+    border: 2px solid #e0e0e0; /* Borde gris */
+}
+
+/* Hover en botón descargar */
+.btn-descargar:hover {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    border-color: #000; /* Borde negro */
+    transform: translateY(-2px); /* Se eleva */
+}
+
+/* ===== MENSAJE SIN RESULTADOS ===== */
+
+.no-resultados {
+    text-align: center; /* Centra el texto */
+    padding: 60px 20px; /* Espaciado */
+    color: #666; /* Gris medio */
+}
+
+.no-resultados p {
+    font-size: 1.2rem; /* Tamaño grande */
+    margin-bottom: 20px; /* Espacio debajo */
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablets y móviles */
+@media (max-width: 768px) {
+    .revistas-title {
+        font-size: 2rem; /* Reduce el título */
+    }
+    
+    .filtros-container {
+        flex-direction: column; /* Apila filtros verticalmente */
+        align-items: stretch; /* Estira elementos */
+    }
+    
+    .filtro-select {
+        width: 100%; /* Ancho completo */
+    }
+    
+    .revistas-grid {
+        grid-template-columns: 1fr; /* Una sola columna */
+        gap: 20px; /* Reduce el espacio */
+    }
+}
+
+
+/* ==========================================================================
+  ARCHIVO
+   ========================================================================== */
+
+/* Contenedor principal de la sección */
+.articulos-section {
+    padding: 80px 40px; /* Espaciado vertical y horizontal */
+    background-color: #ffffff; /* Fondo gris muy claro */
+    min-height: 100vh; /* Altura mínima de toda la ventana */
+}
+
+/* Contenedor interno que limita el ancho */
+.articulos-container {
+    max-width: 1400px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centra horizontalmente */
+}
+
+/* ==========================================================================
+   ENCABEZADO DE LA SECCIÓN
+   ========================================================================== */
+
+/* Contenedor del encabezado */
+.articulos-header {
+    text-align: center; /* Centra el texto */
+    margin-bottom: 50px; /* Espacio debajo */
+}
+
+/* Título principal */
+.articulos-title {
+    font-size: 3rem; /* Tamaño grande */
+    font-weight: bold; /* Negrita */
+    color: #000; /* Negro */
+    margin-bottom: 15px; /* Espacio debajo */
+}
+
+/* Subtítulo descriptivo */
+.articulos-subtitle {
+    margin-top: 50px;
+    margin-bottom: 45px;
+    font-size: 1.2rem; /* Tamaño mediano */
+    color: #666; /* Gris medio */
+}
+
+
+/* ==========================================================================
+   FILTROS AVANZADOS
+   ========================================================================== */
+
+/* Botón para mostrar/ocultar filtros avanzados */
+.btn-filtros-avanzados {
+    width: 100%; /* Ancho completo */
+    padding: 12px; /* Espaciado interno */
+    background-color: #f5f5f5; /* Fondo gris claro */
+    border: 2px solid #ffffff; /* Borde gris */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 0.95rem; /* Tamaño de texto */
+    font-weight: 600; /* Semi-negrita */
+    cursor: pointer; /* Cursor de mano */
+    transition: all 0.3s ease; /* Transición suave */
+    margin-bottom: 15px; /* Espacio debajo */
+}
+
+/* Hover del botón de filtros avanzados */
+.btn-filtros-avanzados:hover {
+    background-color: #e8e8e8; /* Gris más oscuro */
+    border-color: #ccc; /* Borde más oscuro */
+}
+
+/* Panel de filtros avanzados (oculto por defecto) */
+.filtros-avanzados {
+    display: none; /* Oculto inicialmente */
+    padding: 25px; /* Espaciado interno */
+    background-color: #fafafa; /* Fondo gris muy claro */
+    border-radius: 8px; /* Bordes redondeados */
+    border: 1px solid #e0e0e0; /* Borde sutil */
+    margin-top: 15px; /* Espacio arriba */
+}
+
+/* Cuando el panel está visible */
+.filtros-avanzados.activo {
+    display: grid; /* Usa CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas responsivas */
+    gap: 20px; /* Espacio entre filtros */
+}
+
+/* Grupo individual de filtro (label + input/select) */
+.filtro-grupo {
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Columna vertical */
+    gap: 8px; /* Espacio entre label e input */
+}
+
+/* Etiqueta (label) del filtro */
+.filtro-grupo label {
+    font-size: 0.9rem; /* Tamaño pequeño */
+    font-weight: 600; /* Semi-negrita */
+    color: #333; /* Gris oscuro */
+}
+
+/* Input de texto para filtros */
+.filtro-input {
+    padding: 10px 15px; /* Espaciado interno */
+    border: 2px solid #e0e0e0; /* Borde gris claro */
+    border-radius: 6px; /* Bordes redondeados */
+    font-size: 0.9rem; /* Tamaño de texto */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Focus en input de filtro */
+.filtro-input:focus {
+    outline: none; /* Quita borde por defecto */
+    border-color: #000; /* Borde negro */
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1); /* Sombra de enfoque */
+}
+
+/* Botón para limpiar filtros */
+.btn-limpiar-filtros {
+    grid-column: 1 / -1; /* Ocupa todas las columnas del grid */
+    padding: 12px; /* Espaciado interno */
+    background-color: #fff; /* Fondo blanco */
+    color: #000; /* Texto negro */
+    border: 2px solid #000; /* Borde negro */
+    border-radius: 6px; /* Bordes redondeados */
+    font-size: 0.9rem; /* Tamaño de texto */
+    font-weight: 600; /* Semi-negrita */
+    cursor: pointer; /* Cursor de mano */
+    transition: all 0.3s ease; /* Transición suave */
+    margin-top: 10px; /* Espacio arriba */
+}
+
+/* Hover del botón limpiar */
+.btn-limpiar-filtros:hover {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    transform: translateY(-2px); /* Se eleva */
+}
+
+/* ==========================================================================
+   CONTADOR DE RESULTADOS
+   ========================================================================== */
+
+/* Información de resultados mostrados */
+.resultados-info {
+    padding: 15px 20px; /* Espaciado interno */
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    margin-bottom: 30px; /* Espacio debajo */
+    font-size: 0.95rem; /* Tamaño de texto */
+    color: #666; /* Gris medio */
+    text-align: center; /* Centra el texto */
+}
+
+/* Número de resultados (destacado) */
+#contadorResultados {
+    font-weight: bold; /* Negrita */
+    color: #000; /* Negro */
+}
+
+/* ==========================================================================
+   GRID DE ARTÍCULOS
+   ========================================================================== */
+
+/* Contenedor grid de las tarjetas de artículos */
+.articulos-grid {
+    display: grid; /* Usa CSS Grid */
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Columnas responsivas */
+    gap: 30px; /* Espacio entre tarjetas */
+    margin-bottom: 40px; /* Espacio debajo */
+}
+
+/* ==========================================================================
+   TARJETA DE ARTÍCULO
+   ========================================================================== */
+
+/* Tarjeta individual de artículo */
+.articulo-card {
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 12px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta contenido desbordado */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    transition: all 0.3s ease; /* Transición suave */
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Columna vertical */
+}
+
+/* Hover en la tarjeta completa */
+.articulo-card:hover {
+    transform: translateY(-8px); /* Se eleva */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); /* Sombra más pronunciada */
+}
+
+/* ==========================================================================
+   IMAGEN DEL ARTÍCULO
+   ========================================================================== */
+
+/* Contenedor de la imagen del artículo */
+.articulo-imagen {
+    position: relative; /* Para posicionar la etiqueta de categoría */
+    width: 100%; /* Ancho completo */
+    height: 250px; /* Altura fija */
+    overflow: hidden; /* Oculta desbordamiento */
+}
+
+/* Imagen del artículo */
+.articulo-imagen img {
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    object-fit: cover; /* Cubre el espacio sin distorsión */
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+/* Hover en la imagen (zoom) */
+.articulo-card:hover .articulo-imagen img {
+    transform: scale(1.08); /* Agranda la imagen */
+}
+
+/* Etiqueta de categoría sobre la imagen */
+.articulo-categoria-tag {
+    position: absolute; /* Posición absoluta sobre la imagen */
+    top: 15px; /* Distancia desde arriba */
+    left: 15px; /* Distancia desde la izquierda */
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    padding: 6px 12px; /* Espaciado interno */
+    font-size: 0.75rem; /* Tamaño pequeño */
+    font-weight: 600; /* Semi-negrita */
+    text-transform: uppercase; /* Mayúsculas */
+    letter-spacing: 0.05em; /* Espaciado entre letras */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+/* ==========================================================================
+   CONTENIDO DE LA TARJETA
+   ========================================================================== */
+
+/* Contenedor del contenido textual */
+.articulo-contenido {
+    padding: 25px; /* Espaciado interno */
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Columna vertical */
+    gap: 12px; /* Espacio entre elementos */
+    flex-grow: 1; /* Ocupa espacio disponible */
+}
+
+/* Título del artículo */
+.articulo-titulo {
+    font-size: 1.3rem; /* Tamaño grande */
+    font-weight: bold; /* Negrita */
+    color: #000; /* Negro */
+    line-height: 1.3; /* Altura de línea */
+    margin: 0; /* Sin márgenes */
+}
+
+/* ==========================================================================
+   METADATA DEL ARTÍCULO
+   ========================================================================== */
+
+/* Contenedor de metadata (autor, año) */
+.articulo-meta {
+    display: flex; /* Flexbox horizontal */
+    align-items: center; /* Centra verticalmente */
+    gap: 8px; /* Espacio entre elementos */
+    font-size: 0.85rem; /* Tamaño pequeño */
+    color: #888; /* Gris claro */
+}
+
+/* Nombre del autor */
+.articulo-autor {
+    font-weight: 600; /* Semi-negrita */
+    color: #555; /* Gris medio-oscuro */
+}
+
+/* Separador entre autor y año */
+.articulo-separador {
+    color: #ccc; /* Gris muy claro */
+}
+
+/* Año de publicación */
+.articulo-ano {
+    font-weight: 500; /* Peso medio */
+}
+
+/* ==========================================================================
+   RESUMEN Y DOI
+   ========================================================================== */
+
+/* Resumen del artículo */
+.articulo-resumen {
+    font-size: 0.95rem; /* Tamaño mediano-pequeño */
+    color: #555; /* Gris oscuro */
+    line-height: 1.6; /* Altura de línea */
+    margin: 0; /* Sin márgenes */
+    flex-grow: 1; /* Ocupa espacio disponible */
+}
+
+/* Contenedor del DOI */
+.articulo-doi {
+    font-size: 0.8rem; /* Tamaño pequeño */
+    color: #666; /* Gris medio */
+    padding: 10px; /* Espaciado interno */
+    background-color: #f8f8f8; /* Fondo gris muy claro */
+    border-radius: 6px; /* Bordes redondeados */
+    font-family: 'Courier New', monospace; /* Fuente monoespaciada */
+}
+
+/* ==========================================================================
+   BOTONES DE ACCIÓN
+   ========================================================================== */
+
+/* Contenedor de botones */
+.articulo-acciones {
+    display: flex; /* Flexbox horizontal */
+    gap: 10px; /* Espacio entre botones */
+    margin-top: 10px; /* Espacio arriba */
+}
+
+/* Botón genérico de artículo */
+.btn-articulo {
+    flex: 1; /* Ocupa espacio igual */
+    padding: 12px; /* Espaciado interno */
+    text-align: center; /* Centra el texto */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 0.85rem; /* Tamaño pequeño */
+    font-weight: 600; /* Semi-negrita */
+    border-radius: 6px; /* Bordes redondeados */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Botón de leer artículo */
+.btn-articulo.btn-leer {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+}
+
+/* Hover del botón leer */
+.btn-articulo.btn-leer:hover {
+    background-color: #333; /* Gris oscuro */
+    transform: translateY(-2px); /* Se eleva */
+}
+
+/* Botón de descargar PDF */
+.btn-articulo.btn-descargar {
+    background-color: #f5f5f5; /* Fondo gris claro */
+    color: #000; /* Texto negro */
+    border: 2px solid #e0e0e0; /* Borde gris */
+}
+
+/* Hover del botón descargar */
+.btn-articulo.btn-descargar:hover {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    border-color: #000; /* Borde negro */
+    transform: translateY(-2px); /* Se eleva */
+}
+
+/* ==========================================================================
+   MENSAJE SIN RESULTADOS
+   ========================================================================== */
+
+/* Contenedor del mensaje cuando no hay resultados */
+.sin-resultados {
+    text-align: center; /* Centra el texto */
+    padding: 80px 20px; /* Espaciado amplio */
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 12px; /* Bordes redondeados */
+}
+
+/* Texto del mensaje */
+.sin-resultados p {
+    font-size: 1.2rem; /* Tamaño grande */
+    color: #666; /* Gris medio */
+    margin-bottom: 25px; /* Espacio debajo */
+}
+
+/* Botón para reintentar búsqueda */
+.btn-reintentar {
+    padding: 12px 30px; /* Espaciado interno */
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 0.95rem; /* Tamaño de texto */
+    font-weight: 600; /* Semi-negrita */
+    cursor: pointer; /* Cursor de mano */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Hover del botón reintentar */
+.btn-reintentar:hover {
+    background-color: #333; /* Gris oscuro */
+    transform: translateY(-2px); /* Se eleva */
+}
+
+/* ==========================================================================
+   RESPONSIVE: TABLETS (max-width: 1024px)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    /* Reduce el grid a 2 columnas */
+    .articulos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Reduce título */
+    .articulos-title {
+        font-size: 2.5rem;
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE: MÓVILES (max-width: 768px)
+   ========================================================================== */
+
+/* Media query que aplica estilos cuando la pantalla es de 768px o menos */
+@media (max-width: 768px) {
+
+    /* Reduce el padding general de la sección de artículos
+       para que no se vea demasiado amplia en pantallas pequeñas */
+    .articulos-section {
+        padding: 60px 20px;
+    }
+    
+    /* Reduce el tamaño del título principal para que se adapte mejor al móvil */
+    .articulos-title {
+        font-size: 2rem;
+    }
+    
+    /* Convierte el buscador horizontal en un layout vertical
+       para que los elementos no se aprieten */
+    .buscador-principal {
+        flex-direction: column;
+    }
+    
+    /* El botón de búsqueda pasa a ocupar todo el ancho del contenedor
+       mejorando la accesibilidad en móviles */
+    .btn-buscar {
+        width: 100%;
+    }
+    
+    /* El grid pasa de múltiples columnas a solo una
+       para facilitar la lectura en pantallas pequeñas */
+    .articulos-grid {
+        grid-template-columns: 1fr;
+        gap: 20px; /* Reduce espacio entre tarjetas en móvil */
+    }
+    
+    /* Reduce la altura de las imágenes de los artículos
+       para evitar que ocupen demasiado espacio vertical */
+    .articulo-imagen {
+        height: 200px;
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE: MÓVILES PEQUEÑOS (max-width: 480px)
+   ========================================================================== */
+
+/* Media query para teléfonos aún más pequeños (pantallas muy reducidas) */
+@media (max-width: 480px) {
+
+    /* Disminuye aún más el tamaño del título para que no desborde */
+    .articulos-title {
+        font-size: 1.75rem;
+    }
+    
+    /* Reduce el padding del contenedor del buscador
+       para aprovechar mejor el espacio limitado */
+    .buscador-container {
+        padding: 20px;
+    }
+    
+    /* Los botones de cada artículo se apilan verticalmente
+       porque el ancho es demasiado pequeño para ponerlos lado a lado */
+    .articulo-acciones {
+        flex-direction: column;
+    }
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+/* Contenedor principal del footer */
+.site-footer {
+    background-color: #1a1a1a; /* Fondo negro oscuro para contraste */
+    color: #ffffff; /* Texto blanco para legibilidad */
+    padding: 60px 0 30px; /* Espaciado superior grande, inferior mediano */
+    margin-top: 80px; /* Separa visualmente el footer del contenido anterior */
+}
+
+/* Contenedor interno centrado */
+.footer-container {
+    max-width: 1400px; /* Limita el ancho máximo en pantallas grandes */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 0 40px; /* Espacio lateral para que el contenido respire */
+}
+
+/* Sección superior del footer con varias columnas */
+.footer-top {
+    display: grid; /* Usa grid para organizar columnas */
+    grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas del mismo tamaño */
+    gap: 50px; /* Espacio entre columnas */
+    margin-bottom: 40px; /* Separación respecto al contenido inferior */
+}
+
+/* Columnas individuales dentro del footer */
+.footer-column {
+    display: flex; /* Permite organizar elementos en columna */
+    flex-direction: column; /* Acomoda verticalmente cada item */
+    gap: 20px; /* Espaciado vertical entre cada elemento */
+}
+
+/* Títulos de cada columna del footer */
+.footer-title {
+    font-size: 1.1rem; /* Tamaño de texto ligeramente grande */
+    font-weight: 700; /* Negrita para destacar */
+    color: #ffffff; /* Color blanco */
+    margin-bottom: 5px; /* Separación ligera bajo el título */
+    text-transform: uppercase; /* Convertir texto en mayúsculas */
+    letter-spacing: 0.05em; /* Separación entre letras estilo "footer" clásico */
+}
+
+/* ==========================================================================
+   CONTACTO
+   ========================================================================== */
+
+/* Contenedor de la sección de contacto dentro del footer */
+.footer-contact {
+    display: flex; /* Organiza los elementos en columna */
+    flex-direction: column; /* Acomoda cada item uno debajo de otro */
+    gap: 15px; /* Espacio vertical entre elementos */
+    color: #ffffff; /* Color de texto blanco */
+}
+
+/* Cada item de contacto (icono + texto) */
+.contact-item {
+    display: flex; /* Alinea icono y texto horizontalmente */
+    align-items: center; /* Centra verticalmente ambos elementos */
+    gap: 12px; /* Separación entre icono y texto */
+}
+
+/* Icono del contacto (correo, teléfono, ubicación, etc.) */
+.contact-icon {
+    flex-shrink: 0; /* Evita que el icono se reduzca de tamaño */
+    color: #ffffff; /* Color blanco */
+}
+
+/* Enlaces de contacto (correo, enlaces externos, etc.) */
+.contact-item a {
+    color: #cccccc; /* Gris claro por defecto */
+    text-decoration: none; /* Elimina subrayado del enlace */
+    font-size: 0.95rem; /* Tamaño de fuente ligeramente pequeño */
+    transition: color 0.3s ease; /* Transición suave para hover */
+}
+
+/* Hover sobre enlaces de contacto */
+.contact-item a:hover {
+    color: #ffffff; /* Se vuelve blanco al pasar el cursor */
+}
+
+/* ==========================================================================
+   NAVEGACIÓN FOOTER
+   ========================================================================== */
+
+/* Contenedor de los enlaces del footer */
+.footer-nav {
+    display: flex; /* Organiza los enlaces en vertical */
+    flex-direction: column; /* Acomoda cada enlace uno debajo del otro */
+    gap: 12px; /* Espacio entre cada enlace */
+}
+
+/* Estilo base de los enlaces del footer */
+.footer-link {
+    color: #cccccc; /* Color gris claro por defecto */
+    text-decoration: none; /* Elimina el subrayado */
+    font-size: 0.95rem; /* Tamaño de texto ligeramente pequeño */
+    transition: all 0.3s ease; /* Animación suave de hover */
+    position: relative; /* Necesario para el subrayado animado con ::after */
+    width: fit-content; /* El ancho se ajusta solo al texto */
+}
+
+/* Subrayado animado del enlace */
+.footer-link::after {
+    content: ''; /* Crea una línea vacía */
+    position: absolute; /* Posiciona la línea debajo del texto */
+    bottom: -2px; /* Ubica la línea justo debajo del enlace */
+    left: 0; /* Comienza desde el borde izquierdo */
+    width: 0; /* La línea empieza invisible */
+    height: 2px; /* Grosor de la línea */
+    background-color: #ffffff; /* Línea blanca */
+    transition: width 0.3s ease; /* Animación suave al expandirse */
+}
+
+/* Efecto hover del enlace */
+.footer-link:hover {
+    color: #ffffff; /* Cambia el texto a blanco en hover */
+    transform: translateX(5px); /* Desplaza 5px hacia la derecha para un efecto elegante */
+}
+
+/* Expansión del subrayado en hover */
+.footer-link:hover::after {
+    width: 100%; /* La línea se expande completamente bajo el texto */
+}
+
+
+/* ==========================================================================
+   REDES SOCIALES
+   ========================================================================== */
+
+/* Contenedor de iconos de redes sociales */
+.footer-social {
+    display: flex; /* Muestra los iconos en fila */
+    gap: 15px; /* Espacio entre cada icono */
+    flex-wrap: wrap; /* Permite saltar a otra línea si no caben */
+}
+
+/* Estilo base del botón/icono de red social */
+.social-link {
+    width: 45px; /* Ancho del círculo */
+    height: 45px; /* Alto del círculo */
+    display: flex; /* Para centrar el ícono dentro */
+    align-items: center; /* Alineado vertical */
+    justify-content: center; /* Alineado horizontal */
+    background-color: #2a2a2a; /* Gris muy oscuro, casi negro */
+    border-radius: 50%; /* Convierte el fondo en un círculo */
+    color: #ffffff; /* Color del ícono */
+    transition: all 0.3s ease; /* Transición suave para hover */
+}
+
+/* Efecto hover del icono */
+.social-link:hover {
+    background-color: #ffffff; /* El círculo se vuelve blanco */
+    color: #1a1a1a; /* El icono se vuelve negro */
+    transform: translateY(-3px); /* Pequeña elevación visual hacia arriba */
+}
+
+/* Iconos SVG dentro de los botones */
+.social-link svg {
+    width: 20px; /* Tamaño del icono */
+    height: 20px; /* Mantiene proporción cuadrada */
+}
+
+/* ==========================================================================
+   DIVISOR Y FOOTER INFERIOR
+   ========================================================================== */
+
+/* Línea divisora entre la parte superior e inferior del footer */
+.footer-divider {
+    width: 100%; /* Ocupar todo el ancho disponible */
+    height: 1px; /* Grosor de la línea */
+    background-color: #333333; /* Color gris oscuro de la línea */
+    margin: 30px 0; /* Espaciado arriba y abajo para separación */
+}
+
+/* Contenedor del footer inferior */
+.footer-bottom {
+    text-align: center; /* Centra todo el contenido interior */
+}
+
+/* Texto de derechos de autor */
+.footer-copyright {
+    color: #888888; /* Gris medio para suavizar el texto */
+    font-size: 0.9rem; /* Tamaño de texto ligeramente pequeño */
+    margin: 0; /* Sin espacio adicional alrededor */
+}
+
+
+/* ==========================================================================
+   LOGO FOOTER
+   ========================================================================== */
+
+/* Estilos aplicados al logo dentro del footer */
+.logo {
+  max-width: 100%; /* El logo nunca excede el ancho disponible */
+  width: 30%;
+  height: auto; /* Mantiene la proporción original del logo */
+  margin-bottom: 20px; /* Espacio inferior para separarlo del contenido */
+  display: block; /* Se comporta como bloque para permitir centrado */
+  margin-left: auto; /* Centrado horizontal */
+  margin-right: auto; /* Centrado horizontal */
+  filter: brightness(0) invert(1); /* Convierte el logo a blanco mediante filtros */
+}
+
+
+/* ==========================================================================
+   RESPONSIVE: TABLETS (max-width: 1024px)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+
+    /* Footer superior ahora usa 2 columnas en vez de 3 */
+    .footer-top {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
+        gap: 40px; /* Ajuste del espaciado */
+    }
+
+    /* Última columna se expande para ocupar todo el ancho */
+    .footer-column:last-child {
+        grid-column: 1 / -1; /* Ocupa de la primera a la última columna */
+        justify-content: center; /* Centra verticalmente */
+        align-items: center; /* Centra horizontalmente */
+        text-align: center; /* Centra el texto */
+    }
+
+    /* Redes sociales centradas */
+    .footer-social {
+        justify-content: center; /* Centra todos los íconos */
+    }
+}
+
+
+/* ==========================================================================
+   RESPONSIVE: MÓVILES (max-width: 768px)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    /* Reduce padding general del footer en móviles */
+    .site-footer {
+        padding: 50px 0 25px; /* Menor espacio para pantallas pequeñas */
+        margin-top: 60px; /* Ajuste del margen superior */
+    }
+
+    /* Reduce padding lateral del contenedor */
+    .footer-container {
+        padding: 0 20px; /* Espacio lateral más compacto */
+    }
+
+    /* Footer superior pasa a 1 columna */
+    .footer-top {
+        grid-template-columns: 1fr; /* Solo una columna */
+        gap: 35px; /* Espaciado entre secciones */
+    }
+
+    /* Centra texto y elementos en cada columna */
+    .footer-column {
+        text-align: center;
+        align-items: center;
+    }
+
+    /* Títulos más pequeños */
+    .footer-title {
+        font-size: 1rem; /* Tamaño reducido */
+    }
+
+    /* Ítems de contacto centrados */
+    .contact-item {
+        justify-content: center; /* Centrado horizontal */
+    }
+
+    /* Navegación del footer centrada */
+    .footer-nav {
+        align-items: center; /* Centrado de los enlaces */
+    }
+
+    /* Enlaces del footer un poco más pequeños */
+    .footer-link {
+        font-size: 0.9rem; /* Tamaño de texto reducido */
+    }
+
+    /* En móviles el enlace NO se mueve hacia la derecha en hover */
+    .footer-link:hover {
+        transform: translateX(0); /* Se desactiva el movimiento */
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE: MÓVILES PEQUEÑOS (max-width: 480px)
+   ========================================================================== */
+
+/* Media query para pantallas muy pequeñas (teléfonos compactos) */
+@media (max-width: 480px) {
+
+    /* Ajusto el espacio entre iconos de redes sociales */
+    .footer-social {
+        gap: 12px; /* Reduce separación entre íconos */
+    }
+
+    /* Hago los botones de redes más pequeños */
+    .social-link {
+        width: 40px;  /* Ancho reducido */
+        height: 40px; /* Alto reducido */
+    }
+
+    /* También reduzco el tamaño del SVG dentro del icono */
+    .social-link svg {
+        width: 18px;  /* Ancho del símbolo */
+        height: 18px; /* Alto del símbolo */
+    }
+
+    /* Ajusto el tamaño del texto de copyright */
+    .footer-copyright {
+        font-size: 0.85rem; /* Texto más pequeño */
+    }
+}
+
+
+/* ==========================================================================
+   RESPONSIVE LOGO
+   ========================================================================== */
+/* Ajustamos el tamaño del logo según el tamaño de la pantalla */
+
+/* Para pantallas máximas de 768px (tablets y móviles grandes) */
+@media (max-width: 768px) {
+    .logo {
+        max-width: 50%; /* El logo ocupa la mitad del ancho disponible */
+    }
+}
+
+/* Para pantallas pequeñas (máx 480px) */
+@media (max-width: 480px) {
+    .logo {
+        max-width: 30%; /* Logo aún más pequeño para evitar ocupar mucho espacio */
+    }
+}
+
+
+/* ==========================================================================
+   MODAL PDF — FONDO OSCURO
+   ========================================================================== */
+
+/* Fondo oscuro que cubre toda la pantalla cuando el modal está activo */
+.pdf-modal {
+    display: none; /* No se muestra hasta que sea activado con JS */
+    position: fixed; /* Se mantiene fijo aunque haya scroll */
+    z-index: 9999; /* Muy por encima de cualquier otro elemento */
+    left: 0; /* Alineado al borde izquierdo */
+    top: 0; /* Alineado al borde superior */
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa toda la altura */
+    background-color: rgba(0,0,0,0.65); /* Fondo negro translúcido */
+    backdrop-filter: blur(2px); /* Desenfoque del fondo para efecto moderno */
+}
+
+
+/* ==========================================================================
+   MODAL PDF — CONTENEDOR DEL VISOR
+   ========================================================================== */
+
+.pdf-modal-content {
+    position: relative; /* Para posicionar los botones dentro */
+    margin: 3% auto; /* Centrado horizontal con margen superior */
+    width: 80%; /* Anchura del modal */
+    height: 85%; /* Altura del modal */
+    background: white; /* Fondo blanco del visor */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Evita que el contenido se desborde */
+    box-shadow: 0 0 15px rgba(0,0,0,0.4); /* Sombra para resaltar el modal */
+    animation: aparecer 0.3s ease-out; /* Animación suave al abrir */
+}
+
+
+/* ==========================================================================
+   MODAL PDF — ANIMACIÓN SUAVE
+   ========================================================================== */
+
+@keyframes aparecer {
+    from {
+        transform: scale(0.9); /* Modal inicia más pequeño */
+        opacity: 0; /* Totalmente transparente */
+    }
+    to {
+        transform: scale(1); /* Tamaño normal */
+        opacity: 1; /* Totalmente visible */
+    }
+}
+
+
+/* ==========================================================================
+   MODAL PDF — BOTÓN CERRAR
+   ========================================================================== */
+
+/* Botón X para cerrar el modal */
+.pdf-modal-cerrar {
+    position: absolute; /* Lo coloco encima del contenido */
+    top: 10px; /* Distancia desde arriba */
+    right: 20px; /* Distancia desde la derecha */
+    font-size: 40px; /* Tamaño grande para ser clickeable */
+    cursor: pointer; /* Cursor de mano */
+    z-index: 999999; /* Por encima de todo dentro del modal */
+}
+
+
+/* ==========================================================================
+   MODAL PDF — VISOR
+   ========================================================================== */
+
+/* Iframe que muestra el PDF */
+#visorPDF {
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa toda la altura */
+}
+
+
+/* ==========================================================================
+   MODAL PDF — FONDO DUPLICADO (misma función, redefinido)
+   ========================================================================== */
+
+.pdf-modal {
+    display: none; /* Oculto hasta que se active */
+    position: fixed; /* Permanece fijo en pantalla */
+    z-index: 9999; /* Encima del resto de elementos */
+    left: 0; top: 0; /* Alineado arriba a la izquierda */
+    width: 100%; height: 100%; /* Cubre toda la pantalla */
+    background-color: rgba(0,0,0,0.65); /* Fondo oscuro */
+    backdrop-filter: blur(2px); /* Desenfoque del fondo */
+}
+
+
+/* ==========================================================================
+   MODAL PDF — CONTENEDOR PRINCIPAL
+   ========================================================================== */
+
+.pdf-modal-content {
+    position: relative; /* Necesario para posicionar elementos arriba */
+    margin: 2.5% auto; /* Centrado con margen ajustado */
+    width: 80%; /* Ancho del modal */
+    height: 85%; /* Altura del modal */
+    background: white; /* Fondo blanco */
+    border-radius: 12px; /* Esquinas redondeadas */
+    overflow: hidden; /* Evitar contenido fuera del borde */
+    animation: modalShow .35s ease-out; /* Animación de aparición */
+    box-shadow: 0 0 30px rgba(0,0,0,0.4); /* Sombra más fuerte */
+}
+
+
+/* ==========================================================================
+   MODAL PDF — ANIMACIÓN PRINCIPAL
+   ========================================================================== */
+
+@keyframes modalShow {
+    0% {
+        transform: scale(0.85) translateY(15px); /* Más pequeño y bajito */
+        opacity: 0; /* Invisible */
+    }
+    100% {
+        transform: scale(1) translateY(0); /* Tamaño normal, posición correcta */
+        opacity: 1; /* Visible */
+    }
+}
+
+
+/* ==========================================================================
+   MODAL PDF — VISOR (repetido)
+   ========================================================================== */
+
+#visorPDF {
+    width: 100%; /* Todo el ancho */
+    height: 100%; /* Todo el alto */
+}
+
+
+/* ==========================================================================
+   MODAL PDF — BOTÓN CERRAR (versión final)
+   ========================================================================== */
+
+.pdf-modal-cerrar {
+    position: absolute; /* Se ubica sobre el modal */
+    top: 10px; /* Separación desde arriba */
+    right: 20px; /* Separación desde la derecha */
+    font-size: 38px; /* Tamaño algo menor que el anterior */
+    cursor: pointer; /* Cursor de mano */
+    color: #444; /* Gris oscuro */
+    z-index: 20; /* Aparece por encima del visor */
+}
+
+
+/* ==========================================================================
+   MODAL PDF — BOTONES ANTERIOR / SIGUIENTE
+   ========================================================================== */
+
+.pdf-nav {
+    position: absolute; /* Se colocan encima del PDF */
+    top: 50%; /* Centrado vertical */
+    transform: translateY(-50%); /* Alineación exacta al centro */
+    z-index: 20; /* Por encima del contenido */
+    background: rgba(255,255,255,0.85); /* Fondo blanco translúcido */
+    border: none; /* Sin borde */
+    padding: 15px 18px; /* Tamaño clickeable */
+    font-size: 28px; /* Iconos grandes */
+    cursor: pointer; /* Cursor de mano */
+    border-radius: 50%; /* Forma circular */
+    transition: all .25s; /* Animación suave */
+    box-shadow: 0 0 10px rgba(0,0,0,0.25); /* Sombra para destacar */
+}
+
+
+/* ==========================================================================
+   ANIMACIÓN ESPECIAL DE ENTRADA
+   ========================================================================== */
+
+/* Clase para animar cualquier contenido suavemente */
+.entrada-suave {
+    animation: aparecerDesdeAbajo 1s ease-out forwards; /* Aparece subiendo */
+    opacity: 0; /* Inicia invisible */
+}
+
+/* Animación de entrada desde abajo */
+@keyframes aparecerDesdeAbajo {
+    0% {
+        opacity: 0; /* Invisible */
+        transform: translateY(20px); /* Comienza un poco abajo */
+    }
+    100% {
+        opacity: 1; /* Visible */
+        transform: translateY(0); /* En su posición natural */
+    }
+}
+
+
+/* ===== ARREGLO PARA VER 2 COLUMNAS EN MÓVIL ===== */
+
+@media (max-width: 768px) {
+    
+    /* 1. Forzamos la cuadrícula a tener 2 columnas */
+    .revistas-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) !important; /* 1fr 1fr = dos espacios iguales */
+        gap: 10px; /* Espacio reducido entre tarjetas para que quepan bien */
+        padding: 0 10px; /* Un poco de aire a los lados de la pantalla */
+    }
+
+    /* 2. Hacemos que la tarjeta sea flexible y no de tamaño fijo */
+    .revista-card {
+        width: 100% !important; /* Que ocupe todo el ancho de su columna */
+        height: auto !important; /* La altura se ajusta al contenido */
+        min-height: 400px; /* Altura mínima para que se vean uniformes */
+    }
+
+    /* 3. Ajustamos el contenido interno para que no se vea apretado */
+    .revista-content {
+        padding: 10px; /* Reducimos el relleno interno */
+    }
+
+    /* 4. Textos más pequeños para que no se rompan en 2 columnas */
+    .revista-titulo {
+        font-size: 0.95rem; /* Título más pequeño */
+        line-height: 1.2;
+    }
+    
+    .revista-info {
+        font-size: 0.75rem;
+    }
+
+    /* 5. Los botones de acción: Uno encima del otro para ahorrar espacio */
+    .revista-acciones {
+        flex-direction: column; /* Botones verticales */
+        gap: 5px;
+    }
+
+    .btn-revista {
+        font-size: 0.75rem; /* Texto del botón más pequeño */
+        padding: 8px 0;
+    }
+    
+    /* Opcional: Ocultar el resumen en móvil si ocupa mucho espacio */
+    .revista-resumen {
+        display: none; 
+    }
+}

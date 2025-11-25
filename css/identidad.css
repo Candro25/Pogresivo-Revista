@@ -1,0 +1,1080 @@
+/* ==========================================================================
+   IDENTIDAD PROGRESIVO - ESTILOS ESPECÍFICOS
+   ========================================================================== */
+
+/* Variables CSS para permitir personalización rápida del diseño */
+:root {
+    --identidad-primary: #000000;      /* Color primario de la identidad (negro) */
+    --identidad-secondary: #ffffff;    /* Color secundario (blanco) */
+    --identidad-accent: #666666;       /* Color acento (gris medio) */
+    --identidad-highlight: #f5f5f5;    /* Color de resaltado (gris claro) */
+    --identidad-spacing: 80px;         /* Espaciado general entre secciones */
+}
+
+
+/* ==========================================================================
+   HERO SECTION - Banner con imagen geométrica y efecto parallax
+   ========================================================================== */
+
+.identidad-hero {
+    position: relative;        /* Permite superponer elementos (imagen, overlay, título) */
+    height: 100vh;             /* Ocupa el alto completo de la pantalla */
+    min-height: 600px;         /* Evita que en pantallas pequeñas sea demasiado bajo */
+    display: flex;             /* Usa flexbox para centrar contenido */
+    align-items: center;       /* Centra verticalmente */
+    justify-content: center;   /* Centra horizontalmente */
+    overflow: hidden;          /* Oculta cualquier desbordamiento de la imagen */
+    margin-top: 85px;          /* Deja espacio superior para el navbar fijo */
+}
+
+
+/* ==========================================================================
+   HERO SECTION - CORRECCIONES PARA LA IMAGEN
+   ========================================================================== */
+
+/* Contenedor de la imagen de fondo */
+.identidad-hero-background {
+    position: absolute;  /* Permite colocarlo detrás del contenido */
+    top: 0;              /* Alineado arriba */
+    left: 0;             /* Alineado a la izquierda */
+    width: 100%;         /* Ocupa todo el ancho */
+    height: 100%;        /* Ocupa todo el alto del hero */
+    z-index: 1;          /* Se ubica detrás del overlay y del texto */
+}
+
+/* Imagen del hero */
+.hero-image-parallax {
+    width: 100%;              /* Ocupar todo el ancho disponible */
+    height: 100%;             /* Ocupar todo el alto del contenedor */
+    object-fit: contain;      /* Mantiene la imagen completa sin recortes */
+    object-position: center;  /* Centra la imagen */
+    transform: translateZ(0); /* Mejora rendimiento del parallax */
+    will-change: transform;   /* Indica al navegador que la imagen cambiará */
+}
+
+/* Overlay para suavizar la imagen */
+.identidad-hero-overlay {
+    position: absolute;  /* Se superpone sobre la imagen */
+    top: 0; left: 0;     /* Ocupa toda la pantalla */
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0) 0%,     /* Transparente al inicio */
+        rgba(255, 255, 255, 0.1) 100%  /* Ligero blanqueo al final */
+    );
+    z-index: 2; /* Encima de la imagen, debajo del texto */
+}
+
+
+/* ==========================================================================
+   HERO SECTION - TÍTULO y SCROLL INDICATOR
+   ========================================================================== */
+
+.identidad-hero-title {
+    font-size: 5rem;                 /* Título muy grande e impactante */
+    font-weight: 700;                /* Negrita fuerte */
+    text-align: center;              /* Centrado */
+    line-height: 1.1;                /* Ajusta espacio entre líneas */
+    margin-bottom: 480px;            /* Posicionado visualmente arriba de la imagen */
+    letter-spacing: -0.02em;         /* Letras ligeramente más juntas */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5); /* Sombra para contrastar sobre imagen */
+    opacity: 0;                      /* Comienza invisible */
+    animation: fadeInUp 1s ease forwards 0.3s; /* Aparece desde abajo */
+}
+
+/* Texto del indicador de scroll */
+.scroll-indicator span {
+    font-size: 0.9rem;           /* Texto pequeño */
+    text-transform: uppercase;   /* Mayúsculas */
+    letter-spacing: 0.1em;       /* Separación entre letras */
+    font-weight: 500;            /* Grosor medio */
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5); /* Mejor legibilidad */
+}
+
+
+/* ==========================================================================
+   HERO RESPONSIVE — Ajustes para móviles
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    /* Imagen en móvil llena el contenedor sin dejar áreas vacías */
+    .hero-image-parallax {
+        object-fit: cover; /* Rellena el espacio */
+        object-position: center;
+    }
+
+    /* Overlay más oscuro para lectura en pantallas pequeñas */
+    .identidad-hero-overlay {
+        background: linear-gradient(
+            135deg,
+            rgba(0,0,0,0.4) 0%,   /* Más oscuro */
+            rgba(0,0,0,0.2) 100%
+        );
+    }
+}
+
+
+/* ==========================================================================
+   CONTENIDO PRINCIPAL — Layout con sidebar sticky
+   ========================================================================== */
+
+.identidad-content {
+    background-color: var(--identidad-secondary); /* Fondo blanco */
+    padding: var(--identidad-spacing) 0;          /* Espaciado vertical configurable */
+}
+
+/* Contenedor principal del contenido */
+.identidad-container {
+    max-width: 1400px;                       /* Ancho máximo del contenido */
+    margin: 0 auto;                          /* Centra el contenido */
+    padding: 0 40px;                         /* Espaciado lateral */
+    display: grid;                           /* Grid layout */
+    grid-template-columns: 280px 1fr;        /* Sidebar + contenido */
+    gap: 80px;                               /* Separación entre columnas */
+    align-items: start;                      /* Alineación superior */
+}
+
+
+/* ==========================================================================
+   SIDEBAR — Navegación sticky con indicador de progreso
+   ========================================================================== */
+
+.identidad-sidebar {
+    position: sticky;   /* Se queda fija durante el scroll */
+    top: 120px;         /* Distancia desde la parte superior */
+    display: flex;      /* Layout vertical */
+    flex-direction: column;
+    gap: 30px;          /* Separación entre elementos */
+}
+
+
+/* Navegación interna del documento */
+.content-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Links individuales del sidebar */
+.nav-link {
+    display: flex;                /* Alinea número y texto */
+    align-items: center;
+    gap: 15px;                    /* Espacio entre número y texto */
+    padding: 15px 20px;           /* Espaciado interno */
+    text-decoration: none;        /* Sin subrayado */
+    color: var(--identidad-accent); /* Color gris medio */
+    border-left: 3px solid transparent; /* Borde lateral invisible */
+    transition: all 0.3s ease;    /* Animación suave */
+    position: relative;
+}
+
+/* Hover: resalta el link */
+.nav-link:hover {
+    background-color: var(--identidad-highlight); /* Fondo gris claro */
+    border-left-color: var(--identidad-primary);  /* Línea negra */
+}
+
+/* Link activo — indica la sección actual */
+.nav-link.active {
+    color: var(--identidad-primary);            /* Texto negro */
+    background-color: var(--identidad-highlight);
+    border-left-color: var(--identidad-primary);
+    font-weight: 600;                           /* Más grueso */
+}
+
+/* Número de cada sección */
+.nav-number {
+    font-size: 0.85rem;  /* Tamaño pequeño */
+    font-weight: 700;    /* Negrita */
+    opacity: 0.5;        /* Suavizado visual */
+}
+
+/* Texto del link */
+.nav-text {
+    font-size: 0.95rem; /* Tamaño cómodo */
+}
+
+
+/* ==========================================================================
+   PROGRESS BAR — Indicador de lectura
+   ========================================================================== */
+
+.reading-progress {
+    width: 100%;                 /* Ancho completo */
+    height: 4px;                 /* Grosor de la barra */
+    background-color: #e0e0e0;   /* Gris claro */
+    border-radius: 2px;          /* Bordes redondeados */
+    overflow: hidden;            /* Evita que el indicador sobresalga */
+}
+
+/* Barra interior que crece con el scroll */
+.progress-bar {
+    height: 100%;
+    background-color: var(--identidad-primary); /* Color negro */
+    width: 0%;               /* Comienza vacía */
+    transition: width 0.2s ease; /* Crece suavemente */
+}
+
+/* ==========================================================================
+   CONTENIDO PRINCIPAL - Secciones y artículos
+   ========================================================================== */
+
+/* Contenedor principal de todo el contenido central */
+.identidad-main {
+    display: flex;                 /* Usa flexbox para organizar las secciones verticalmente */
+    flex-direction: column;        /* Coloca cada sección una debajo de la otra */
+    gap: 120px;                    /* Espacio vertical entre secciones */
+}
+
+/* Sección individual dentro del contenido */
+.content-section {
+    scroll-margin-top: 100px;      /* Ajuste del scroll al navegar mediante anclas */
+}
+
+/* Encabezado de cada sección (título + número) */
+.section-header {
+    display: flex;                 /* Alinea el número y título en la misma línea */
+    align-items: baseline;         /* Alinea el texto por su línea base */
+    gap: 20px;                     /* Separación entre número y título */
+    margin-bottom: 40px;           /* Espacio inferior antes del contenido */
+    padding-bottom: 20px;          /* Espaciado inferior dentro del header */
+    border-bottom: 2px solid var(--identidad-primary); /* Línea inferior decorativa */
+}
+
+/* Número de la sección */
+.section-number {
+    font-size: 1.2rem;             /* Tamaño del número */
+    font-weight: 700;              /* Negrita */
+    color: var(--identidad-accent);/* Color gris acento */
+    opacity: 0.4;                  /* Apariencia más suave */
+}
+
+/* Título de cada sección */
+.section-title {
+    font-size: 2.5rem;             /* Tamaño importante del título */
+    font-weight: 700;              /* Muy negrita para jerarquía visual */
+    color: var(--identidad-primary); /* Color negro de la identidad */
+    margin: 0;                     /* Elimina margen por defecto */
+}
+
+
+/* ==========================================================================
+   CONTENIDO DE TEXTO - Párrafos y elementos
+   ========================================================================== */
+
+/* Contenedor de los párrafos y elementos textuales */
+.text-content {
+    display: flex;                 /* Usa flexbox para orden vertical */
+    flex-direction: column;        /* Organiza todo en columna */
+    gap: 25px;                     /* Separación entre párrafos */
+}
+
+/* Párrafos estándar */
+.text-content p {
+    font-size: 1.05rem;            /* Tamaño de letra cómodo */
+    line-height: 1.8;              /* Buena lectura */
+    color: #333;                   /* Gris oscuro */
+    opacity: 0;                    /* Empieza invisible para animación */
+    transform: translateY(20px);   /* Desplazado hacia abajo para efecto reveal */
+    transition: all 0.6s ease;     /* Animación suave al revelarse */
+}
+
+/* Párrafo ya visible (activado con IntersectionObserver en JS) */
+.text-content p.revealed {
+    opacity: 1;                    /* Ahora visible */
+    transform: translateY(0);      /* Vuelve a su posición original */
+}
+
+/* Párrafo introductorio destacado */
+.intro-text {
+    font-size: 1.3rem;             /* Más grande que los párrafos normales */
+    font-weight: 400;              /* Grosor medio */
+    line-height: 1.7;              /* Altura cómoda */
+    color: var(--identidad-primary); /* Color principal */
+    margin-bottom: 15px;           /* Separación inferior */
+}
+
+/* Términos destacados que muestran tooltip al pasar el mouse */
+.highlight-term {
+    position: relative;            /* Necesario para ubicar el tooltip relativo */
+    font-weight: 600;              /* Más negrita */
+    color: var(--identidad-primary); /* Color negro */
+    border-bottom: 2px dotted var(--identidad-primary); /* Subrayado punteado */
+    cursor: help;                  /* Cursor de ayuda */
+}
+
+/* Tooltip: texto que aparece cuando el usuario pasa el cursor */
+.highlight-term::after {
+    content: attr(data-tooltip);   /* Obtiene el texto desde el atributo data-tooltip */
+    position: absolute;            /* Posición absoluta respecto al elemento padre */
+    bottom: 100%;                  /* Aparece arriba del término */
+    left: 50%;                     /* Centrado horizontal */
+    transform: translateX(-50%) translateY(-10px); /* Ajuste inicial */
+    background-color: var(--identidad-primary); /* Fondo negro */
+    color: var(--identidad-secondary); /* Texto blanco */
+    padding: 8px 12px;             /* Espaciado interno */
+    border-radius: 6px;            /* Bordes redondeados */
+    font-size: 0.85rem;            /* Texto pequeño */
+    font-weight: 400;              /* Normal */
+    white-space: nowrap;           /* Evita saltos de línea */
+    opacity: 0;                    /* Invisible por defecto */
+    pointer-events: none;          /* No interfiere con el cursor */
+    transition: all 0.3s ease;     /* Animación suave */
+    z-index: 10;                   /* Se muestra encima de otros elementos */
+}
+
+/* Flecha inferior del tooltip */
+.highlight-term::before {
+    content: '';                   /* Elemento vacío para la flecha */
+    position: absolute;            /* Posicionado sobre el elemento */
+    bottom: 100%;                  /* Aparece arriba */
+    left: 50%;                     /* Centrado */
+    transform: translateX(-50%);   /* Ajuste horizontal */
+    border: 6px solid transparent; /* Base de la flecha */
+    border-top-color: var(--identidad-primary); /* Flecha negra */
+    opacity: 0;                    /* Invisible inicial */
+    transition: all 0.3s ease;     /* Animación suave */
+}
+
+/* Estado visible del tooltip al hacer hover */
+.highlight-term:hover::after,
+.highlight-term:hover::before {
+    opacity: 1;                    /* Ahora visible */
+    transform: translateX(-50%) translateY(-5px); /* Se mueve un poco hacia arriba */
+}
+
+/* ==========================================================================
+   BLOQUES DE CITAS
+   ========================================================================== */
+
+/* Contenedor principal del bloque de cita */
+.quote-block {
+    margin: 40px 0;                           /* Espacio arriba y abajo del bloque */
+    padding: 30px 40px;                       /* Espaciado interno amplio */
+    background-color: var(--identidad-highlight); /* Fondo gris claro */
+    border-left: 4px solid var(--identidad-primary); /* Barra vertical decorativa */
+    opacity: 0;                                /* Inicialmente invisible para animación */
+    transform: translateY(20px);               /* Ligeramente desplazado hacia abajo */
+    transition: all 0.6s ease;                 /* Transición suave al aparecer */
+}
+
+/* Estado del bloque cuando ya fue revelado (IntersectionObserver) */
+.quote-block.revealed {
+    opacity: 1;                                /* Ahora visible */
+    transform: translateY(0);                  /* Vuelve a su posición original */
+}
+
+/* Estilo del texto dentro del bloque de cita */
+.quote-block blockquote {
+    font-size: 1.2rem;                         /* Tamaño más grande para importancia */
+    line-height: 1.7;                           /* Mejora de lectura */
+    font-style: italic;                         /* Estilo itálico para citas */
+    color: var(--identidad-primary);            /* Color negro */
+    margin: 0;                                  /* Elimina margen por defecto */
+}
+
+
+/* ==========================================================================
+   PANELES EXPANDIBLES - Acordeón interactivo
+   ========================================================================== */
+
+/* Contenedor del panel expandible */
+.expandable-panel {
+    margin: 30px 0;                             /* Espaciado vertical */
+    border: 2px solid #e0e0e0;                  /* Borde gris claro */
+    border-radius: 8px;                          /* Bordes redondeados */
+    overflow: hidden;                            /* Evita que se vea el contenido cerrado */
+    opacity: 0;                                  /* Inicialmente invisible */
+    transform: translateY(20px);                 /* Desplazado hacia abajo */
+    transition: all 0.6s ease;                   /* Transición para reveal */
+}
+
+/* Estado cuando el panel ya fue revelado con animación */
+.expandable-panel.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Botón clickeable que abre y cierra el panel */
+.panel-trigger {
+    width: 100%;                                /* El botón ocupa todo el ancho */
+    display: flex;                              /* Usa flexbox para alineación */
+    justify-content: space-between;             /* Texto a la izquierda, icono a la derecha */
+    align-items: center;                        /* Centra verticalmente */
+    padding: 20px 25px;                         /* Espaciado interno */
+    background-color: var(--identidad-secondary); /* Fondo blanco */
+    border: none;                               /* Sin borde */
+    font-size: 1.1rem;                          /* Tamaño del texto del botón */
+    font-weight: 600;                           /* Negrita */
+    color: var(--identidad-primary);            /* Texto negro */
+    cursor: pointer;                            /* Manito para indicar interacción */
+    transition: all 0.3s ease;                  /* Transición para hover */
+}
+
+/* Hover del botón */
+.panel-trigger:hover {
+    background-color: var(--identidad-highlight); /* Cambio de fondo al pasar el mouse */
+}
+
+/* Icono de la flecha del panel */
+.panel-icon {
+    transition: transform 0.3s ease;            /* Animación suave al rotar */
+}
+
+/* Flecha rota cuando el panel está abierto */
+.expandable-panel.open .panel-icon {
+    transform: rotate(180deg);                   /* Gira la flecha */
+}
+
+/* Contenedor del contenido del panel (cerrado por defecto) */
+.panel-content {
+    max-height: 0;                               /* Oculto: altura cero */
+    overflow: hidden;                            /* Esconde lo que rebasa */
+    transition: max-height 0.4s ease, padding 0.4s ease; /* Animación de apertura */
+}
+
+/* Contenido visible cuando el panel está abierto */
+.expandable-panel.open .panel-content {
+    max-height: 500px;                           /* Altura máxima permitida */
+    padding: 25px;                               /* Espaciado interno */
+    background-color: #fafafa;                   /* Fondo gris muy claro */
+}
+
+/* Párrafos dentro del panel */
+.panel-content p {
+    margin: 0;                                   /* Elimina margen por defecto */
+    opacity: 1;                                  /* Asegura visibilidad completa */
+    transform: none;                             /* Sin transformaciones */
+}
+
+
+/* ==========================================================================
+   ELEMENTOS VISUALES DECORATIVOS
+   ========================================================================== */
+
+/* Contenedor de un elemento visual */
+.visual-element {
+    margin: 50px 0;                               /* Separación vertical */
+    display: flex;                                /* Flexbox para centrar */
+    justify-content: center;                      /* Centrado horizontal */
+    opacity: 0;                                   /* Invisible inicial */
+    transform: translateY(20px);                  /* Animación hacia arriba */
+    transition: all 0.6s ease;                    /* Transición suave */
+}
+
+/* Se vuelve visible tras el reveal */
+.visual-element.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Contenedor del patrón geométrico */
+.geometric-pattern {
+    width: 200px;                                 /* Ancho del patrón */
+    height: 100px;                                /* Alto del patrón */
+    position: relative;                           /* Para ubicar líneas dentro */
+}
+
+/* Línea del patrón geométrico */
+.pattern-line {
+    position: absolute;                           /* Ubicación absoluta dentro del patrón */
+    width: 100%;                                  /* Ocupa todo el ancho */
+    height: 2px;                                  /* Grosor de la línea */
+    background-color: var(--identidad-primary);   /* Línea negra */
+    opacity: 0.3;                                 /* Ligera transparencia */
+}
+
+/* Primera línea: arriba */
+.pattern-line:nth-child(1) {
+    top: 0;                                       /* Ubicada arriba */
+    animation: lineSlide 3s ease-in-out infinite; /* Animación continua */
+}
+
+/* Segunda línea: centro */
+.pattern-line:nth-child(2) {
+    top: 50%;                                     /* Ubicada a la mitad */
+    transform: translateY(-50%);                  /* Centrada exactamente */
+    animation: lineSlide 3s ease-in-out infinite 0.5s; /* Retraso de animación */
+}
+
+/* Tercera línea: abajo */
+.pattern-line:nth-child(3) {
+    bottom: 0;                                    /* Ubicada abajo */
+    animation: lineSlide 3s ease-in-out infinite 1s; /* Retraso mayor */
+}
+
+/* Animación del patrón de líneas */
+@keyframes lineSlide {
+    0%, 100% {
+        transform: scaleX(1);                     /* Línea completa */
+        opacity: 0.3;                             /* Transparencia normal */
+    }
+    50% {
+        transform: scaleX(0.5);                   /* Se acorta a la mitad */
+        opacity: 0.8;                             /* Se hace más visible */
+    }
+}
+
+/* ==========================================================================
+   TWEET DESTACADO
+   ========================================================================== */
+
+/* Contenedor principal del bloque de tweets destacados */
+.tweet-highlight {
+    margin: 40px 0;                                             /* Espacio superior e inferior */
+    padding: 30px;                                              /* Espaciado interno */
+    background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%); /* Fondo con degradado suave */
+    border-radius: 12px;                                        /* Bordes redondeados */
+    border: 1px solid #e0e0e0;                                  /* Borde gris claro */
+    opacity: 0;                                                 /* Inicia invisible (animación reveal) */
+    transform: translateY(20px);                                /* Ligeramente desplazado hacia abajo */
+    transition: all 0.6s ease;                                  /* Transición suave */
+}
+
+/* Estado visible cuando el bloque ya fue revelado */
+.tweet-highlight.revealed {
+    opacity: 1;                                                 /* Ahora visible */
+    transform: translateY(0);                                   /* Recupera posición original */
+}
+
+/* Título del bloque de tweets */
+.tweet-highlight h4 {
+    font-size: 1.2rem;                                          /* Tamaño del título */
+    margin-bottom: 20px;                                        /* Espaciado inferior */
+    color: var(--identidad-primary);                            /* Color negro principal */
+}
+
+/* Lista de tweets */
+.tweet-list {
+    list-style: none;                                           /* Elimina viñetas */
+    padding: 0;                                                 /* Elimina padding */
+    margin: 0 0 15px 0;                                         /* Margen inferior */
+    display: flex;                                              /* Flexbox vertical */
+    flex-direction: column;
+    gap: 12px;                                                  /* Espaciado entre tweets */
+}
+
+/* Elemento individual de tweet */
+.tweet-list li {
+    padding-left: 25px;                                         /* Espacio para el icono '#' */
+    position: relative;                                         /* Para colocar el icono con ::before */
+    font-size: 0.95rem;                                         /* Tamaño del texto */
+    line-height: 1.6;                                           /* Altura de línea */
+    color: #333;                                                /* Gris oscuro */
+}
+
+/* Icono de hashtag antes de cada tweet */
+.tweet-list li::before {
+    content: '#';                                               /* Icono textual */
+    position: absolute;                                         /* Ubicado a la izquierda */
+    left: 0;
+    font-weight: 700;                                           /* Hashtag en negrita */
+    color: var(--identidad-primary);                            /* Color negro */
+}
+
+/* Autor del tweet en la parte inferior */
+.tweet-highlight cite {
+    display: block;                                             /* Bloque completo */
+    text-align: right;                                          /* Alineado a la derecha */
+    font-style: normal;                                         /* Sin itálica */
+    font-size: 0.9rem;                                          /* Tamaño del texto */
+    color: var(--identidad-accent);                             /* Gris medio */
+    margin-top: 15px;                                           /* Espacio superior */
+}
+
+
+/* ==========================================================================
+   LISTA DE NIVELES - Sistema jerárquico interactivo
+   ========================================================================== */
+
+/* Contenedor principal de los niveles */
+.levels-list {
+    margin: 40px 0;                                             /* Espaciado vertical */
+    padding: 30px;                                              /* Espaciado interno */
+    background-color: #fafafa;                                  /* Fondo gris claro */
+    border-radius: 12px;                                        /* Esquinas redondeadas */
+    opacity: 0;                                                 /* Inicia invisible */
+    transform: translateY(20px);                                /* Desplazamiento inicial */
+    transition: all 0.6s ease;                                  /* Animación */
+}
+
+/* Estado revelado */
+.levels-list.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Título de la lista de niveles */
+.levels-list h3 {
+    font-size: 1.4rem;                                          /* Tamaño del título */
+    margin-bottom: 25px;                                        /* Espacio inferior */
+    color: var(--identidad-primary);                            /* Color negro */
+}
+
+/* Elemento individual de nivel */
+.level-item {
+    display: flex;                                              /* Flex horizontal */
+    gap: 20px;                                                  /* Espacio entre indicador y texto */
+    padding: 20px;                                              /* Espaciado interno */
+    margin-bottom: 15px;                                        /* Separación entre niveles */
+    background-color: var(--identidad-secondary);               /* Fondo blanco */
+    border-radius: 8px;                                         /* Esquinas suaves */
+    border-left: 4px solid transparent;                         /* Borde que cambia en hover */
+    transition: all 0.3s ease;                                  /* Animación de hover */
+    cursor: pointer;                                            /* Indica interacción */
+}
+
+/* Hover del nivel: destaca visualmente */
+.level-item:hover {
+    border-left-color: var(--identidad-primary);                /* Borde negro */
+    transform: translateX(5px);                                 /* Se mueve hacia la derecha */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);                    /* Sombra suave */
+}
+
+/* Contenedor del indicador visual del nivel */
+.level-indicator {
+    display: flex;                                              /* Flex vertical */
+    flex-direction: column;
+    align-items: center;                                        /* Centrado horizontal */
+    gap: 8px;                                                   /* Espacio entre elementos */
+    min-width: 80px;                                            /* Ancho mínimo */
+}
+
+/* Punto que representa el nivel */
+.level-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;                                         /* Círculo */
+    background-color: var(--identidad-primary);                 /* Color negro */
+    position: relative;                                         /* Para animación ::after */
+}
+
+/* Efecto pulsante del punto cuando se hace hover */
+.level-item:hover .level-dot::after {
+    content: '';                                                /* Elemento decorativo */
+    position: absolute;
+    top: 50%;                                                   /* Centro del punto */
+    left: 50%;
+    transform: translate(-50%, -50%);                           /* Centrado */
+    width: 100%;                                                /* Mismo tamaño que el punto */
+    height: 100%;
+    border-radius: 50%;                                         /* Forma circular */
+    background-color: var(--identidad-primary);                 /* Color negro */
+    animation: dotPulse 1.5s ease-out infinite;                 /* Animación continua */
+}
+
+/* Animación del pulso */
+@keyframes dotPulse {
+    0% {
+        opacity: 0.8;                                           /* Visible */
+        transform: translate(-50%, -50%) scale(1);              /* Tamaño normal */
+    }
+    100% {
+        opacity: 0;                                             /* Se desvanece */
+        transform: translate(-50%, -50%) scale(2.5);            /* Aumenta y desaparece */
+    }
+}
+
+/* Texto debajo del indicador del nivel */
+.level-label {
+    font-size: 0.75rem;                                         /* Pequeño */
+    text-transform: uppercase;                                  /* Mayúsculas */
+    letter-spacing: 0.05em;                                     /* Espaciado entre letras */
+    font-weight: 600;                                           /* Medio */
+    color: var(--identidad-accent);                             /* Gris medio */
+    text-align: center;                                         /* Centrado */
+}
+
+/* Texto descriptivo del nivel */
+.level-item p {
+    margin: 0;                                                  /* Sin márgenes */
+    font-size: 1rem;                                            /* Tamaño estándar */
+    line-height: 1.6;                                           /* Lectura cómoda */
+    color: #333;                                                /* Gris oscuro */
+    opacity: 1;                                                 /* Totalmente visible */
+    transform: none;                                            /* Sin animación extra */
+}
+
+/* ==========================================================================
+   GRID DEL MUNDO - Tarjetas de conceptos
+   ========================================================================== */
+
+/* Contenedor principal del grid con dos columnas para tarjetas */
+.mundo-grid {
+    display: grid;                                   /* Activa CSS Grid */
+    grid-template-columns: repeat(2, 1fr);           /* Dos columnas iguales */
+    gap: 25px;                                       /* Espacio entre tarjetas */
+    margin: 40px 0;                                  /* Espacio vertical */
+    opacity: 0;                                      /* Inicia invisible (reveal) */
+    transform: translateY(20px);                     /* Desplazamiento inicial */
+    transition: all 0.6s ease;                       /* Animación suave */
+}
+
+/* Estado revelado del grid */
+.mundo-grid.revealed {
+    opacity: 1;                                      /* Visible */
+    transform: translateY(0);                        /* Posición normal */
+}
+
+/* Tarjeta individual dentro del grid del mundo */
+.mundo-card {
+    padding: 30px;                                   /* Espaciado interno */
+    background-color: var(--identidad-secondary);    /* Fondo blanco */
+    border: 2px solid #e0e0e0;                       /* Borde gris claro */
+    border-radius: 12px;                             /* Esquinas redondeadas */
+    transition: all 0.3s ease;                       /* Animación hover */
+    cursor: pointer;                                 /* Indica acción */
+}
+
+/* Efecto hover de la tarjeta */
+.mundo-card:hover {
+    border-color: var(--identidad-primary);          /* Borde negro */
+    transform: translateY(-5px);                     /* Se eleva */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);          /* Sombra */
+}
+
+/* Icono cuadrado en la parte superior de cada tarjeta */
+.mundo-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;                                   /* Centrado con flexbox */
+    align-items: center;
+    justify-content: center;
+    background-color: var(--identidad-highlight);    /* Fondo gris claro */
+    border-radius: 12px;                             /* Esquinas redondeadas */
+    margin-bottom: 20px;                             /* Separación inferior */
+    color: var(--identidad-primary);                 /* Icono negro */
+    transition: all 0.3s ease;                       /* Animación hover */
+}
+
+/* Hover sobre icono dentro de una tarjeta */
+.mundo-card:hover .mundo-icon {
+    background-color: var(--identidad-primary);      /* Fondo negro */
+    color: var(--identidad-secondary);               /* Icono blanco */
+    transform: rotate(5deg) scale(1.1);              /* Giro y aumento */
+}
+
+/* Título de la tarjeta */
+.mundo-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: var(--identidad-primary);
+}
+
+/* Texto de descripción de la tarjeta */
+.mundo-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+    opacity: 1;
+    transform: none;
+}
+
+
+/* ==========================================================================
+   GRID DE AUTORES
+   ========================================================================== */
+
+/* Contenedor del grid de autores */
+.autores-grid {
+    display: grid;                                   /* Activa CSS Grid */
+    grid-template-columns: repeat(2, 1fr);           /* Dos columnas */
+    gap: 30px;                                       /* Espacio entre tarjetas */
+    margin: 40px 0;                                  /* Espacio vertical */
+    opacity: 0;                                      /* Inicia invisible */
+    transform: translateY(20px);                     /* Desplazamiento */
+    transition: all 0.6s ease;                       /* Animación suave */
+}
+
+/* Grid cuando se vuelve visible */
+.autores-grid.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Tarjeta individual del autor */
+.autor-card {
+    display: flex;                                   /* Columna vertical */
+    flex-direction: column;
+    align-items: center;                              /* Centrado horizontal */
+    padding: 40px 30px;
+    background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+    border-radius: 12px;                             /* Esquinas redondeadas */
+    transition: all 0.3s ease;
+}
+
+/* Hover de la tarjeta del autor */
+.autor-card:hover {
+    transform: translateY(-5px);                     /* Se eleva */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);          /* Sombra */
+}
+
+/* Iniciales circulares del autor */
+.autor-initial {
+    width: 80px;
+    height: 80px;
+    display: flex;                                   /* Centrado flex */
+    align-items: center;
+    justify-content: center;
+    background-color: var(--identidad-primary);       /* Fondo negro */
+    color: var(--identidad-secondary);                /* Texto blanco */
+    font-size: 1.8rem;                                /* Letra grande */
+    font-weight: 700;                                 /* Negrita */
+    border-radius: 50%;                               /* Forma circular */
+    margin-bottom: 20px;                              /* Espacio inferior */
+    transition: all 0.3s ease;                        /* Animación hover */
+}
+
+/* Hover sobre iniciales */
+.autor-card:hover .autor-initial {
+    transform: scale(1.1) rotate(5deg);               /* Agranda y gira */
+}
+
+/* Nombre del autor */
+.autor-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--identidad-primary);
+    margin: 0;
+}
+
+
+/* ==========================================================================
+   RESPONSIVE: TABLETS (max-width: 1024px)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+
+    /* El contenedor principal del layout pasa a una sola columna */
+    .identidad-container {
+        grid-template-columns: 1fr;                   /* 1 columna */
+        gap: 40px;                                    /* Espacio vertical */
+    }
+
+    /* Sidebar ya no es sticky, ahora horizontal */
+    .identidad-sidebar {
+        position: static;                             /* Quita sticky */
+        flex-direction: row;                          /* Horizontal */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Navegación interna en una fila */
+    .content-nav {
+        flex-direction: row;
+        gap: 10px;
+        flex-wrap: wrap;                              /* Permite saltos */
+    }
+
+    /* Links de navegación se rediseñan */
+    .nav-link {
+        padding: 10px 15px;
+        border-left: none;                            /* Sin borde lateral */
+        border-bottom: 3px solid transparent;         /* Borde inferior */
+    }
+
+    /* Hover/activo aplican borde inferior */
+    .nav-link.active,
+    .nav-link:hover {
+        border-left: none;
+        border-bottom-color: var(--identidad-primary);
+    }
+
+    /* Texto se oculta, solo se ven números */
+    .nav-text {
+        display: none;
+    }
+
+    /* Barra de progreso se hace más pequeña */
+    .reading-progress {
+        width: 150px;
+    }
+
+    /* Grid del mundo pasa a 1 columna */
+    .mundo-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==========================================================================
+   RESPONSIVE: MÓVILES (max-width: 768px)
+
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    /* 1. Ajuste del contenedor Hero para que ocupe toda la pantalla del móvil */
+    .identidad-hero {
+        height: 100vh;             /* Ocupar toda la altura de la ventana */
+        min-height: auto;          /* Reseteamos min-height */
+        margin-top: 0;             /* Quitamos margen externo */
+        padding-top: 60px;         /* Espacio interno para compensar el Navbar fijo */
+        align-items: center;       /* Centrado vertical perfecto */
+    }
+
+    /* 2. Imagen de fondo: Cubrir todo el espacio sin deformarse */
+    .hero-image-parallax {
+        object-fit: cover; 
+        object-position: center;
+    }
+
+    /* 3. Overlay: Un poco más fuerte en móvil para que el texto se lea */
+    .identidad-hero-overlay {
+        background: linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.8) 0%,   /* Blanco arriba para el texto */
+            rgba(255,255,255,0.4) 50%, 
+            rgba(255,255,255,0.1) 100%
+        );
+    }
+    
+    /* 4. EL ARREGLO PRINCIPAL: El Título */
+    .identidad-hero-title {
+        font-size: 2.8rem;         /* Tamaño legible en móvil */
+        line-height: 1.1;
+        margin-bottom: 20px;       /* IMPORTANTE: Bajamos de 480px a 20px */
+        margin-top: 0;
+        width: 100%;
+        padding: 0 20px;           /* Margen lateral para que no toque los bordes */
+        text-shadow: none;         /* Quitamos sombra para limpieza visual */
+    }
+    
+    /* 5. Ajuste del contenedor general */
+    .identidad-container {
+        padding: 0 20px;
+    }
+
+    /* 6. Sidebar y navegación interna */
+    .identidad-sidebar {
+        flex-direction: column;
+        gap: 20px;
+        top: 80px; /* Ajuste para sticky en móvil si fuera necesario */
+    }
+
+    .content-nav {
+        width: 100%;
+    }
+
+    .nav-link {
+        flex: 1;
+        justify-content: center;
+        padding: 12px;
+        background-color: #f9f9f9; /* Fondo suave para los botones */
+        border-radius: 6px;
+        margin-bottom: 5px;
+    }
+
+    .reading-progress {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    /* Textos y contenidos generales */
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .intro-text {
+        font-size: 1.1rem;
+    }
+    
+    .text-content p {
+        font-size: 1rem;
+    }
+
+    /* Grids a una sola columna */
+    .autores-grid, .mundo-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE: MÓVILES PEQUEÑOS (max-width: 480px)
+   ========================================================================== */
+
+@media (max-width: 480px) {
+    
+    /* Título aún más ajustado para pantallas muy angostas */
+    .identidad-hero-title {
+        font-size: 2.2rem; 
+    }
+    
+    /* Ajuste de padding del hero */
+    .identidad-hero {
+        padding-top: 80px; /* Un poco más de aire arriba */
+    }
+    
+    /* Panel de acordeón */
+    .panel-trigger {
+        padding: 15px;
+        font-size: 0.95rem;
+    }
+}
+/* ==========================================================================
+   ANIMACIONES ADICIONALES Y UTILIDADES
+   ========================================================================== */
+
+/* Defino una clase genérica para elementos que se revelan al hacer scroll */
+[data-reveal] {
+    opacity: 0;                         /* Comienzan invisibles */
+    transform: translateY(20px);        /* Posición inicial desplazada */
+    transition: all 0.6s ease;          /* Animación suave */
+}
+
+/* Cuando un elemento obtiene la clase .revealed */
+[data-reveal].revealed {
+    opacity: 1;                         /* Hago visible */
+    transform: translateY(0);           /* Vuelve a su posición original */
+}
+
+/* Activación del scroll suave nativo del navegador */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Mejoro el rendimiento marcando elementos animables */
+.identidad-hero-background,
+.geometric-pattern,
+.mundo-icon,
+.autor-initial {
+    will-change: transform;             /* Optimiza animaciones */
+}
+
+
+
+/* ==========================================================================
+   FIX URGENTE: Hacer todo el contenido visible mientras se configura JS
+   ========================================================================== */
+
+/* Fuerzo visibilidad en TODOS los bloques mientras JS se implementa */
+.text-content p,
+.intro-text,
+.quote-block,
+.expandable-panel,
+.visual-element,
+.tweet-highlight,
+.levels-list,
+.mundo-grid,
+.autores-grid,
+[data-reveal] {
+    opacity: 1 !important;              /* Siempre visibles */
+    transform: translateY(0) !important; /* Sin animaciones por ahora */
+}
+
+/* Aseguro que los párrafos tengan color visible */
+.text-content p {
+    color: #333 !important;
+}
+
+/* Aseguro que TODOS los textos sean visibles y negros */
+.section-title,
+.section-number,
+h1, h2, h4, p, span, li, blockquote {
+    opacity: 1 !important;
+    color: #000 !important;
+}

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convocatorias - Revista Progresivo</title>
+    <!-- Importa los estilos base del proyecto -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Importa los estilos especificos de convocatorias -->
+    <link rel="stylesheet" href="css/convocatorias.css">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+</head>
+<body>
+    <!-- HEADER: Barra de navegacion superior fija, igual que index.html -->
+    <header class="site-header">
+          <div class="header-container">
+    <div class="logo-area">
+        <img src="img/logo-revista-progresivo.png" alt="Logo">
+    </div>
+
+    <button class="menu-toggle" aria-label="Abrir menú">
+        ☰
+    </button>
+
+   <nav class="main-navigation">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#archivo">Archivo</a>
+                <a href="convocatorias.html">Convocatorias</a>
+                <a href="identidad.html">Identidad Progresivo</a>
+                <a href="index.html#revistas">Revistas</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+</div>
+
+    </header>
+
+ <main class="entrada-suave"> 
+    
+    <!-- HERO: Banner principal con imagen vertical de portada -->
+    <section class="convocatoria-hero">
+        <!-- Contenedor de imagen vertical centrada -->
+        <div class="hero-imagen-container">
+            <img src="img/36.png" alt="Convocatoria Progresivo 37" class="hero-imagen-vertical">
+        </div>
+        
+        <!-- Contenido superpuesto con informacion destacada -->
+        <div class="hero-overlay-content">
+            <!-- Badge que indica que la convocatoria esta abierta -->
+            <div class="badge-convocatoria">Abierta</div>
+            <!-- Titulo principal de la convocatoria -->
+            <h1 class="hero-titulo-convocatoria">Convocatoria<br>Progresivo N°37</h1>
+            <!-- Descripcion breve -->
+            <p class="hero-descripcion">Invitamos a toda la comunidad academica a presentar ejercicios creativos</p>
+            <!-- Boton de accion principal que lleva al formulario -->
+            <a href="#formulario-inscripcion" class="btn-postular">Postular ahora</a>
+        </div>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL: Toda la informacion de la convocatoria -->
+    <section class="convocatoria-content">
+        <div class="content-wrapper">
+            
+            <!-- TIMELINE: Fechas importantes de la convocatoria -->
+            <div class="fechas-importantes">
+                <h2 class="section-title">Fechas Importantes</h2>
+                <div class="timeline">
+                    <!-- Fecha 1: Apertura de convocatoria -->
+                    <div class="timeline-item">
+                        <div class="timeline-punto"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-fecha">1 de julio 2025</span>
+                            <h3 class="timeline-titulo">Apertura de convocatoria</h3>
+                            <p class="timeline-descripcion">Inicio del periodo de recepcion de propuestas</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Fecha 2: Cierre de convocatoria -->
+                    <div class="timeline-item">
+                        <div class="timeline-punto"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-fecha">30 de septiembre 2025</span>
+                            <h3 class="timeline-titulo">Cierre de convocatoria</h3>
+                            <p class="timeline-descripcion">Ultimo dia para enviar propuestas</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Fecha 3: Comunicacion de resultados -->
+                    <div class="timeline-item">
+                        <div class="timeline-punto"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-fecha">1 al 8 de octubre</span>
+                            <h3 class="timeline-titulo">Comunicacion a seleccionados</h3>
+                            <p class="timeline-descripcion">Notificacion de resultados</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Fecha 4: Periodo de ajustes -->
+                    <div class="timeline-item">
+                        <div class="timeline-punto"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-fecha">1 al 15 de noviembre 2025</span>
+                            <h3 class="timeline-titulo">Ajustes y correcciones</h3>
+                            <p class="timeline-descripcion">Periodo de revision final</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MODALIDADES: Dos formas de participar -->
+            <div class="modalidades-section">
+                <h2 class="section-title">Modalidades de Participacion</h2>
+                <p class="section-intro">Cada participante puede enviar un maximo de tres productos por convocatoria</p>
+                
+                <div class="modalidades-grid">
+                    <!-- Modalidad 1: Articulos academicos -->
+                    <div class="modalidad-card">
+                        <!-- Icono SVG decorativo -->
+                        <div class="modalidad-icono">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                                <rect x="10" y="10" width="30" height="30" stroke="currentColor" stroke-width="2"/>
+                                <line x1="15" y1="18" x2="35" y2="18" stroke="currentColor" stroke-width="2"/>
+                                <line x1="15" y1="25" x2="35" y2="25" stroke="currentColor" stroke-width="2"/>
+                                <line x1="15" y1="32" x2="28" y2="32" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="modalidad-titulo">Ejercicio de divulgacion academico</h3>
+                        <p class="modalidad-descripcion">Texto de caracter investigativo o reflexivo, ensayo o resena</p>
+                        <!-- Lista de ejemplos -->
+                        <ul class="modalidad-lista">
+                            <li>Articulos de investigacion</li>
+                            <li>Ensayos academicos</li>
+                            <li>Resenas criticas</li>
+                            <li>Reflexiones teoricas</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Modalidad 2: Dossier creativo -->
+                    <div class="modalidad-card">
+                        <!-- Icono SVG decorativo -->
+                        <div class="modalidad-icono">
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                                <circle cx="25" cy="25" r="15" stroke="currentColor" stroke-width="2"/>
+                                <path d="M25 15 L25 25 L33 25" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="18" cy="18" r="3" fill="currentColor"/>
+                                <circle cx="32" cy="32" r="3" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="modalidad-titulo">Divulgacion de practica creativa</h3>
+                        <p class="modalidad-descripcion">Publicacion de resultados de proyectos creativos transdisciplinares</p>
+                        <!-- Lista de ejemplos -->
+                        <ul class="modalidad-lista">
+                            <li>Series fotograficas</li>
+                            <li>Pinturas y grabados</li>
+                            <li>Textos narrativos poeticos</li>
+                            <li>Registro documental</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- REQUISITOS: Acordeon interactivo con orientaciones -->
+            <div class="requisitos-section">
+                <h2 class="section-title">Orientaciones para la Postulacion</h2>
+                
+                <div class="accordion-container">
+                    <!-- Item acordeon 1: Requisitos generales -->
+                    <div class="accordion-item">
+                        <!-- Boton que abre/cierra el acordeon -->
+                        <button class="accordion-header">
+                            <span>Requisitos generales</span>
+                            
+                            <!-- Icono de flecha que rota al abrir -->
+                            <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        </button>
+                        <!-- Contenido oculto que se expande -->
+                        <div class="accordion-content">
+                            <ul>
+                                <li>Todas las postulaciones deben ser, en principio, ineditas</li>
+                                <li>Se pueden publicar textos resultado de Trabajos de Grado (TFG, TFM o Tesis doctorales) si se hace explicito</li>
+                                <li>No debe existir conflicto de interes externo</li>
+                                <li>Seguir las recomendaciones de las Instrucciones para los autores</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Item acordeon 2: Productos visuales -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Productos visuales y sonoros</span>
+                            <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>Debe acompanarse con un texto reflexivo del proceso de formacion</li>
+                                <li>Anexar archivos de soporte con buena calidad</li>
+                                <li>Los archivos deben garantizar legibilidad y posterior diagramacion</li>
+                                <li>Propuestas con archivos no legibles seran descartadas</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Item acordeon 3: Imagenes -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Imagenes y material grafico</span>
+                            <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>Enviar imagenes separadas e independientes con buena resolucion</li>
+                                <li>Garantizar calidad para impresion</li>
+                                <li>Incluir creditos y permisos de reproduccion</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Item acordeon 4: Proceso de evaluacion -->
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Proceso de evaluacion</span>
+                            <svg class="accordion-icon" width="20" height="20" viewBox="0 0 20 20">
+                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        </button>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>Revision por Comite Editorial y Evaluadores designados</li>
+                                <li>El comite puede solicitar correcciones o ajustes</li>
+                                <li>Decision final tomada por la direccion de la revista</li>
+                                <li>La revista se reserva el derecho de retirar contribuciones en cualquier momento</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ETICA: Normas eticas en tarjetas -->
+            <div class="etica-section">
+                <h2 class="section-title">Normas Eticas</h2>
+                <div class="etica-grid">
+                    <!-- Tarjeta 1: Responsabilidad -->
+                    <div class="etica-card">
+                        <h3>Responsabilidad del autor</h3>
+                        <p>Los autores son responsables de obtener permisos para reproducir material de otras fuentes. El contenido publicado es responsabilidad exclusiva de los autores.</p>
+                    </div>
+                    
+                    <!-- Tarjeta 2: Plagio -->
+                    <div class="etica-card">
+                        <h3>Plagio</h3>
+                        <p>El uso de frases o fragmentos sin correcta citacion se considera plagio. Las citas textuales deben ir correctamente citadas en normas APA edicion 7.</p>
+                    </div>
+                    
+                    <!-- Tarjeta 3: Derechos de autor -->
+                    <div class="etica-card">
+                        <h3>Derechos de autor</h3>
+                        <p>Los autores conceden a la Revista Progresivo la propiedad de derechos patrimoniales para reproduccion y divulgacion sin animo de lucro. Los derechos morales permanecen con los autores.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INSCRIPCION: Formulario y descargas -->
+            <div class="inscripcion-section" id="formulario-inscripcion">
+                <h2 class="section-title">Postula tu propuesta</h2>
+                
+                <div class="inscripcion-grid">
+                    <!-- Tarjeta de formulario online -->
+                    <div class="inscripcion-card inscripcion-formulario">
+                        <!-- Icono SVG de formulario -->
+                        <div class="inscripcion-icono">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                                <rect x="15" y="10" width="30" height="40" stroke="currentColor" stroke-width="2" rx="2"/>
+                                <line x1="20" y1="20" x2="40" y2="20" stroke="currentColor" stroke-width="2"/>
+                                <line x1="20" y1="27" x2="40" y2="27" stroke="currentColor" stroke-width="2"/>
+                                <line x1="20" y1="34" x2="35" y2="34" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3>Formulario de inscripcion</h3>
+                        <p>Completa el formulario online para postular tu propuesta</p>
+                        <!-- Boton que lleva al formulario externo -->
+                        <a href="https://forms.office.com/pages/responsepage.aspx?id=Lj-dOkPUaEunrlhsXgxN2WEPAfpb_SpIt5iq2bp6Sh1UMkQyWDNOUVJWUExSUlpEOEVYWEZPU1g5WS4u&route=shorturl" target="_blank" class="btn-accion btn-primario">Ir al formulario</a> 
+                    </div>
+                    
+                    <!-- Tarjeta de descargas de documentos -->
+                    <div class="inscripcion-card inscripcion-descargas">
+                        <!-- Icono SVG de descarga -->
+                        <div class="inscripcion-icono">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                                <path d="M30 15 L30 35" stroke="currentColor" stroke-width="2"/>
+                                <path d="M20 28 L30 38 L40 28" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <rect x="15" y="40" width="30" height="5" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3>Documentos requeridos</h3>
+                        <p>Descarga los formatos necesarios para tu postulacion</p>
+                        <!-- Lista de enlaces de descarga -->
+                    <div class="descargas-lista">
+    
+                    <a href="PdfRequisitosConvocatoria/Instrucciones-para-los-autores-2024.docx" class="btn-descarga" download="Instrucciones-para-los-autores-2024.docx">
+                        <span>Instrucciones para autores</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M8 2 L8 10" stroke="currentColor" stroke-width="2"/>
+                            <path d="M4 7 L8 11 L12 7" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </a                >
+
+                    <a href="PdfRequisitosConvocatoria/Carta-cesion-derechos.pdf" class="btn-descarga" download="Carta-cesion-derechos.pdf">
+                        <span>Carta de cesion de derechos</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16">
+                            <path d="M8 2 L8 10" stroke="currentColor" stroke-width="2"/>
+                            <path d="M4 7 L8 11 L12 7" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </a>
+                </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTACTO: Informacion de contacto destacada -->
+            <div class="contacto-convocatoria">
+                <div class="contacto-content">
+                    <h3>Mas informacion</h3>
+                    <p>Para consultas sobre la convocatoria contactanos:</p>
+                    <!-- Email clickeable -->
+                    <a href="mailto:revista.progresivo@bellasartesmed.edu.co" class="contacto-email">
+                        revista.progresivo@bellasartesmed.edu.co
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main> 
+    <!-- FOOTER: Pie de pagina, igual que en index.html -->
+    <footer class="site-footer" id="contacto">
+        <div class="footer-container">
+            
+            <!-- Seccion superior con 3 columnas -->
+            <div class="footer-top">
+                
+                <!-- Columna 1: Informacion de contacto -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Contacto</h3>
+                    <div class="footer-contact">
+                        <!-- Telefono con icono -->
+                        <div class="contact-item">
+                            <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                           <h5> 60(4) 322 82 83 </h5>
+                        </div>
+                        <!-- Email con icono -->
+                        <div class="contact-item">
+                            <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <h5>revista.progresivo@bellasartesmed.edu.co </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Enlaces de navegacion -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Explora</h3>
+                    <nav class="footer-nav">                       
+                   <!-- <a href="videos.html" class="footer-link">Videos</a> - LA REVISTA ORIGINAL NO TIENE VIDEOS -->
+                   <!-- <a href="eventos.html" class="footer-link">Eventos</a>  LA REVISTA ORIGINAL NO TIENE EVENTOS-->
+                       <a href="https://bellasartesmed.edu.co/semilleros-de-investigacion/ " class="footer-link" target="_blank">Semilleros</a>
+                    </nav>
+                </div>
+
+                <!-- Columna 3: Redes sociales -->
+                <div class="footer-column">
+                <h3 class="footer-title">Síguenos</h3>
+                <div class="footer-social">
+                    <a href="https://web.facebook.com/people/Revista_progresivo/100066919231309/#" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/revista_progresivo/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCscGmMWkis03dq0ZO0oG1tQ" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+ <img src="img/logo-semillero-cocreacion-bellas-artes.png" alt="Logo FUBA y Semillero Cocreación" class="logo">
+            <!-- Linea divisoria horizontal -->
+            <div class="footer-divider"></div>
+
+            <!-- Seccion inferior con copyright -->
+            <div class="footer-bottom">
+                <h3 class="footer-copyright">
+                     &copy; Fundación Universitaria Bellas Artes – Medellín / Antioquia / Colombia
+                </h3>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/convocatorias.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

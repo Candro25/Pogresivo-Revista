@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progresivo - Revista FUBA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+</head>
+<body>
+
+ <!-- HEADER SUPERIOR -->
+<header class="site-header">
+
+    <div class="header-container">
+    <div class="logo-area">
+        <img src="img/logo-revista-progresivo.png" alt="Logo">
+    </div>
+
+    <button class="menu-toggle" aria-label="Abrir menú">
+        ☰
+    </button>
+
+   <nav class="main-navigation">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#archivo">Archivo</a>
+                <a href="convocatorias.html">Convocatorias</a>
+                <a href="identidad.html">Identidad Progresivo</a>
+                <a href="index.html#revistas">Revistas</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+</div>
+
+    
+</header>
+
+<main class="entrada-suave" 
+
+<!--HERO BANNER-->
+ <!-- HERO: Artículo destacado con imagen grande y texto superpuesto -->
+<section class="hero-section" id="inicio">
+    <!-- Imagen de fondo del hero -->
+    <div class="hero-background">
+        <img src="img/portada.jpg" alt="Portada Revista #36">
+    </div>
+    
+    <!-- Overlay oscuro para legibilidad -->
+    <div class="hero-overlay"></div>
+    
+    <!-- Contenido del hero -->
+    <div class="hero-content" >
+        <span class="hero-category">Destacado</span>
+        <h2 class="hero-title">YA ESTÁ DISPONIBLE <br> LA REVISTA <br>PROGRESIVO #36</h2>
+        <!--<p class="hero-description">
+            Una exploración profunda sobre cómo los artistas emergentes de Medellín están 
+            transformando el espacio público en lienzos de expresión social y política.
+        </p>-->
+        <div class="hero-meta" >
+           <!-- <span>Autor</span> -->
+            <span class="meta-separator">·</span>
+            <span>Medellín, Colombia, junio 2025</span>
+        </div>
+        <a href="#revistas" class="hero-button" data-pdf="PdfRevistas/PROGRESIVO-No36-1.pdf">Leer Revista</a>
+    </div>
+</section>
+
+<!-- REVISTAS-->
+
+<!-- Sección de Revistas Publicadas -->
+<section class="revistas-section" id="revistas">
+    <!-- Título de la sección -->
+    <div class="revistas-header">
+        <h2 class="revistas-title">Revistas Publicadas</h2>
+        <p class="revistas-subtitle">Explora todas nuestras ediciones anteriores</p>
+    </div>
+
+    <!-- Filtros -->
+    <div class="filtros-container">
+        <!-- Filtro por año -->
+        <div class="filtro-grupo">
+            <label for="filtro-ano">Año:</label>
+            <select id="filtro-ano" class="filtro-select">
+                <option value="todos">Todos</option>
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+            </select>
+        </div>
+
+        <!-- Filtro por ISSN -->
+    <div class="filtro-grupo">
+     <label for="filtro-ISSN">ISSN:</label>
+        <select id="filtro-ISSN" class="filtro-select">
+        <option value="todos">Todos</option>
+        <option value="2619-5631">2619-5631</option>
+        <option value="2256-4160">2256-4160</option>
+        </select>
+    </div>
+
+
+        <!-- Botón para resetear filtros -->
+        <button class="btn-reset-filtros" id="btnResetFiltros">Limpiar filtros</button>
+    </div>
+
+    <!-- Grid de revistas -->
+    <div class="revistas-grid" id="revistasGrid">
+        
+        <!-- Tarjeta de revista 1 -->
+        <div class="revista-card" data-ano="2025"  data-pdf="PdfRevistas/PROGRESIVO-No36-1.pdf" data-issn="2619-5631">
+            <!-- Imagen de portada -->
+            <div class="revista-portada">
+                <img src="img/36.png" alt="Revista Progresivo No. 36">
+                <!-- Overlay con información -->
+                <div class="revista-overlay">
+                    <span class="revista-numero">Edición #36
+                    <span class="hero-category">Destacado</span>
+                    </span>
+                </div>
+            </div>
+            
+            <!-- Contenido de la tarjeta -->
+            <div class="revista-content">
+                <h3 class="revista-titulo">Progresivo #36</h3>
+                <p class="revista-info">Junio 2025 ISSN: 2619-5631</p>
+                <p class="revista-resumen">Exploramos las nuevas tendencias del arte contemporáneo y su impacto en.</p>
+                
+                <!-- Botones de acción -->
+                <div class="revista-acciones">
+                    <a href="PdfRevistas/PROGRESIVO-No36-1.pdf" class="btn-revista btn-leer">Leer en línea</a>
+                    <a href="PdfRevistas/PROGRESIVO-No36-1.pdf" class="btn-revista btn-descargar">Descargar PDF</a>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Tarjeta de revista 2 -->
+        <div class="revista-card" data-ano="2024" data-pdf="PdfRevistas/REVISTA-PROGRESIVO-35.pdf" data-issn="2256-4160">
+            <div class="revista-portada">
+                <img src="img/35.png" alt="Revista Progresivo No. 35">
+                <div class="revista-overlay">
+                    <span class="revista-numero">Edición #35</span>
+                </div>
+            </div>
+            <div class="revista-content">
+                <h3 class="revista-titulo">Progresivo #35</h3>
+                <p class="revista-info">Agosto 2024 ISSN: 2256-4160</p>
+                <p class="revista-resumen">Expresiones que definen nuestra identidad universitaria.</p>
+                <div class="revista-acciones">
+                    <a href="PdfRevistas/REVISTA-PROGRESIVO-35.pdf" class="btn-revista btn-leer">Leer en línea</a>
+                    <a href="PdfRevistas/REVISTA-PROGRESIVO-35.pdf" class="btn-revista btn-descargar">Descargar PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tarjeta de revista 3 -->
+        <div class="revista-card" data-ano="2023" data-pdf="PdfRevistas/progresivo-34-corregido-y-revisado.pdf" data-issn="2619-5631">
+            <div class="revista-portada">
+                <img src="img/34.png" alt="Revista Progresivo No. 34">
+                <div class="revista-overlay">
+                    <span class="revista-numero">Edición #34</span>
+                </div>
+            </div>
+            <div class="revista-content">
+                <h3 class="revista-titulo">Progresivo #34</h3>
+                <p class="revista-info">Octubre 2023 ISSN: 2619-5631 </p>
+                <p class="revista-resumen">Innovación educativa y nuevas metodologías en el aula universitaria.</p>
+                <div class="revista-acciones">
+                    <a href="PdfRevistas/progresivo-34-corregido-y-revisado.pdf" class="btn-revista btn-leer">Leer en línea</a>
+                    <a href="PdfRevistas/progresivo-34-corregido-y-revisado.pdf" class="btn-revista btn-descargar">Descargar PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tarjeta de revista 4 -->
+        <div class="revista-card" data-ano="2023" data-pdf="PdfRevistas/Version-final-del-numero-33-de-la-Revista-Progresivo.pdf" data-issn="2619-5631">
+            <div class="revista-portada">
+                <img src="img/33.png" alt="Revista Progresivo No. 33">
+                <div class="revista-overlay">
+                    <span class="revista-numero">Edición #33</span>
+                </div>
+            </div>
+            <div class="revista-content">
+                <h3 class="revista-titulo">Progresivo #33</h3>
+                <p class="revista-info">Mayo 2023 ISSN: 2619-5631</p>
+                <p class="revista-resumen">Proyectos de investigación destacados de nuestros estudiantes y docentes.</p>
+                <div class="revista-acciones">
+                    <a href="PdfRevistas/Version-final-del-numero-33-de-la-Revista-Progresivo.pdf" class="btn-revista btn-leer">Leer en línea</a>
+                    <a href="PdfRevistas/Version-final-del-numero-33-de-la-Revista-Progresivo.pdf" class="btn-revista btn-descargar">Descargar PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tarjeta de revista 5 -->
+        <div class="revista-card" data-ano="2020" data-pdf="PdfRevistas/progresivo32.pdf" data-issn="2619-5631" >
+            <div class="revista-portada">
+                <img src="img/32.png" alt="Revista Progresivo No. 32">
+                <div class="revista-overlay">
+                    <span class="revista-numero">Edición #32</span>
+                </div>
+            </div>
+            <div class="revista-content">
+                <h3 class="revista-titulo">Progresivo #32</h3>
+                <p class="revista-info">Agosto 2020 ISSN: 2619-5631</p>
+                <p class="revista-resumen">Proyectos de investigación destacados de nuestros estudiantes y docentes.</p>
+                <div class="revista-acciones">
+                    <a href="PdfRevistas/progresivo32.pdf" class="btn-revista btn-leer">Leer en línea</a>
+                    <a href="PdfRevistas/progresivo32.pdf" class="btn-revista btn-descargar">Descargar PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tarjeta de revista 6 -->
+        <div class="revista-card" data-ano="2019" data-pdf="PdfRevistas/progresivo-31.pdf" data-issn="2619-5631">
+            <div class="revista-portada">
+                <img src="img/31.png" alt="Revista Progresivo No. 31">
+                <div class="revista-overlay">
+                    <span class="revista-numero">Edición #31</span>
+                </div>
+            </div>
+            <div class="revista-content">
+                <h3 class="revista-titulo">Progresivo #31</h3>
+                <p class="revista-info">Agosto 2019 ISSN: 2619-5631</p>
+                <p class="revista-resumen">Proyectos de investigación destacados de nuestros estudiantes y docentes.</p>
+                <div class="revista-acciones">
+                    <a href="PdfRevistas/progresivo-31.pdf" class="btn-revista btn-leer">Leer en línea</a>
+                    <a href="PdfRevistas/progresivo-31.pdf" class="btn-revista btn-descargar">Descargar PDF</a>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta de revista 7 -->
+        <div class="revista-card" data-ano="2018" data-pdf="PdfRevistas/Progresivo-30.pdf" data-issn="2619-5631" >
+            <div class="revista-portada">
+                <img src="img/30.png" alt="Revista Progresivo No. 30">
+                <div class="revista-overlay">
+                    <span class="revista-numero">Edición #30</span>
+                </div>
+            </div>
+            <div class="revista-content">
+                <h3 class="revista-titulo">Progresivo #30</h3>
+                <p class="revista-info">Abril 2018 ISSN: 2619-5631</p>
+                <p class="revista-resumen">Proyectos de investigación destacados de nuestros estudiantes y docentes.</p>
+                <div class="revista-acciones">
+                    <a href="PdfRevistas/Progresivo-30.pdf" class="btn-revista btn-leer">Leer en línea</a>
+                    <a href="PdfRevistas/Progresivo-30.pdf" class="btn-revista btn-descargar">Descargar PDF</a>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta de revista 10 -->
+        <div class="revista-card" data-ano="2014" data-pdf="PdfRevistas/progresivo-27-separata.pdf" data-issn="2256-4160">
+            <div class="revista-portada">
+                <img src="img/27.png" alt="Revista Progresivo No. 27" data-pdf="PdfRevistas/progresivo-27-separata.pdf">
+                <div class="revista-overlay">
+                    <span class="revista-numero">Edición #27</span>
+                </div>
+            </div>
+            <div class="revista-content">
+                <h3 class="revista-titulo">Progresivo #27</h3>
+                <p class="revista-info">Noviembre 2014 ISSN: 2256-4160</p>
+                <p class="revista-resumen">Proyectos destacados de nuestra institución.</p>
+                <div class="revista-acciones">
+                    <a href="PdfRevistas/progresivo-27-separata.pdf" class="btn-revista btn-leer">Leer en línea</a>
+                    <a href="PdfRevistas/progresivo-27-separata.pdf" class="btn-revista btn-descargar">Descargar PDF</a>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta de revista 11 -->
+        <div class="revista-card" data-ano="2013" data-pdf="PdfRevistas/progresivo-26.pdf" data-issn="2256-4160">
+            <div class="revista-portada">
+                <img src="img/26.png" alt="Revista Progresivo No. 26">
+                <div class="revista-overlay">
+                    <span class="revista-numero">Edición #26</span>
+                </div>
+            </div>
+            <div class="revista-content">
+                <h3 class="revista-titulo">Progresivo #26</h3>
+                <p class="revista-info">Noviembre 2013 ISSN: 2256-4160</p>
+                <p class="revista-resumen">Proyectos de investigación destacados de nuestros estudiantes y docentes.</p>
+                <div class="revista-acciones">
+                    <a href="PdfRevistas/progresivo-26.pdf" class="btn-revista btn-leer">Leer en línea</a>
+                    <a href="PdfRevistas/progresivo-26.pdf" class="btn-revista btn-descargar">Descargar PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Puedes agregar más tarjetas siguiendo el mismo formato -->
+
+    </div>
+
+    <!-- Mensaje cuando no hay resultados -->
+    <div class="no-resultados" id="noResultados" style="display: none;">
+        <p>No se encontraron revistas con los filtros seleccionados.</p>
+        <button class="btn-reset-filtros" onclick="document.getElementById('btnResetFiltros').click()">Mostrar todas</button>
+    </div>
+</section>
+
+
+<section class="articulos-section" id="archivo">
+    <div class="articulos-container">
+        
+        <div class="articulos-header">
+            <h2 class="articulos-title">ARCHIVO</h2>
+            <p class="articulos-subtitle">Explora nuestra colección de investigaciones y publicaciones</p>
+        </div>
+
+        <div class="articulos-grid" id="articulosGrid">
+            
+            <article class="articulo-card" 
+                     data-categoria="musica" 
+                     data-autor="Ensamble Aguacero" 
+                     data-ano="2020" 
+                     data-tema="musica coral">
+                
+                <div class="articulo-imagen">
+                    <img src="img/arch1.png" alt="Ensamble Vocal Aguacero">
+                </div>
+
+                <div class="articulo-contenido">
+                    <h3 class="articulo-titulo">Ensamble Vocal Aguacero</h3>
+                    
+                    <div class="articulo-meta">
+                        <span class="articulo-autor">Música</span>
+                        <span class="articulo-separador">•</span>
+                        <span class="articulo-ano">2020</span>
+                    </div>
+
+                    <p class="articulo-resumen">
+                        La pregunta de cómo acercar a los espectadores al formato coral y la experiencia sonora del ensamble.
+                    </p>
+
+                    <div class="articulo-acciones">
+                        <a href="archivo-ensamble.html" class="btn-articulo btn-leer">Leer artículo</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="articulo-card" 
+                     data-categoria="artes-visuales" 
+                     data-autor="Progresivo" 
+                     data-ano="2020" 
+                     data-tema="espacio negativo">
+                
+                <div class="articulo-imagen">
+                    <img src="img/arch2.png" alt="Vacíos">
+                </div>
+
+                <div class="articulo-contenido">
+                    <h3 class="articulo-titulo">Vacíos</h3>
+                    
+                    <div class="articulo-meta">
+                        <span class="articulo-autor">Artes Visuales</span>
+                        <span class="articulo-separador">•</span>
+                        <span class="articulo-ano">2020</span>
+                    </div>
+
+                    <p class="articulo-resumen">
+                        Exploración visual sobre espacios no ocupados y la percepción de la ausencia en la obra.
+                    </p>
+
+                    <div class="articulo-acciones">
+                        <a href="archivo-vacios.html" class="btn-articulo btn-leer">Leer artículo</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="articulo-card" 
+                     data-categoria="fotografia" 
+                     data-autor="Laura Marín" 
+                     data-ano="2020" 
+                     data-tema="genero masculinidad">
+                
+                <div class="articulo-imagen">
+                    <img src="img/arch3.png" alt="Estereotipos masculinos">
+                </div>
+
+                <div class="articulo-contenido">
+                    <h3 class="articulo-titulo">Estereotipos del género masculino</h3>
+                    
+                    <div class="articulo-meta">
+                        <span class="articulo-autor">Laura Marín</span>
+                        <span class="articulo-separador">•</span>
+                        <span class="articulo-ano">2020</span>
+                    </div>
+
+                    <p class="articulo-resumen">
+                       Análisis crítico de las construcciones sociales sobre la masculinidad a través de la fotografía.
+                    </p>
+
+                    <div class="articulo-acciones">
+                        <a href="archivo-estereotipos.html" class="btn-articulo btn-leer">Leer artículo</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="articulo-card" 
+                     data-categoria="audiovisual" 
+                     data-autor="C. Muñoz & P. Agudelo" 
+                     data-ano="2020" 
+                     data-tema="cine experimental">
+                
+                <div class="articulo-imagen">
+                    <img src="img/arch4.png" alt="La poética de la experimentación audiovisual">
+                </div>
+
+                <div class="articulo-contenido">
+                    <h3 class="articulo-titulo">La poética de la experimentación audiovisual</h3>
+                    
+                    <div class="articulo-meta">
+                        <span class="articulo-autor">Audiovisual</span>
+                        <span class="articulo-separador">•</span>
+                        <span class="articulo-ano">2020</span>
+                    </div>
+
+                    <p class="articulo-resumen">
+                       Reflexiones sobre procesos creativos híbridos y cine de no ficción.
+                    </p>
+
+                    <div class="articulo-acciones">
+                        <a href="archivo-poetica-experimentacion.html" class="btn-articulo btn-leer">Leer artículo</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="articulo-card" 
+                     data-categoria="investigacion" 
+                     data-autor="Astrid González" 
+                     data-ano="2020" 
+                     data-tema="identidad afrodescendiente">
+                
+                <div class="articulo-imagen">
+                    <img src="img/arch5.png" alt="Escribir en clave de africanía">
+                </div>
+
+                <div class="articulo-contenido">
+                    <h3 class="articulo-titulo">Escribir en clave de africanía</h3>
+                    
+                    <div class="articulo-meta">
+                        <span class="articulo-autor">Investigación</span>
+                        <span class="articulo-separador">•</span>
+                        <span class="articulo-ano">2020</span>
+                    </div>
+
+                    <p class="articulo-resumen">
+                        Sobre los intereses que estudia el libro Ombligo cimarrón y la gestión cultural.
+                    </p>
+
+                    <div class="articulo-acciones">
+                        <a href="archivo-africania.html" class="btn-articulo btn-leer">Leer artículo</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="articulo-card" 
+                     data-categoria="performance" 
+                     data-autor="Leifer Hoyos" 
+                     data-ano="2020" 
+                     data-tema="cuerpo vestido">
+                
+                <div class="articulo-imagen">
+                    <img src="img/arch6.png" alt="Cuerpo, Vestido y Performance">
+                </div>
+
+                <div class="articulo-contenido">
+                    <h3 class="articulo-titulo">Cuerpo, Vestido y Performance</h3>
+                    
+                    <div class="articulo-meta">
+                        <span class="articulo-autor">Leifer Hoyos</span>
+                        <span class="articulo-separador">•</span>
+                        <span class="articulo-ano">2020</span>
+                    </div>
+
+                    <p class="articulo-resumen">
+                       Relaciones existentes entre cuerpo, vestido y performance como acto reflexivo.
+                    </p>
+
+                    <div class="articulo-acciones">
+                        <a href="archivo-cuerpo-vestido.html" class="btn-articulo btn-leer">Leer artículo</a>
+                    </div>
+                </div>
+            </article>
+
+        </div
+
+    </div>
+</section>
+
+</main>  
+<!-- FOOTER -->
+<footer class="site-footer" id="contacto">
+    <div class="footer-container">
+        
+        <!-- Sección superior del footer -->
+        <div class="footer-top">
+            
+            <!-- Columna 1: Contacto -->
+            <div class="footer-column">
+                <h3 class="footer-title">Contacto</h3>
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                       <h5> 60(4) 322 82 83 </h5>
+                    </div>
+                    <div class="contact-item">
+                        <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <h5>revista.progresivo@bellasartesmed.edu.co </h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna 2: Navegación -->
+            <div class="footer-column">
+                <h3 class="footer-title">Explora</h3>
+                <nav class="footer-nav">
+                   <!-- <a href="videos.html" class="footer-link">Videos</a> - LA REVISTA ORIGINAL NO TIENE VIDEOS -->
+                   <!-- <a href="eventos.html" class="footer-link">Eventos</a>  LA REVISTA ORIGINAL NO TIENE EVENTOS-->
+                    <a href="https://bellasartesmed.edu.co/semilleros-de-investigacion/ " class="footer-link" target="_blank">Semilleros</a>
+                </nav>
+            </div>
+
+            <!-- Columna 3: Redes Sociales -->
+            <div class="footer-column">
+                <h3 class="footer-title">Síguenos</h3>
+                <div class="footer-social">
+                    <a href="https://web.facebook.com/people/Revista_progresivo/100066919231309/#" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/revista_progresivo/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCscGmMWkis03dq0ZO0oG1tQ" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <img src="img/logo-semillero-cocreacion-bellas-artes.png" alt="Logo FUBA Y SEMILLERO COCREACIÓN" class="logo">
+
+        <!-- Línea divisoria -->
+        <div class="footer-divider"></div>
+
+        <!-- Sección inferior del footer -->
+        <div class="footer-bottom">
+            <p class="footer-copyright">
+                &copy; Fundación Universitaria Bellas Artes – Medellín / Antioquia / Colombia
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- Modal PDF -->
+<div id="pdfModal" class="pdf-modal">
+
+    <span id="cerrarModal" class="pdf-modal-cerrar">×</span>
+
+    <div class="pdf-modal-content">
+        <iframe id="visorPDF" src="" frameborder="0"></iframe>
+    </div>
+</div>
+
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

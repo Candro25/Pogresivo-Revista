@@ -1,0 +1,1100 @@
+/* ==========================================================================
+   ESTILOS PARA PÁGINAS DE ARTÍCULOS - REVISTA PROGRESIVO
+   ========================================================================== */
+
+/* Variables globales específicas para artículos */
+:root {
+    --articulo-primary: #000000;          /* Color principal: negro */
+    --articulo-secondary: #ffffff;        /* Color secundario: blanco */
+    --articulo-text: #333333;             /* Color principal del texto */
+    --articulo-text-light: #666666;       /* Texto gris claro */
+    --articulo-border: #e0e0e0;           /* Color de bordes suaves */
+    --articulo-highlight: #f5f5f5;        /* Fondo de elementos destacados */
+    --articulo-spacing: 80px;             /* Espaciado genérico entre secciones */
+}
+
+/* ==========================================================================
+   HERO DEL ARTÍCULO
+   ========================================================================== */
+
+/* Contenedor principal del hero */
+.articulo-hero {
+    position: relative;                    /* Permite posicionar elementos internos absolutos */
+    height: 100vh;                          /* Altura relativa al viewport (70%) */
+    min-height: 500px;                     /* Altura mínima para pantallas pequeñas */
+    display: flex;                         /* Activa flexbox */
+    align-items: flex-end;                 /* Alinea el contenido al fondo */
+    overflow: hidden;                      /* Oculta cualquier contenido que se desborde */
+    margin-top: 85px;                      /* Espacio por el navbar fijo */
+}
+
+/* Contenedor del fondo del hero */
+.articulo-hero-background {
+    position: absolute;                    /* Se posiciona detrás del contenido */
+    top: 0;
+    left: 0;
+    width: 100%;                           /* Cubre todo el ancho del hero */
+    height: 100%;                          /* Cubre toda la altura del hero */
+    z-index: 1;                            /* Capa inferior del hero */
+}
+
+/* Imagen del fondo del hero */
+.articulo-hero-background img {
+    width: 100%;                           /* Imagen ocupa el ancho completo */
+    height: 100%;                          /* Imagen ocupa la altura completa */
+    object-fit: cover;                     /* Recorta la imagen manteniendo la proporción */
+}
+
+/* Capa de oscurecimiento con degradado sobre el fondo */
+.articulo-hero-overlay {
+    position: absolute;                    /* Se superpone sobre la imagen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, /* Degradado vertical */
+        rgba(0, 0, 0, 0.055) 0%,                /* Negro suave arriba */
+        rgba(0,0,0,0.7) 100%);             /* Negro más fuerte abajo */
+    z-index: 1;                            /* Va encima del fondo */
+}
+
+/* Contenido visible del hero (títulos, metadata, etc.) */
+.articulo-hero-content {
+    position: relative;                    /* Le permite estar por encima del overlay */
+    z-index: 3;                            /* Capa superior del hero */
+    max-width: 1200px;                     /* Ancho máximo */
+    margin: 0 auto;                        /* Centrado horizontal */
+    padding: 0 40px 60px;                  /* Padding lateral y uno inferior grande */
+    width: 100%;
+}
+
+/* ---------------- BREADCRUMB ---------------- */
+
+/* Contenedor del breadcrumb */
+.breadcrumb {
+    display: flex;                         /* Pone los elementos en línea */
+    align-items: center;                   /* Centra iconos/textos verticalmente */
+    gap: 10px;                             /* Separación entre elementos */
+    margin-bottom: 20px;                   /* Espacio antes del siguiente elemento */
+    font-size: 0.9rem;                     /* Tamaño del texto */
+}
+
+/* Enlaces del breadcrumb */
+.breadcrumb a {
+    color: rgba(255,255,255,0.8);          /* Blanco semitransparente */
+    text-decoration: none;                 /* Sin subrayado */
+    transition: color 0.3s ease;           /* Cambio de color suave */
+}
+
+/* Enlaces del breadcrumb en hover */
+.breadcrumb a:hover {
+    color: #ffffff;                        /* Se vuelve blanco sólido */
+}
+
+/* Separador del breadcrumb */
+.breadcrumb-separator {
+    color: rgba(255,255,255,0.5);          /* Blanco más tenue */
+}
+
+/* Elemento actual del breadcrumb */
+.breadcrumb-current {
+    color: #ffffff;                        /* Blanco sólido */
+}
+
+/* ---------------- CATEGORÍA DEL ARTÍCULO ---------------- */
+
+/* Badge con categoría */
+.articulo-categoria {
+    display: inline-block;                 /* Se ajusta al contenido */
+    padding: 8px 16px;                     /* Espaciado interno */
+    background-color: rgba(255,255,255,0.2); /* Blanco semitransparente */
+    backdrop-filter: blur(10px);           /* Efecto de desenfoque elegante */
+    color: #ffffff;                        /* Texto blanco */
+    font-size: 0.75rem;                    /* Texto pequeño */
+    font-weight: 600;                      /* Negrita moderada */
+    text-transform: uppercase;             /* Mayúsculas */
+    letter-spacing: 0.1em;                 /* Espaciado entre letras */
+    border-radius: 4px;                    /* Bordes suavemente redondeados */
+    margin-bottom: 20px;                   /* Espacio inferior */
+}
+
+/* ---------------- TÍTULO PRINCIPAL ---------------- */
+
+/* Título grande del hero */
+.articulo-hero-title {
+    font-size: 3.5rem;                     /* Tamaño muy grande */
+    font-weight: 700;                      /* Negrita fuerte */
+    color: #ffffff;                        /* Blanco */
+    line-height: 1.1;                      /* Espaciado ajustado */
+    margin-bottom: 25px;                   /* Separación inferior */
+    max-width: 900px;                      /* Controla el ancho para lectura óptima */
+}
+
+/* ---------------- METADATA DEL ARTÍCULO ---------------- */
+
+/* Contenedor de metadata (fecha, autor, lectura, etc.) */
+.articulo-hero-meta {
+    display: flex;                         /* Items en línea */
+    gap: 30px;                             /* Separación entre elementos */
+    flex-wrap: wrap;                       /* Se acomoda si no cabe en una línea */
+}
+
+/* Cada bloque individual de metadata */
+.meta-item {
+    display: flex;                         /* Ícono + texto alineados */
+    align-items: center;
+    gap: 10px;                             /* Espaciado entre icono y texto */
+    color: rgba(255,255,255,0.9);          /* Blanco casi sólido */
+    font-size: 0.95rem;                    /* Tamaño del texto */
+}
+
+/* Ícono dentro de metadata */
+.meta-icon {
+    flex-shrink: 0;                        /* Evita que se achique cuando el texto es muy largo */
+}
+
+/* ---------------- INDICADOR DE SCROLL ---------------- */
+
+/* Indicador visual que invita a hacer scroll */
+.scroll-indicator {
+    position: absolute;                    /* Fijado dentro del hero */
+    bottom: 30px;                          /* A 30px del borde inferior */
+    left: 50%;                             /* Centrado horizontal */
+    transform: translateX(-50%);           /* Corrección de centrado */
+    display: flex;                         /* Coloca icono + texto */
+    flex-direction: column;                /* Uno encima del otro */
+    align-items: center;                   /* Centrado */
+    gap: 10px;
+    color: rgba(255,255,255,0.8);          /* Blanco tenue */
+    font-size: 0.85rem;
+    z-index: 3;                            /* Se coloca sobre el overlay */
+}
+
+/* Línea vertical animada del indicador */
+.scroll-arrow {
+    width: 2px;                            /* Línea delgada */
+    height: 30px;                          /* Altura de la línea */
+    background: rgba(255,255,255,0.6);     /* Blanco suave */
+    position: relative;
+    animation: scrollBounce 2s ease-in-out infinite; /* Animación repetitiva */
+}
+
+/* Flecha dibujada con bordes */
+.scroll-arrow::after {
+    content: '';                           /* Crea pseudo-elemento */
+    position: absolute;
+    bottom: 0;                             /* Ubicada en la parte inferior */
+    left: 50%;                             /* Centrada */
+    transform: translateX(-50%);           /* Corrección */
+    width: 8px;                            /* Tamaño del cuadrado que forma la flecha */
+    height: 8px;
+    border-right: 2px solid rgba(255,255,255,0.8); /* Bordes que forman flecha */
+    border-bottom: 2px solid rgba(255,255,255,0.8);
+    transform: translateX(-50%) rotate(45deg); /* Rotación para formar la punta */
+}
+
+/* Animación de rebote del indicador de scroll */
+@keyframes scrollBounce {
+    0%, 100% {
+        transform: translateY(0);          /* Posición inicial y final */
+        opacity: 1;                        /* Totalmente visible */
+    }
+    50% {
+        transform: translateY(10px);       /* Se desplaza 10px hacia abajo */
+        opacity: 0.7;                      /* Baja un poco la opacidad */
+    }
+}
+
+/* ==========================================================================
+   CONTENIDO DEL ARTÍCULO
+   ========================================================================== */
+
+/* Contenedor principal del contenido del artículo */
+.articulo-contenido {
+    background-color: #ffffff;                       /* Fondo blanco para lectura */
+    padding: var(--articulo-spacing) 0;              /* Espaciado vertical usando la variable global */
+}
+
+/* Contenedor interno que organiza sidebar + contenido */
+.contenido-wrapper {
+    max-width: 1400px;                               /* Máximo ancho del layout */
+    margin: 0 auto;                                  /* Centra horizontalmente */
+    padding: 0 40px;                                 /* Padding lateral para aire */
+    display: grid;                                   /* Activa grid layout */
+    grid-template-columns: 280px 1fr;                /* Primera columna fija para sidebar, segunda flexible */
+    gap: 80px;                                       /* Separación entre sidebar y contenido */
+    align-items: start;                              /* Ambos elementos alineados arriba */
+}
+
+/* ==========================================================================
+   SIDEBAR
+   ========================================================================== */
+
+/* Contenedor del sidebar fijo mientras se hace scroll */
+.articulo-sidebar {
+    position: sticky;                                /* Permite que se mantenga visible */
+    top: 120px;                                      /* Distancia desde arriba antes de fijarse */
+}
+
+/* Contenedor interno del sidebar */
+.sidebar-sticky {
+    display: flex;                                   /* Flexbox vertical */
+    flex-direction: column;
+    gap: 40px;                                       /* Separación entre bloques del sidebar */
+}
+
+/* Título del sidebar */
+.sidebar-title {
+    font-size: 1.1rem;                               /* Tamaño de fuente */
+    font-weight: 700;                                /* Negrita */
+    color: var(--articulo-primary);                  /* Color del título */
+    margin-bottom: 15px;                             /* Separación inferior */
+}
+
+/* ---------------- ÍNDICE (Tabla de contenido) ---------------- */
+
+/* Contenedor del índice */
+.articulo-indice {
+    display: flex;                                   /* Coloca los enlaces verticalmente */
+    flex-direction: column;
+    gap: 8px;                                        /* Separación entre cada enlace */
+}
+
+/* Enlace individual del índice */
+.indice-link {
+    padding: 12px 16px;                              /* Espaciado interior */
+    color: var(--articulo-text-light);               /* Texto gris claro */
+    text-decoration: none;                           /* Sin subrayado */
+    font-size: 0.9rem;                               /* Tamaño del texto */
+    border-left: 3px solid transparent;              /* Borde izquierdo que se colorea en hover */
+    transition: all 0.3s ease;                       /* Transición suave */
+}
+
+/* Hover en enlace del índice */
+.indice-link:hover {
+    color: var(--articulo-primary);                  /* Color del texto al pasar el mouse */
+    background-color: var(--articulo-highlight);     /* Fondo gris claro */
+    border-left-color: var(--articulo-primary);      /* Se activa el borde izquierdo */
+}
+
+/* Estilo del enlace activo (sección actual) */
+.indice-link.active {
+    color: var(--articulo-primary);                  /* Texto negro */
+    background-color: var(--articulo-highlight);     /* Fondo activado */
+    border-left-color: var(--articulo-primary);      /* Borde activado */
+    font-weight: 600;                                /* Negrita adicional */
+}
+
+/* ---------------- COMPARTIR ---------------- */
+
+/* Contenedor del bloque para compartir */
+.sidebar-compartir {
+    padding: 20px;                                   /* Espaciado interior */
+    background-color: var(--articulo-highlight);     /* Fondo suave destacado */
+    border-radius: 8px;                              /* Bordes redondeados */
+}
+
+/* Título de la sección de compartir */
+.sidebar-compartir h4 {
+    font-size: 0.95rem;                              /* Tamaño del texto */
+    font-weight: 700;                                /* Negrita */
+    margin-bottom: 15px;                             /* Espacio inferior */
+    color: var(--articulo-primary);                  /* Color del texto */
+}
+
+/* Contenedor de los botones de redes */
+.compartir-botones {
+    display: flex;                                   /* Flexbox horizontal */
+    gap: 10px;                                       /* Separación entre iconos */
+}
+
+/* Botón individual de compartir */
+.btn-compartir {
+    width: 40px;                                     /* Ancho fijo circular */
+    height: 40px;                                    /* Alto fijo circular */
+    display: flex;                                   /* Centrar icono */
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;                       /* Fondo blanco */
+    border: 2px solid var(--articulo-border);        /* Borde gris claro */
+    border-radius: 50%;                              /* Forma circular */
+    color: var(--articulo-primary);                  /* Icono negro */
+    cursor: pointer;                                 /* Cursor de botón */
+    transition: all 0.3s ease;                       /* Transición suave */
+}
+
+/* Hover del botón de compartir */
+.btn-compartir:hover {
+    background-color: var(--articulo-primary);       /* Fondo negro */
+    color: #ffffff;                                  /* Icono blanco */
+    border-color: var(--articulo-primary);           /* Borde negro */
+    transform: translateY(-2px);                     /* Elevación visual */
+}
+
+/* ==========================================================================
+   CONTENIDO PRINCIPAL
+   ========================================================================== */
+
+/* Contenedor principal del cuerpo del artículo */
+.articulo-main {
+    max-width: 800px;                                /* Limita el ancho para mejorar la lectura */
+}
+
+/* ---------------- RESUMEN DESTACADO ---------------- */
+
+/* Caja destacada al inicio del artículo */
+.articulo-resumen {
+    padding: 40px;                                   /* Espaciado interno amplio */
+    background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%); /* Fondo con degradado suave */
+    border-left: 4px solid var(--articulo-primary);  /* Borde vertical de acento */
+    margin-bottom: 60px;                             /* Espaciado inferior */
+    border-radius: 8px;                              /* Bordes redondeados */
+}
+
+/* Título del bloque resumen */
+.resumen-titulo {
+    font-size: 1.5rem;                               /* Tamaño grande */
+    font-weight: 700;                                /* Negrita */
+    color: var(--articulo-primary);                  /* Color principal */
+    margin-bottom: 15px;                             /* Espaciado inferior */
+}
+
+/* Texto del resumen */
+.resumen-texto {
+    font-size: 1.15rem;                              /* Tamaño legible y mayor al normal */
+    line-height: 1.7;                                /* Altura de línea cómoda */
+    color: var(--articulo-text);                     /* Gris oscuro */
+    margin: 0;                                       /* Sin márgenes adicionales */
+}
+
+/* ---------------- SECCIONES DE CONTENIDO ---------------- */
+
+.contenido-seccion {
+    margin-bottom: 60px;                             /* Separación entre secciones */
+    scroll-margin-top: 120px;                        /* Ajuste para scroll al navegar por índice */
+}
+
+/* Título de cada sección del artículo */
+.seccion-titulo {
+    font-size: 2rem;                                 /* Título grande */
+    font-weight: 700;                                /* Negrita */
+    color: var(--articulo-primary);                  /* Color principal */
+    margin-bottom: 30px;                             /* Separación inferior */
+    padding-bottom: 15px;                            /* Espacio interno inferior */
+    border-bottom: 2px solid var(--articulo-border); /* Línea divisoria */
+}
+
+/* ---------------- PÁRRAFOS ---------------- */
+
+.parrafo {
+    font-size: 1.1rem;                               /* Tamaño de párrafo más grande de lo normal */
+    line-height: 1.8;                                /* Lectura cómoda */
+    color: var(--articulo-text);                     /* Color principal del texto */
+    margin-bottom: 25px;                             /* Separación entre párrafos */
+}
+
+/* Negrita dentro del párrafo */
+.parrafo strong {
+    font-weight: 600;                                /* Negrita suave */
+    color: var(--articulo-primary);                  /* Resalta con color del tema */
+}
+
+/* Cursiva dentro del párrafo */
+.parrafo em {
+    font-style: italic;                              /* Cursiva */
+    color: var(--articulo-text-light);               /* Gris más claro */
+}
+
+/* ---------------- CITA DESTACADA ---------------- */
+
+.cita-destacada {
+    margin: 50px 0;                                  /* Espaciado vertical amplio */
+    padding: 40px;                                   /* Espaciado interno */
+    background-color: var(--articulo-highlight);     /* Fondo gris claro */
+    border-left: 4px solid var(--articulo-primary);  /* Borde de acento */
+    position: relative;                              /* Para el uso de ::before */
+}
+
+/* Comillas grandes decorativas */
+.cita-destacada::before {
+    content: '"';                                    /* Comillas decorativas */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 4rem;                                 /* Tamaño gigante */
+    font-weight: 700;
+    color: var(--articulo-border);                   /* Gris casi invisible */
+    line-height: 1;
+}
+
+/* Texto principal de la cita */
+.cita-destacada p {
+    font-size: 1.3rem;                               /* Texto grande */
+    line-height: 1.6;
+    font-style: italic;                              /* Cita en cursiva */
+    color: var(--articulo-text);
+    margin: 0 0 15px 0;                              /* Separación con el autor */
+    padding-left: 40px;                              /* Compensa la comilla decorativa */
+}
+
+/* Autor de la cita */
+.cita-destacada cite {
+    display: block;
+    font-size: 0.95rem;
+    font-style: normal;
+    color: var(--articulo-text-light);
+    padding-left: 40px;                              /* Alineado al texto de la cita */
+}
+
+/* ---------------- FIGURAS E IMÁGENES ---------------- */
+
+.articulo-figura {
+    margin: 60px 0;                                  /* Separación vertical */
+    text-align: center;                              /* Centrado del contenido */
+}
+
+.articulo-figura img {
+    width: 100%;                                     /* Imagen responsiva */
+    height: auto;
+    border-radius: 12px;                             /* Bordes redondeados */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);         /* Sombra elegante */
+}
+
+.articulo-figura figcaption {
+    margin-top: 15px;                                /* Espaciado superior */
+    font-size: 0.9rem;                               /* Texto pequeño */
+    color: var(--articulo-text-light);               /* Gris suave */
+    font-style: italic;                              /* Estilo de caption */
+}
+
+/* ---------------- GRID DE IMÁGENES ---------------- */
+
+.imagenes-grid {
+    display: grid;                                   /* Grid layout */
+    grid-template-columns: repeat(2, 1fr);           /* Dos columnas iguales */
+    gap: 30px;                                       /* Separación entre imágenes */
+    margin: 60px 0;
+}
+
+.grid-item {
+    text-align: center;
+}
+
+.grid-item img {
+    width: 100%;                                     /* Responsiva */
+    height: 250px;                                   /* Alto fijo */
+    object-fit: cover;                               /* Recorte elegante */
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.grid-item figcaption {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--articulo-text-light);
+}
+
+/* ---------------- LISTA DESTACADA ---------------- */
+
+.lista-destacada {
+    padding: 30px;
+    background-color: #fafafa;                       /* Fondo gris claro */
+    border-radius: 8px;
+    margin: 40px 0;
+}
+
+.lista-destacada h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--articulo-primary);
+    margin-bottom: 20px;
+}
+
+.lista-destacada ul {
+    list-style: none;                                /* Sin viñetas por defecto */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;                                       /* Separación entre ítems */
+}
+
+.lista-destacada li {
+    padding-left: 30px;                              /* Espacio para el icono */
+    position: relative;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--articulo-text);
+}
+
+.lista-destacada li::before {
+    content: '→';                                    /* Flecha personalizada */
+    position: absolute;
+    left: 0;
+    color: var(--articulo-primary);
+    font-weight: 700;
+}
+
+/* ---------------- NOTA INFORMATIVA ---------------- */
+
+.nota-informativa {
+    display: flex;                                   /* Ícono + texto */
+    gap: 20px;
+    padding: 25px;
+    background-color: #e8f4f8;                       /* Azul suave */
+    border-radius: 8px;
+    margin: 40px 0;
+}
+
+.nota-icono {
+    font-size: 2rem;                                 /* Ícono grande */
+    flex-shrink: 0;                                  /* Evita que se reduzca */
+}
+
+.nota-contenido h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--articulo-primary);
+    margin-bottom: 10px;
+}
+
+.nota-contenido p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--articulo-text);
+    margin: 0;
+}
+
+/* ---------------- ESTADÍSTICAS ---------------- */
+
+.estadisticas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);           /* 4 columnas iguales */
+    gap: 30px;
+    margin: 50px 0;
+    padding: 40px;
+    background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+    border-radius: 12px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-numero {
+    font-size: 3rem;                                 /* Número principal gigante */
+    font-weight: 700;
+    color: var(--articulo-primary);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    font-size: 0.95rem;
+    color: var(--articulo-text-light);
+    text-transform: uppercase;                       /* Mayúsculas */
+    letter-spacing: 0.05em;                          /* Espaciado entre letras */
+}
+
+/* ---------------- REFERENCIAS ---------------- */
+
+.articulo-referencias {
+    margin-top: 80px;
+    padding: 40px;
+    background-color: var(--articulo-highlight);     /* Fondo destacado */
+    border-radius: 12px;
+}
+
+.referencias-titulo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--articulo-primary);
+    margin-bottom: 25px;
+}
+
+.referencias-lista {
+    padding-left: 20px;                              /* Sangría para las viñetas */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.referencias-lista li {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--articulo-text);
+}
+
+/* ---------------- BIOGRAFÍA DEL AUTOR ---------------- */
+
+.autor-bio {
+    display: flex;                                   /* Foto + texto */
+    gap: 25px;
+    padding: 40px;
+    background-color: #fafafa;                       /* Fondo gris suave */
+    border-radius: 12px;
+    margin-top: 60px;
+}
+
+/* Avatar del autor: contenedor de la imagen o inicial */
+.autor-avatar {
+    flex-shrink: 0;                                  /* Evita que el avatar se encoja dentro del flex */
+}
+
+/* Avatar circular con la inicial del autor */
+.avatar-inicial {
+    width: 80px;                                     /* Ancho del círculo */
+    height: 80px;                                    /* Alto del círculo */
+    display: flex;                                   /* Centrado usando flexbox */
+    align-items: center;                             /* Centrar vertical */
+    justify-content: center;                         /* Centrar horizontal */
+    background-color: var(--articulo-primary);       /* Fondo en color principal del artículo */
+    color: #ffffff;                                   /* Texto blanco */
+    font-size: 2rem;                                  /* Inicial grande */
+    font-weight: 700;                                 /* Negrita */
+    border-radius: 50%;                               /* Forma circular */
+}
+
+/* Contenedor de la información del autor */
+.autor-info {
+    flex: 1;                                         /* Ocupa todo el espacio restante */
+}
+
+/* Nombre del autor */
+.autor-nombre {
+    font-size: 1.3rem;                               /* Tamaño de fuente grande */
+    font-weight: 700;                                 /* Negrita */
+    color: var(--articulo-primary);                   /* Color principal */
+    margin-bottom: 5px;                               /* Pequeño margen inferior */
+}
+
+/* Cargo o título profesional del autor */
+.autor-titulo {
+    font-size: 0.95rem;                              /* Tamaño reducido */
+    color: var(--articulo-text-light);               /* Gris claro */
+    margin-bottom: 15px;                              /* Separación con el texto */
+}
+
+/* Descripción o biografía del autor */
+.autor-descripcion {
+    font-size: 1rem;                                 /* Tamaño estándar */
+    line-height: 1.6;                                /* Lectura cómoda */
+    color: var(--articulo-text);                     /* Gris oscuro */
+    margin: 0;                                       /* Sin margen extra */
+}
+
+/* ---------------- ARTÍCULOS RELACIONADOS ---------------- */
+
+.articulos-relacionados {
+    margin-top: 80px;                                /* Separación superior */
+    padding-top: 60px;                               /* Espaciado interno superior */
+    border-top: 2px solid var(--articulo-border);    /* Línea divisoria */
+}
+
+/* Título de la sección de relacionados */
+.relacionados-titulo {
+    font-size: 2rem;                                 /* Grande */
+    font-weight: 700;                                 /* Negrita */
+    color: var(--articulo-primary);                  /* Color principal */
+    margin-bottom: 40px;                              /* Separación inferior */
+}
+
+/* Grid de 3 columnas para los artículos */
+.relacionados-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);           /* 3 columnas iguales */
+    gap: 30px;                                       /* Espacio entre tarjetas */
+}
+
+/* Tarjeta individual de artículo relacionado */
+.relacionado-card {
+    background-color: #ffffff;                       /* Fondo blanco */
+    border: 2px solid var(--articulo-border);        /* Borde gris claro */
+    border-radius: 12px;                              /* Bordes redondeados */
+    overflow: hidden;                                 /* Oculta desbordes del contenido */
+    transition: all 0.3s ease;                        /* Suavidad en hover */
+}
+
+/* Hover de la tarjeta */
+.relacionado-card:hover {
+    border-color: var(--articulo-primary);            /* Borde oscuro */
+    transform: translateY(-5px);                      /* Levanta la tarjeta */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);           /* Sombra suave */
+}
+
+/* Imagen superior del card */
+.relacionado-card img {
+    width: 100%;                                     /* Cubre todo el ancho */
+    height: 200px;                                   /* Alto fijo */
+    object-fit: cover;                               /* Corta manteniendo proporción */
+}
+
+/* Contenido textual debajo de la imagen */
+.relacionado-content {
+    padding: 20px;                                   /* Espaciado interno */
+}
+
+/* Título del artículo relacionado */
+.relacionado-content h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--articulo-primary);
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+/* Descripción corta del artículo */
+.relacionado-content p {
+    font-size: 0.9rem;
+    color: var(--articulo-text-light);
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+/* Link al artículo */
+.relacionado-link {
+    color: var(--articulo-primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+/* Hover del link */
+.relacionado-link:hover {
+    color: #333333;                                  /* Oscurece aún más */
+}
+
+/* ---------------- ENLACES EXTERNOS ---------------- */
+
+.enlaces-externos {
+    margin: 60px 0;                                  /* Separación vertical */
+}
+
+/* Título de la sección de enlaces */
+.enlaces-titulo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--articulo-primary);
+    margin-bottom: 30px;
+}
+
+/* Tarjeta del enlace externo */
+.enlace-card {
+    display: flex;                                   /* Ícono + info */
+    gap: 25px;                                       /* Separación entre elementos */
+    padding: 30px;
+    background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+    border: 2px solid var(--articulo-border);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+/* Hover del enlace */
+.enlace-card:hover {
+    border-color: var(--articulo-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Icono cuadrado del enlace */
+.enlace-icono {
+    flex-shrink: 0;                                  /* Evita que se reduzca */
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--articulo-primary);
+    color: #ffffff;
+    border-radius: 12px;
+}
+
+/* Contenedor de la información textual */
+.enlace-info {
+    flex: 1;
+}
+
+/* Título del enlace */
+.enlace-info h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--articulo-primary);
+    margin-bottom: 8px;
+}
+
+/* Descripción del enlace */
+.enlace-info p {
+    font-size: 0.95rem;
+    color: var(--articulo-text-light);
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+/* Botón para ir al enlace */
+.btn-enlace {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: var(--articulo-primary);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+/* Hover del botón */
+.btn-enlace:hover {
+    background-color: #333333;
+    transform: translateX(5px);                      /* Se desplaza suavemente */
+}
+
+/* ---------------- VIDEOS RESPONSIVE ---------------- */
+
+.video-container {
+    margin: 60px 0;                                  /* Separación vertical */
+}
+
+/* Título encima del video */
+.video-titulo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--articulo-primary);
+    margin-bottom: 20px;
+}
+
+/* Wrapper para mantener proporción 16:9 */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;                          /* Relación 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+/* Iframe embebido */
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;                                    /* Sin bordes */
+}
+
+/* Texto descriptivo del video */
+.video-descripcion {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: var(--articulo-text-light);
+    font-style: italic;
+    text-align: center;
+}
+
+/* ---------------- GRID DE MÚLTIPLES VIDEOS ---------------- */
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);           /* Dos columnas iguales */
+    gap: 30px;
+    margin: 60px 0;
+}
+
+/* Mantiene el 16:9 dentro del grid */
+.videos-grid .video-wrapper {
+    padding-bottom: 56.25%;
+}
+
+.videos-grid .video-titulo {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   RESPONSIVE: TABLETS (max-width: 1024px)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+
+    /* El wrapper del contenido pasa a una sola columna */
+    .contenido-wrapper {
+        grid-template-columns: 1fr;                  /* Sidebar debajo */
+        gap: 40px;
+    }
+
+    .articulo-sidebar {
+        position: static;                            /* Quita posición sticky */
+        order: 2;                                     /* Va después del contenido */
+    }
+
+    .articulo-main {
+        order: 1;                                     /* El contenido va primero */
+        max-width: 100%;                              /* Ya no se limita a 800px */
+    }
+
+    /* Estadísticas en 2 columnas */
+    .estadisticas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Artículos relacionados pasan de 3 columnas a 2 */
+    .relacionados-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE: MÓVILES (max-width: 768px)
+   Ajustes visuales para pantallas pequeñas como celulares.
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    /* Hero del artículo más pequeño en móviles */
+    .articulo-hero {
+        height: 60vh;                     /* Reduce la altura del hero */
+        min-height: 400px;                /* Asegura que no sea demasiado pequeño */
+        margin-top: 70px;                 /* Reduce margen respecto al navbar fijo */
+    }
+
+    /* Reduce el padding interno del contenido del hero */
+    .articulo-hero-content {
+        padding: 0 20px 40px;             /* Menos espacio lateral y en la parte inferior */
+    }
+
+    /* Título del hero más pequeño para pantallas móviles */
+    .articulo-hero-title {
+        font-size: 2rem;                  /* Reduce el tamaño del título */
+    }
+
+    /* La metadata del artículo se apila verticalmente */
+    .articulo-hero-meta {
+        flex-direction: column;           /* Cambia de fila a columna */
+        gap: 15px;                         /* Menos espacio entre elementos */
+    }
+
+    /* El contenido general del artículo tiene menos padding */
+    .articulo-contenido {
+        padding: 60px 0;                  /* Reduce el espacio superior y inferior */
+    }
+
+    /* Reduce padding lateral del wrapper */
+    .contenido-wrapper {
+        padding: 0 20px;                  /* Se ajusta mejor a pantallas estrechas */
+    }
+
+    /* Títulos de sección más pequeños */
+    .seccion-titulo {
+        font-size: 1.5rem;                /* Reduce el tamaño del título */
+    }
+
+    /* Párrafos más compactos */
+    .parrafo {
+        font-size: 1rem;                  /* Reduce tamaño del texto */
+    }
+
+    /* Caja de cita más pequeña */
+    .cita-destacada {
+        padding: 30px 20px;               /* Menos padding general */
+    }
+
+    /* Texto de la cita más pequeño */
+    .cita-destacada p {
+        font-size: 1.1rem;                /* Reduce tamaño de texto */
+    }
+
+    /* El grid de imágenes pasa a una sola columna */
+    .imagenes-grid {
+        grid-template-columns: 1fr;       /* Una sola columna */
+    }
+
+    /* Las estadísticas se apilan en una sola columna */
+    .estadisticas {
+        grid-template-columns: 1fr;       /* Solo una columna */
+        gap: 20px;                        /* Menos espacio entre estadísticas */
+        padding: 30px 20px;               /* Ajuste del padding */
+    }
+
+    /* Número grande de estadística se reduce */
+    .stat-numero {
+        font-size: 2.5rem;                /* Reduce el tamaño del número */
+    }
+
+    /* Biografía del autor en formato vertical */
+    .autor-bio {
+        flex-direction: column;           /* De horizontal a vertical */
+        padding: 30px 20px;               /* Ajusta el espacio interno */
+    }
+
+    /* Artículos relacionados pasan a una sola columna */
+    .relacionados-grid {
+        grid-template-columns: 1fr;       /* Una sola columna */
+    }
+
+    /* Sidebar con menor separación entre elementos */
+    .sidebar-sticky {
+        gap: 30px;                        /* Reduce distancia entre bloques */
+    }
+
+    /* Índice del artículo se vuelve horizontal y scrollable */
+    .articulo-indice {
+        flex-direction: row;              /* De columna a fila */
+        overflow-x: auto;                 /* Permite desplazamiento horizontal */
+        padding-bottom: 10px;             /* Espacio inferior para evitar recortes */
+    }
+
+    /* Enlaces del índice adaptados al nuevo diseño horizontal */
+    .indice-link {
+        white-space: nowrap;              /* Evita que los enlaces se partan en varias líneas */
+        border-left: none;                /* Quita el borde lateral */
+        border-bottom: 3px solid transparent;   /* Borde inferior para estado activo */
+    }
+
+    /* Estados hover y active cambian borde inferior en lugar del izquierdo */
+    .indice-link.active,
+    .indice-link:hover {
+        border-left: none;                     /* No se usa borde izquierdo */
+        border-bottom-color: var(--articulo-primary);  /* Subraya el link activo o hover */
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE: MÓVILES PEQUEÑOS (max-width: 480px)
+   Ajustes específicos para celulares muy pequeños.
+   ========================================================================== */
+
+@media (max-width: 480px) {
+
+    /* Título del hero aún más pequeño */
+    .articulo-hero-title {
+        font-size: 1.75rem;              /* Reduce aún más el tamaño del título */
+    }
+
+    /* Texto del resumen más pequeño */
+    .resumen-texto {
+        font-size: 1.05rem;              /* Ajusta la lectura para pantallas pequeñas */
+    }
+
+    /* Comillas decorativas más pequeñas en cita */
+    .cita-destacada::before {
+        font-size: 3rem;                 /* Reduce tamaño del símbolo de cita */
+    }
+
+    /* Texto de la cita con ajuste de padding */
+    .cita-destacada p {
+        font-size: 1rem;                 /* Reduce tamaño del texto */
+        padding-left: 20px;              /* Menor sangría en móviles pequeños */
+    }
+
+    /* El autor de la cita también ajusta su sangría */
+    .cita-destacada cite {
+        padding-left: 20px;              /* Sangría consistente */
+    }
+
+    /* Botones de compartir centrados */
+    .compartir-botones {
+        justify-content: center;         /* Centra los iconos de compartir */
+    }
+}
